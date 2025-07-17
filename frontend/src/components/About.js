@@ -90,8 +90,8 @@ const About = () => {
               </p>
               <p className="text-lg text-gray-400 mb-8">
                 Forte de 5 années d'expérience dans l'industrie du tourisme, je parcours le monde pour vous dénicher 
-                les destinations les plus fascinantes aux prix les plus compétitifs. Mon expertise couvre l'Amérique latine, 
-                l'Europe, l'Asie, le Maghreb, l'Égypte et les îles paradisiaques.
+                les destinations les plus fascinantes aux prix les plus compétitifs. Mon expertise tarifaire couvre 
+                l'Amérique du Nord, l'Amérique du Sud, l'Europe, l'Asie, l'Océanie, mais également les îles paradisiaques.
               </p>
             </div>
 
