@@ -297,6 +297,319 @@ const Destinations = () => {
           backpack: 'Sac à dos inclus'
         }
       }
+    'Asie': [
+      {
+        id: 16,
+        name: 'Tokyo, Japon',
+        price: '€1,199',
+        originalPrice: '€1,599',
+        image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf',
+        duration: '8 jours',
+        flightTime: '11h',
+        stops: 'Direct',
+        rating: 4.9,
+        reviews: 456,
+        description: 'Modernité et tradition au pays du soleil levant',
+        highlights: ['Temples traditionnels', 'Quartier de Shibuya', 'Mont Fuji'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 17,
+        name: 'Bangkok, Thaïlande',
+        price: '€649',
+        originalPrice: '€899',
+        image: 'https://images.unsplash.com/photo-1563492065-1ddc4e96b1b8',
+        duration: '7 jours',
+        flightTime: '10h',
+        stops: '1 escale',
+        rating: 4.6,
+        reviews: 378,
+        description: 'Temples dorés et street food authentique',
+        highlights: ['Grand Palais', 'Marchés flottants', 'Temples bouddhistes'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 18,
+        name: 'Singapour',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd',
+        duration: '6 jours',
+        flightTime: '12h',
+        stops: 'Direct',
+        rating: 4.8,
+        reviews: 289,
+        description: 'Cité-État futuriste entre Orient et Occident',
+        highlights: ['Marina Bay Sands', 'Gardens by the Bay', 'Chinatown'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 19,
+        name: 'Bali, Indonésie',
+        price: '€799',
+        originalPrice: '€1,199',
+        image: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1',
+        duration: '9 jours',
+        flightTime: '15h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 523,
+        description: 'Île des dieux aux paysages enchanteurs',
+        highlights: ['Rizières en terrasse', 'Temples hindous', 'Plages paradisiaques'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      }
+    ],
+    'Maghreb': [
+      {
+        id: 20,
+        name: 'Marrakech, Maroc',
+        price: '€449',
+        originalPrice: '€699',
+        image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d0bbb8',
+        duration: '5 jours',
+        flightTime: '3h',
+        stops: 'Direct',
+        rating: 4.5,
+        reviews: 412,
+        description: 'La perle rouge du Maroc',
+        highlights: ['Medina historique', 'Jardin Majorelle', 'Souks traditionnels'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 21,
+        name: 'Tunis, Tunisie',
+        price: '€399',
+        originalPrice: '€599',
+        image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d0bbb8',
+        duration: '4 jours',
+        flightTime: '2h30',
+        stops: 'Direct',
+        rating: 4.3,
+        reviews: 234,
+        description: 'Carrefour des civilisations méditerranéennes',
+        highlights: ['Medina de Tunis', 'Carthage antique', 'Sidi Bou Said'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 22,
+        name: 'Alger, Algérie',
+        price: '€349',
+        originalPrice: '€549',
+        image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96',
+        duration: '4 jours',
+        flightTime: '2h',
+        stops: 'Direct',
+        rating: 4.2,
+        reviews: 156,
+        description: 'La blanche perle de la Méditerranée',
+        highlights: ['Casbah d\'Alger', 'Notre-Dame d\'Afrique', 'Jardin d\'essai'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      }
+    ],
+    'Égypte': [
+      {
+        id: 23,
+        name: 'Le Caire, Égypte',
+        price: '€599',
+        originalPrice: '€899',
+        image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d0bbb8',
+        duration: '6 jours',
+        flightTime: '4h',
+        stops: 'Direct',
+        rating: 4.6,
+        reviews: 367,
+        description: 'Berceau de la civilisation pharaonique',
+        highlights: ['Pyramides de Gizeh', 'Musée égyptien', 'Croisière sur le Nil'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 24,
+        name: 'Louxor, Égypte',
+        price: '€649',
+        originalPrice: '€949',
+        image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364',
+        duration: '7 jours',
+        flightTime: '4h30',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 298,
+        description: 'Musée à ciel ouvert de l\'Égypte ancienne',
+        highlights: ['Vallée des Rois', 'Temple de Karnak', 'Temple de Louxor'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      }
+    ],
+    'Océanie': [
+      {
+        id: 25,
+        name: 'Sydney, Australie',
+        price: '€1,499',
+        originalPrice: '€1,999',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4',
+        duration: '10 jours',
+        flightTime: '20h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 445,
+        description: 'Métropole cosmopolite aux plages iconiques',
+        highlights: ['Opéra de Sydney', 'Harbour Bridge', 'Bondi Beach'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 26,
+        name: 'Auckland, Nouvelle-Zélande',
+        price: '€1,399',
+        originalPrice: '€1,899',
+        image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad',
+        duration: '9 jours',
+        flightTime: '22h',
+        stops: '1 escale',
+        rating: 4.8,
+        reviews: 267,
+        description: 'Paysages grandioses et culture maorie',
+        highlights: ['Baie des Îles', 'Milford Sound', 'Rotorua'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      }
+    ],
+    'Îles Paradisiaques': [
+      {
+        id: 27,
+        name: 'Île de la Réunion',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
+        duration: '8 jours',
+        flightTime: '11h',
+        stops: 'Direct',
+        rating: 4.8,
+        reviews: 234,
+        description: 'Île intense aux paysages volcaniques',
+        highlights: ['Piton de la Fournaise', 'Cirques naturels', 'Plages de sable noir'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 28,
+        name: 'Punta Cana, République Dominicaine',
+        price: '€699',
+        originalPrice: '€999',
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
+        duration: '7 jours',
+        flightTime: '8h',
+        stops: 'Direct',
+        rating: 4.6,
+        reviews: 456,
+        description: 'Plages de sable blanc et eaux cristallines',
+        highlights: ['Plages paradisiaques', 'Récifs coralliens', 'Cenotes naturels'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 29,
+        name: 'Zanzibar, Tanzanie',
+        price: '€799',
+        originalPrice: '€1,199',
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
+        duration: '8 jours',
+        flightTime: '8h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 289,
+        description: 'Île aux épices de l\'océan Indien',
+        highlights: ['Stone Town', 'Plages de Nungwi', 'Épices locales'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 30,
+        name: 'Maldives',
+        price: '€1,299',
+        originalPrice: '€1,799',
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
+        duration: '7 jours',
+        flightTime: '9h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 367,
+        description: 'Paradis tropical sur pilotis',
+        highlights: ['Bungalows sur pilotis', 'Récifs coralliens', 'Plongée sous-marine'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 31,
+        name: 'Seychelles',
+        price: '€1,199',
+        originalPrice: '€1,699',
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
+        duration: '8 jours',
+        flightTime: '9h',
+        stops: '1 escale',
+        rating: 4.8,
+        reviews: 234,
+        description: 'Archipel de rêve aux plages immaculées',
+        highlights: ['Anse Source d\'Argent', 'Tortues géantes', 'Forêt primaire'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      }
     ]
   };
 
