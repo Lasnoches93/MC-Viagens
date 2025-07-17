@@ -4,123 +4,304 @@ import { MapPin, Clock, Plane, Users, Star, Heart } from 'lucide-react';
 
 const Destinations = () => {
   const [selectedDestination, setSelectedDestination] = useState(null);
+  const [selectedRegion, setSelectedRegion] = useState('Amérique du Sud');
 
-  const destinations = [
-    {
-      id: 1,
-      name: 'Machu Picchu, Pérou',
-      price: '€899',
-      originalPrice: '€1,299',
-      image: 'https://images.unsplash.com/photo-1530469525856-cf37954301f7',
-      duration: '8 jours',
-      flightTime: '12h',
-      stops: '1 escale',
-      rating: 4.9,
-      reviews: 245,
-      description: 'Découvrez la citadelle inca perchée dans les Andes',
-      highlights: ['Citadelle du Machu Picchu', 'Vallée Sacrée', 'Cusco colonial'],
-      baggage: {
-        cabin: '1 bagage cabine (8kg)',
-        checked: '1 bagage en soute (23kg)',
-        backpack: 'Sac à dos inclus'
+  const destinationsByRegion = {
+    'Amérique du Sud': [
+      {
+        id: 1,
+        name: 'Machu Picchu, Pérou',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.unsplash.com/photo-1530469525856-cf37954301f7',
+        duration: '8 jours',
+        flightTime: '12h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 245,
+        description: 'Découvrez la citadelle inca perchée dans les Andes',
+        highlights: ['Citadelle du Machu Picchu', 'Vallée Sacrée', 'Cusco colonial'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 2,
+        name: 'Buenos Aires, Argentine',
+        price: '€749',
+        originalPrice: '€1,099',
+        image: 'https://images.unsplash.com/photo-1509362657489-b9bd8c0089c8',
+        duration: '6 jours',
+        flightTime: '11h',
+        stops: 'Direct',
+        rating: 4.8,
+        reviews: 189,
+        description: 'La capitale du tango et de la passion latino-américaine',
+        highlights: ['Quartier de San Telmo', 'Spectacle de tango', 'Gastronomie locale'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 3,
+        name: 'Carthagène, Colombie',
+        price: '€649',
+        originalPrice: '€949',
+        image: 'https://images.unsplash.com/photo-1713561684894-25393bb9594b',
+        duration: '7 jours',
+        flightTime: '10h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 156,
+        description: 'Ville coloniale des Caraïbes aux mille couleurs',
+        highlights: ['Centre historique', 'Plages paradisiaques', 'Architecture coloniale'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 4,
+        name: 'Patagonie, Chili',
+        price: '€1,199',
+        originalPrice: '€1,699',
+        image: 'https://images.unsplash.com/flagged/photo-1576636215888-539d692c4136',
+        duration: '10 jours',
+        flightTime: '14h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 203,
+        description: 'Paysages grandioses aux confins du monde',
+        highlights: ['Torres del Paine', 'Glaciers bleus', 'Faune sauvage'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 5,
+        name: 'Rio de Janeiro, Brésil',
+        price: '€799',
+        originalPrice: '€1,199',
+        image: 'https://images.unsplash.com/flagged/photo-1575402669213-639549555a2c',
+        duration: '7 jours',
+        flightTime: '9h',
+        stops: 'Direct',
+        rating: 4.8,
+        reviews: 278,
+        description: 'La ville merveilleuse entre mer et montagne',
+        highlights: ['Christ Rédempteur', 'Plages de Copacabana', 'Quartier de Santa Teresa'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 6,
+        name: 'Salar de Uyuni, Bolivie',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.pexels.com/photos/6041284/pexels-photo-6041284.jpeg',
+        duration: '9 jours',
+        flightTime: '13h',
+        stops: '2 escales',
+        rating: 4.9,
+        reviews: 134,
+        description: 'Le plus grand miroir du monde sous les étoiles',
+        highlights: ['Désert de sel', 'Lagunes colorées', 'Flamants roses'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
       }
-    },
-    {
-      id: 2,
-      name: 'Buenos Aires, Argentine',
-      price: '€749',
-      originalPrice: '€1,099',
-      image: 'https://images.unsplash.com/photo-1509362657489-b9bd8c0089c8',
-      duration: '6 jours',
-      flightTime: '11h',
-      stops: 'Direct',
-      rating: 4.8,
-      reviews: 189,
-      description: 'La capitale du tango et de la passion latino-américaine',
-      highlights: ['Quartier de San Telmo', 'Spectacle de tango', 'Gastronomie locale'],
-      baggage: {
-        cabin: '1 bagage cabine (8kg)',
-        checked: '1 bagage en soute (23kg)',
-        backpack: 'Sac à dos inclus'
+    ],
+    'Europe': [
+      {
+        id: 7,
+        name: 'Lisbonne, Portugal',
+        price: '€699',
+        originalPrice: '€859',
+        image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b',
+        duration: '5 jours',
+        flightTime: '2h',
+        stops: 'Direct',
+        rating: 4.6,
+        reviews: 312,
+        description: 'La capitale portugaise aux sept collines',
+        highlights: ['Quartier de Alfama', 'Tramway 28', 'Pastéis de nata'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 8,
+        name: 'Madrid, Espagne',
+        price: '€749',
+        originalPrice: '€980',
+        image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4',
+        duration: '4 jours',
+        flightTime: '1h30',
+        stops: 'Direct',
+        rating: 4.5,
+        reviews: 267,
+        description: 'La capitale espagnole dynamique et culturelle',
+        highlights: ['Musée du Prado', 'Parc du Retiro', 'Puerta del Sol'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 9,
+        name: 'Paris, France',
+        price: '€849',
+        originalPrice: '€1,099',
+        image: 'https://images.unsplash.com/photo-1502602898536-47ad22581b52',
+        duration: '4 jours',
+        flightTime: '1h',
+        stops: 'Direct',
+        rating: 4.8,
+        reviews: 445,
+        description: 'La ville lumière et ses monuments iconiques',
+        highlights: ['Tour Eiffel', 'Louvre', 'Champs-Élysées'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 10,
+        name: 'Athènes, Grèce',
+        price: '€1,199',
+        originalPrice: '€1,699',
+        image: 'https://images.unsplash.com/photo-1555993539-1fb207c5e896',
+        duration: '7 jours',
+        flightTime: '3h',
+        stops: 'Direct',
+        rating: 4.7,
+        reviews: 198,
+        description: 'Berceau de la démocratie et de la philosophie',
+        highlights: ['Acropole', 'Parthénon', 'Quartier de Plaka'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 11,
+        name: 'Rome, Italie',
+        price: '€799',
+        originalPrice: '€1,199',
+        image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b',
+        duration: '5 jours',
+        flightTime: '2h',
+        stops: 'Direct',
+        rating: 4.8,
+        reviews: 356,
+        description: 'La ville éternelle aux mille merveilles',
+        highlights: ['Colisée', 'Vatican', 'Fontaine de Trevi'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 12,
+        name: 'Istanbul, Turquie',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200',
+        duration: '6 jours',
+        flightTime: '3h30',
+        stops: 'Direct',
+        rating: 4.6,
+        reviews: 287,
+        description: 'Pont entre l\'Europe et l\'Asie',
+        highlights: ['Sainte-Sophie', 'Grand Bazar', 'Bosphore'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
       }
-    },
-    {
-      id: 3,
-      name: 'Carthagène, Colombie',
-      price: '€649',
-      originalPrice: '€949',
-      image: 'https://images.unsplash.com/photo-1713561684894-25393bb9594b',
-      duration: '7 jours',
-      flightTime: '10h',
-      stops: '1 escale',
-      rating: 4.7,
-      reviews: 156,
-      description: 'Ville coloniale des Caraïbes aux mille couleurs',
-      highlights: ['Centre historique', 'Plages paradisiaques', 'Architecture coloniale'],
-      baggage: {
-        cabin: '1 bagage cabine (8kg)',
-        checked: '1 bagage en soute (23kg)',
-        backpack: 'Sac à dos inclus'
+    ],
+    'Amérique du Nord': [
+      {
+        id: 13,
+        name: 'New York, USA',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9',
+        duration: '7 jours',
+        flightTime: '8h',
+        stops: 'Direct',
+        rating: 4.9,
+        reviews: 523,
+        description: 'La ville qui ne dort jamais',
+        highlights: ['Times Square', 'Central Park', 'Statue de la Liberté'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 14,
+        name: 'Quebec, Canada',
+        price: '€749',
+        originalPrice: '€1,099',
+        image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225',
+        duration: '6 jours',
+        flightTime: '7h',
+        stops: 'Direct',
+        rating: 4.7,
+        reviews: 234,
+        description: 'Charme français au cœur de l\'Amérique',
+        highlights: ['Vieux-Québec', 'Château Frontenac', 'Chutes Montmorency'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 15,
+        name: 'Mexico, Mexique',
+        price: '€649',
+        originalPrice: '€949',
+        image: 'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a',
+        duration: '8 jours',
+        flightTime: '10h',
+        stops: '1 escale',
+        rating: 4.6,
+        reviews: 345,
+        description: 'Culture aztèque et cuisine authentique',
+        highlights: ['Teotihuacan', 'Frida Kahlo', 'Coyoacan'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
       }
-    },
-    {
-      id: 4,
-      name: 'Patagonie, Chili',
-      price: '€1,199',
-      originalPrice: '€1,699',
-      image: 'https://images.unsplash.com/flagged/photo-1576636215888-539d692c4136',
-      duration: '10 jours',
-      flightTime: '14h',
-      stops: '1 escale',
-      rating: 4.9,
-      reviews: 203,
-      description: 'Paysages grandioses aux confins du monde',
-      highlights: ['Torres del Paine', 'Glaciers bleus', 'Faune sauvage'],
-      baggage: {
-        cabin: '1 bagage cabine (8kg)',
-        checked: '1 bagage en soute (23kg)',
-        backpack: 'Sac à dos inclus'
-      }
-    },
-    {
-      id: 5,
-      name: 'Rio de Janeiro, Brésil',
-      price: '€799',
-      originalPrice: '€1,199',
-      image: 'https://images.unsplash.com/flagged/photo-1575402669213-639549555a2c',
-      duration: '7 jours',
-      flightTime: '9h',
-      stops: 'Direct',
-      rating: 4.8,
-      reviews: 278,
-      description: 'La ville merveilleuse entre mer et montagne',
-      highlights: ['Christ Rédempteur', 'Plages de Copacabana', 'Quartier de Santa Teresa'],
-      baggage: {
-        cabin: '1 bagage cabine (8kg)',
-        checked: '1 bagage en soute (23kg)',
-        backpack: 'Sac à dos inclus'
-      }
-    },
-    {
-      id: 6,
-      name: 'Salar de Uyuni, Bolivie',
-      price: '€899',
-      originalPrice: '€1,299',
-      image: 'https://images.pexels.com/photos/6041284/pexels-photo-6041284.jpeg',
-      duration: '9 jours',
-      flightTime: '13h',
-      stops: '2 escales',
-      rating: 4.9,
-      reviews: 134,
-      description: 'Le plus grand miroir du monde sous les étoiles',
-      highlights: ['Désert de sel', 'Lagunes colorées', 'Flamants roses'],
-      baggage: {
-        cabin: '1 bagage cabine (8kg)',
-        checked: '1 bagage en soute (23kg)',
-        backpack: 'Sac à dos inclus'
-      }
-    }
-  ];
+    ]
+  };
+
+  const regions = Object.keys(destinationsByRegion);
+  const destinations = destinationsByRegion[selectedRegion] || [];
 
   const containerVariants = {
     hidden: { opacity: 0 },
