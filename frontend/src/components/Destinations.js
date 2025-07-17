@@ -297,6 +297,7 @@ const Destinations = () => {
           backpack: 'Sac à dos inclus'
         }
       }
+    ],
     'Asie': [
       {
         id: 16,
