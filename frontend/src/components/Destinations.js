@@ -332,12 +332,34 @@ const Destinations = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Destinations <span className="text-gold-500">Exceptionnelles</span>
+            Nos Voyages <span className="text-gold-500">Internationaux</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Découvrez notre sélection exclusive de destinations, choisies par Jheny pour leur authenticité 
+            Découvrez notre sélection exclusive de destinations internationales, choisies par Jheny pour leur authenticité 
             et leurs prix imbattables.
           </p>
+        </motion.div>
+
+        {/* Region Selector */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+        >
+          {regions.map((region) => (
+            <button
+              key={region}
+              onClick={() => setSelectedRegion(region)}
+              className={`px-6 py-3 rounded-full transition-all duration-200 font-semibold ${
+                selectedRegion === region
+                  ? 'bg-gold-500 text-black'
+                  : 'bg-black-800 text-gray-300 hover:bg-black-700 hover:text-white'
+              }`}
+            >
+              {region}
+            </button>
+          ))}
         </motion.div>
 
         <motion.div
