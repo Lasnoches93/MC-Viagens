@@ -5,8 +5,8 @@ import { MapPin, Award, Heart, Globe, Users, Star } from 'lucide-react';
 const About = () => {
   const stats = [
     { number: '500+', label: 'Voyageurs satisfaits' },
-    { number: '25+', label: 'Pays explorés' },
-    { number: '8', label: 'Années d\'expérience' },
+    { number: '30+', label: 'Pays explorés' },
+    { number: '5', label: 'Années d\'expérience' },
     { number: '4.9', label: 'Note moyenne' }
   ];
 
