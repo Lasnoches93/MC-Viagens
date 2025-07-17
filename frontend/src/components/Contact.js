@@ -133,7 +133,7 @@ const Contact = () => {
                 </li>
                 <li className="flex items-center space-x-2 text-gray-300">
                   <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                  <span>Prix négociés directement avec les partenaires</span>
+                  <span>Recherche de prix compétitifs à l'international</span>
                 </li>
                 <li className="flex items-center space-x-2 text-gray-300">
                   <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
