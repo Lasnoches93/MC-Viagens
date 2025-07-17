@@ -13,8 +13,8 @@ const About = () => {
   const specialties = [
     {
       icon: <MapPin className="h-8 w-8" />,
-      title: 'Amérique Latine',
-      description: 'Spécialiste reconnue de l\'Amérique latine, je connais les secrets de chaque destination.'
+      title: 'Voyages Internationaux',
+      description: 'Spécialiste des voyages internationaux avec expertise en Amérique latine, Europe, Asie et îles paradisiaques.'
     },
     {
       icon: <Heart className="h-8 w-8" />,
