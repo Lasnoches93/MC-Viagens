@@ -141,7 +141,7 @@ const Contact = () => {
                 </li>
                 <li className="flex items-center space-x-2 text-gray-300">
                   <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                  <span>Garantie satisfait ou remboursé</span>
+                  <span>En cas d'insatisfaction, un avoir de 15% pour une autre destination vous sera proposée</span>
                 </li>
               </ul>
             </div>
