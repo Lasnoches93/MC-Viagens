@@ -85,14 +85,13 @@ const About = () => {
                 Rencontrez <span className="text-gold-500">Jheny Mamani</span>
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                Passionnée de voyages depuis toujours, j'ai exploré l'ensemble de l'Amérique latine 
-                pour vous dénicher les expériences les plus authentiques aux meilleurs prix.
+                Passionnée de voyages depuis toujours, je me spécialise dans la recherche des meilleurs bons plans 
+                pour les voyages internationaux, avec une expertise particulière en Amérique latine.
               </p>
               <p className="text-lg text-gray-400 mb-8">
-                Forte de 8 années d'expérience dans l'industrie du tourisme, je me spécialise dans 
-                la création de voyages sur mesure qui allient découverte, authenticité et budget maîtrisé. 
-                Mon expertise de l'Amérique latine me permet de vous faire découvrir des lieux secrets 
-                et des expériences uniques.
+                Forte de 5 années d'expérience dans l'industrie du tourisme, je parcours le monde pour vous dénicher 
+                les destinations les plus fascinantes aux prix les plus compétitifs. Mon expertise couvre l'Amérique latine, 
+                l'Europe, l'Asie, le Maghreb, l'Égypte et les îles paradisiaques.
               </p>
             </div>
 
