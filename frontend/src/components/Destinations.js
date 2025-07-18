@@ -596,7 +596,7 @@ const Destinations = () => {
         name: 'Seychelles',
         price: '€1,199',
         originalPrice: '€1,699',
-        image: 'https://images.unsplash.com/photo-1700539944879-5fb98c9313a3?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1601764618179-facadecd701b?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '8 jours',
         flightTime: '9h',
         stops: '1 escale',
