@@ -421,7 +421,7 @@ const Destinations = () => {
         name: 'Bangkok, Thaïlande',
         price: '€649',
         originalPrice: '€899',
-        image: 'https://images.unsplash.com/photo-1563492065-1ddc4e96b1b8',
+        image: 'https://images.unsplash.com/photo-1653754502573-568b8ac7df43?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '10h',
         stops: '1 escale',
