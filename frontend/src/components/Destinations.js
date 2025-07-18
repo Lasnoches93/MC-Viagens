@@ -539,7 +539,7 @@ const Destinations = () => {
         name: 'Punta Cana, République Dominicaine',
         price: '€699',
         originalPrice: '€999',
-        image: 'https://images.unsplash.com/photo-1496281955129-ad3ba33b7591?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1612783614188-44210c7cb1cc?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '8h',
         stops: 'Direct',
