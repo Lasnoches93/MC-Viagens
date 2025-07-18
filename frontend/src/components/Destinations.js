@@ -712,7 +712,7 @@ const Destinations = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.05 // Réduit le délai entre les animations
       }
     }
   };
@@ -722,7 +722,7 @@ const Destinations = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.3 } // Réduit la durée des animations
     }
   };
 
