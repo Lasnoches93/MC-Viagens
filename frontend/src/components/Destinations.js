@@ -704,14 +704,6 @@ const Destinations = () => {
     setShowAllDestinations(false);
   }, [selectedRegion]);
 
-  console.log('Debug:', {
-    selectedRegion,
-    totalDestinations: allDestinations.length,
-    displayedCount: displayedDestinations.length,
-    showAllDestinations,
-    hasMoreDestinations
-  });
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
