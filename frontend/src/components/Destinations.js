@@ -265,7 +265,7 @@ const Destinations = () => {
         name: 'Paris, France',
         price: '€849',
         originalPrice: '€1,099',
-        image: 'https://images.unsplash.com/photo-1610871512251-d0febce3f117?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1657057611558-a7ecf6323aff?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '4 jours',
         flightTime: '1h',
         stops: 'Direct',
