@@ -785,11 +785,12 @@ const Destinations = () => {
           transition={{ duration: 0.5 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {destinations.map((destination) => (
+          {displayedDestinations.map((destination, index) => (
             <DestinationCard
               key={destination.id}
               destination={destination}
               onClick={setSelectedDestination}
+              delay={index * 0.1}
             />
           ))}
         </motion.div>
