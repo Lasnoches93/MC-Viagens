@@ -149,7 +149,7 @@ const Destinations = () => {
         name: 'Carthagène, Colombie',
         price: '€649',
         originalPrice: '€949',
-        image: 'https://images.unsplash.com/photo-1713561684894-25393bb9594b?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1583531352515-8884af319dc1?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '10h',
         stops: '1 escale',
