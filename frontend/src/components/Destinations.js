@@ -767,85 +767,57 @@ const Destinations = () => {
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {destinations.map((destination) => (
-            <motion.div
+            <DestinationCard
               key={destination.id}
-              variants={cardVariants}
-              whileHover={{ y: -10 }}
-              className="bg-black-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300"
-            >
-              <div className="relative">
-                <img
-                  src={destination.image}
-                  alt={destination.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-4 right-4">
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="bg-black-900/70 backdrop-blur-sm p-2 rounded-full text-white hover:text-gold-500 transition-colors"
-                  >
-                    <Heart className="h-5 w-5" />
-                  </motion.button>
-                </div>
-                <div className="absolute bottom-4 left-4">
-                  <div className="flex items-center space-x-1 text-white">
-                    <Star className="h-4 w-4 fill-current text-gold-500" />
-                    <span className="text-sm font-medium">{destination.rating}</span>
-                    <span className="text-sm text-gray-300">({destination.reviews})</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">{destination.name}</h3>
-                <p className="text-gray-400 mb-4">{destination.description}</p>
-
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div className="flex items-center space-x-2 text-gray-300">
-                    <Clock className="h-4 w-4 text-gold-500" />
-                    <span className="text-sm">{destination.duration}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-gray-300">
-                    <Plane className="h-4 w-4 text-gold-500" />
-                    <span className="text-sm">{destination.flightTime}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-gray-300">
-                    <MapPin className="h-4 w-4 text-gold-500" />
-                    <span className="text-sm">{destination.stops}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-gray-300">
-                    <Users className="h-4 w-4 text-gold-500" />
-                    <span className="text-sm">2-8 pers.</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <span className="text-2xl font-bold text-gold-500">{destination.price}</span>
-                    <span className="text-sm text-gray-500 line-through ml-2">{destination.originalPrice}</span>
-                  </div>
-                  <span className="text-sm text-gray-400">par personne</span>
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedDestination(destination)}
-                  className="w-full bg-gold-500 text-black py-3 rounded-lg font-semibold hover:bg-gold-400 transition-colors duration-200"
-                >
-                  Voir les détails
-                </motion.button>
-              </div>
-            </motion.div>
+              destination={destination}
+              onClick={setSelectedDestination}
+            />
           ))}
         </motion.div>
+
+        {/* Bouton "Voir plus" si il y a plus de 6 destinations */}
+        {hasMoreDestinations && !showAllDestinations && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mt-8"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowAllDestinations(true)}
+              className="bg-gold-500 text-black px-8 py-3 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200"
+            >
+              Voir toutes les destinations ({totalDestinations})
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* Bouton "Voir moins" si on affiche toutes les destinations */}
+        {showAllDestinations && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mt-8"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowAllDestinations(false)}
+              className="bg-black-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-black-600 transition-colors duration-200"
+            >
+              Voir moins
+            </motion.button>
+          </motion.div>
+        )}
       </div>
 
       {/* Modal for destination details */}
