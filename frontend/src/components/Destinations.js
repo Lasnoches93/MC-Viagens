@@ -168,7 +168,7 @@ const Destinations = () => {
         name: 'Patagonie, Chili',
         price: '€1,199',
         originalPrice: '€1,699',
-        image: 'https://images.unsplash.com/flagged/photo-1576636215888-539d692c4136?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1547483238-f400e65ccd56?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '10 jours',
         flightTime: '14h',
         stops: '1 escale',
