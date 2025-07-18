@@ -621,18 +621,6 @@ const Destinations = () => {
   const hasMoreDestinations = allDestinations.length > destinationsToShow;
   const remainingCount = allDestinations.length - destinationsToShow;
 
-  // Debug logs
-  console.log('🔍 DEBUG - Region Filter:', {
-    selectedRegion,
-    totalInRegion: allDestinations.length,
-    displayedCount: displayedDestinations.length,
-    destinationsToShow,
-    hasMoreDestinations,
-    regions: regions
-  });
-
-  console.log('🔍 DEBUG - First 3 destinations:', displayedDestinations.slice(0, 3).map(d => d.name));
-
   // Reset lors du changement de région
   React.useEffect(() => {
     setShowAllDestinations(false);
