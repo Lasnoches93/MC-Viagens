@@ -2,9 +2,111 @@ import React, { useState, useMemo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Plane, Users, Star, Heart } from 'lucide-react';
 
+// Composant optimisé pour les cartes de destination
+const DestinationCard = React.memo(({ destination, onClick }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageSrc, setImageSrc] = useState('');
+
+  // Lazy loading pour les images
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = destination.image;
+    img.onload = () => {
+      setImageSrc(destination.image);
+      setImageLoaded(true);
+    };
+  }, [destination.image]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      whileHover={{ y: -5 }}
+      className="bg-black-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300"
+    >
+      <div className="relative">
+        {/* Image placeholder pendant le chargement */}
+        <div className="w-full h-48 bg-gray-700 flex items-center justify-center">
+          {imageLoaded && imageSrc ? (
+            <img
+              src={imageSrc}
+              alt={destination.name}
+              className="w-full h-48 object-cover"
+              loading="lazy"
+            />
+          ) : (
+            <div className="animate-pulse bg-gray-600 w-full h-48 flex items-center justify-center">
+              <MapPin className="h-8 w-8 text-gray-400" />
+            </div>
+          )}
+        </div>
+        <div className="absolute top-4 right-4">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-black-900/70 backdrop-blur-sm p-2 rounded-full text-white hover:text-gold-500 transition-colors"
+          >
+            <Heart className="h-5 w-5" />
+          </motion.button>
+        </div>
+        <div className="absolute bottom-4 left-4">
+          <div className="flex items-center space-x-1 text-white">
+            <Star className="h-4 w-4 fill-current text-gold-500" />
+            <span className="text-sm font-medium">{destination.rating}</span>
+            <span className="text-sm text-gray-300">({destination.reviews})</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-white mb-2">{destination.name}</h3>
+        <p className="text-gray-400 mb-4">{destination.description}</p>
+
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="flex items-center space-x-2 text-gray-300">
+            <Clock className="h-4 w-4 text-gold-500" />
+            <span className="text-sm">{destination.duration}</span>
+          </div>
+          <div className="flex items-center space-x-2 text-gray-300">
+            <Plane className="h-4 w-4 text-gold-500" />
+            <span className="text-sm">{destination.flightTime}</span>
+          </div>
+          <div className="flex items-center space-x-2 text-gray-300">
+            <MapPin className="h-4 w-4 text-gold-500" />
+            <span className="text-sm">{destination.stops}</span>
+          </div>
+          <div className="flex items-center space-x-2 text-gray-300">
+            <Users className="h-4 w-4 text-gold-500" />
+            <span className="text-sm">2-8 pers.</span>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <span className="text-2xl font-bold text-gold-500">{destination.price}</span>
+            <span className="text-sm text-gray-500 line-through ml-2">{destination.originalPrice}</span>
+          </div>
+          <span className="text-sm text-gray-400">par personne</span>
+        </div>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => onClick(destination)}
+          className="w-full bg-gold-500 text-black py-3 rounded-lg font-semibold hover:bg-gold-400 transition-colors duration-200"
+        >
+          Voir les détails
+        </motion.button>
+      </div>
+    </motion.div>
+  );
+});
+
 const Destinations = () => {
   const [selectedDestination, setSelectedDestination] = useState(null);
   const [selectedRegion, setSelectedRegion] = useState('Amérique du Sud');
+  const [showAllDestinations, setShowAllDestinations] = useState(false);
 
   const destinationsByRegion = {
     'Amérique du Sud': [
