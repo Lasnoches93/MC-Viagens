@@ -558,7 +558,7 @@ const Destinations = () => {
         name: 'Zanzibar, Tanzanie',
         price: '€799',
         originalPrice: '€1,199',
-        image: 'https://images.unsplash.com/photo-1612783614188-44210c7cb1cc?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1700539944879-5fb98c9313a3?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '8 jours',
         flightTime: '8h',
         stops: '1 escale',
