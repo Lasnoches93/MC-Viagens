@@ -3,34 +3,29 @@ import { motion } from 'framer-motion';
 import { MapPin, Clock, Plane, Users, Star, Heart } from 'lucide-react';
 
 // Composant optimisé pour les cartes de destination
-const DestinationCard = React.memo(({ destination, onClick }) => {
+const DestinationCard = React.memo(({ destination, onClick, delay = 0 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageSrc, setImageSrc] = useState('');
 
-  // Lazy loading pour les images
+  // Préchargement optimisé des images
   React.useEffect(() => {
     const img = new Image();
     img.src = destination.image;
-    img.onload = () => {
-      setImageSrc(destination.image);
-      setImageLoaded(true);
-    };
+    img.onload = () => setImageLoaded(true);
   }, [destination.image]);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.4, delay }}
       whileHover={{ y: -5 }}
       className="bg-black-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300"
     >
       <div className="relative">
-        {/* Image placeholder pendant le chargement */}
         <div className="w-full h-48 bg-gray-700 flex items-center justify-center">
-          {imageLoaded && imageSrc ? (
+          {imageLoaded ? (
             <img
-              src={imageSrc}
+              src={destination.image}
               alt={destination.name}
               className="w-full h-48 object-cover"
               loading="lazy"
