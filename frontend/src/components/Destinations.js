@@ -696,7 +696,16 @@ const Destinations = () => {
   };
 
   const regions = Object.keys(destinationsByRegion);
-  const destinations = destinationsByRegion[selectedRegion] || [];
+  
+  // Utilisation de useMemo pour optimiser le calcul des destinations
+  const destinations = useMemo(() => {
+    const regionDestinations = destinationsByRegion[selectedRegion] || [];
+    // Limiter à 6 destinations par défaut pour améliorer les performances
+    return showAllDestinations ? regionDestinations : regionDestinations.slice(0, 6);
+  }, [selectedRegion, showAllDestinations]);
+
+  const totalDestinations = destinationsByRegion[selectedRegion]?.length || 0;
+  const hasMoreDestinations = totalDestinations > 6;
 
   const containerVariants = {
     hidden: { opacity: 0 },
