@@ -698,15 +698,24 @@ const Destinations = () => {
 
   const regions = Object.keys(destinationsByRegion);
   
-  // Utilisation de useMemo pour optimiser le calcul des destinations
-  const destinations = useMemo(() => {
-    const regionDestinations = destinationsByRegion[selectedRegion] || [];
-    // Limiter à 6 destinations par défaut pour améliorer les performances
-    return showAllDestinations ? regionDestinations : regionDestinations.slice(0, 6);
-  }, [selectedRegion, showAllDestinations]);
+  // Logique simple et robuste pour la pagination
+  const allDestinations = destinationsByRegion[selectedRegion] || [];
+  const displayedDestinations = showAllDestinations ? allDestinations : allDestinations.slice(0, destinationsToShow);
+  const hasMoreDestinations = allDestinations.length > destinationsToShow;
+  const remainingCount = allDestinations.length - destinationsToShow;
 
-  const totalDestinations = destinationsByRegion[selectedRegion]?.length || 0;
-  const hasMoreDestinations = totalDestinations > 6;
+  // Reset lors du changement de région
+  React.useEffect(() => {
+    setShowAllDestinations(false);
+  }, [selectedRegion]);
+
+  console.log('Debug:', {
+    selectedRegion,
+    totalDestinations: allDestinations.length,
+    displayedCount: displayedDestinations.length,
+    showAllDestinations,
+    hasMoreDestinations
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
