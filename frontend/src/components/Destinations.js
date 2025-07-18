@@ -107,6 +107,7 @@ const Destinations = () => {
   const [selectedDestination, setSelectedDestination] = useState(null);
   const [selectedRegion, setSelectedRegion] = useState('Amérique du Sud');
   const [showAllDestinations, setShowAllDestinations] = useState(false);
+  const [destinationsToShow, setDestinationsToShow] = useState(6);
 
   const destinationsByRegion = {
     'Amérique du Sud': [
@@ -115,7 +116,7 @@ const Destinations = () => {
         name: 'Machu Picchu, Pérou',
         price: '€899',
         originalPrice: '€1,299',
-        image: 'https://images.unsplash.com/photo-1530469525856-cf37954301f7',
+        image: 'https://images.unsplash.com/photo-1530469525856-cf37954301f7?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '8 jours',
         flightTime: '12h',
         stops: '1 escale',
@@ -134,7 +135,7 @@ const Destinations = () => {
         name: 'Buenos Aires, Argentine',
         price: '€749',
         originalPrice: '€1,099',
-        image: 'https://images.unsplash.com/photo-1509362657489-b9bd8c0089c8',
+        image: 'https://images.unsplash.com/photo-1509362657489-b9bd8c0089c8?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '6 jours',
         flightTime: '11h',
         stops: 'Direct',
@@ -153,7 +154,7 @@ const Destinations = () => {
         name: 'Carthagène, Colombie',
         price: '€649',
         originalPrice: '€949',
-        image: 'https://images.unsplash.com/photo-1713561684894-25393bb9594b',
+        image: 'https://images.unsplash.com/photo-1713561684894-25393bb9594b?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '10h',
         stops: '1 escale',
@@ -172,7 +173,7 @@ const Destinations = () => {
         name: 'Patagonie, Chili',
         price: '€1,199',
         originalPrice: '€1,699',
-        image: 'https://images.unsplash.com/flagged/photo-1576636215888-539d692c4136',
+        image: 'https://images.unsplash.com/flagged/photo-1576636215888-539d692c4136?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '10 jours',
         flightTime: '14h',
         stops: '1 escale',
@@ -191,7 +192,7 @@ const Destinations = () => {
         name: 'Rio de Janeiro, Brésil',
         price: '€799',
         originalPrice: '€1,199',
-        image: 'https://images.unsplash.com/flagged/photo-1575402669213-639549555a2c',
+        image: 'https://images.unsplash.com/flagged/photo-1575402669213-639549555a2c?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '9h',
         stops: 'Direct',
@@ -210,7 +211,7 @@ const Destinations = () => {
         name: 'Salar de Uyuni, Bolivie',
         price: '€899',
         originalPrice: '€1,299',
-        image: 'https://images.pexels.com/photos/6041284/pexels-photo-6041284.jpeg',
+        image: 'https://images.pexels.com/photos/6041284/pexels-photo-6041284.jpeg?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '9 jours',
         flightTime: '13h',
         stops: '2 escales',
