@@ -473,6 +473,143 @@ const Destinations = () => {
           backpack: 'Sac à dos inclus'
         }
       }
+    ],
+    'Océanie': [
+      {
+        id: 25,
+        name: 'Sydney, Australie',
+        price: '€1,499',
+        originalPrice: '€1,999',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '10 jours',
+        flightTime: '20h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 445,
+        description: 'Métropole cosmopolite aux plages iconiques',
+        highlights: ['Opéra de Sydney', 'Harbour Bridge', 'Bondi Beach'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 26,
+        name: 'Auckland, Nouvelle-Zélande',
+        price: '€1,399',
+        originalPrice: '€1,899',
+        image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '9 jours',
+        flightTime: '22h',
+        stops: '1 escale',
+        rating: 4.8,
+        reviews: 267,
+        description: 'Paysages grandioses et culture maorie',
+        highlights: ['Baie des Îles', 'Milford Sound', 'Rotorua'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      }
+    ],
+    'Îles Paradisiaques': [
+      {
+        id: 27,
+        name: 'Île de la Réunion',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.unsplash.com/photo-1496281955129-ad3ba33b7591?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '11h',
+        stops: 'Direct',
+        rating: 4.8,
+        reviews: 234,
+        description: 'Île intense aux paysages volcaniques',
+        highlights: ['Piton de la Fournaise', 'Cirques naturels', 'Plages de sable noir'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 28,
+        name: 'Punta Cana, République Dominicaine',
+        price: '€699',
+        originalPrice: '€999',
+        image: 'https://images.unsplash.com/photo-1496281955129-ad3ba33b7591?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '7 jours',
+        flightTime: '8h',
+        stops: 'Direct',
+        rating: 4.6,
+        reviews: 456,
+        description: 'Plages de sable blanc et eaux cristallines',
+        highlights: ['Plages paradisiaques', 'Récifs coralliens', 'Cenotes naturels'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 29,
+        name: 'Zanzibar, Tanzanie',
+        price: '€799',
+        originalPrice: '€1,199',
+        image: 'https://images.unsplash.com/photo-1496281955129-ad3ba33b7591?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '8h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 289,
+        description: 'Île aux épices de l\'océan Indien',
+        highlights: ['Stone Town', 'Plages de Nungwi', 'Épices locales'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 30,
+        name: 'Maldives',
+        price: '€1,299',
+        originalPrice: '€1,799',
+        image: 'https://images.unsplash.com/photo-1496281955129-ad3ba33b7591?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '7 jours',
+        flightTime: '9h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 367,
+        description: 'Paradis tropical sur pilotis',
+        highlights: ['Bungalows sur pilotis', 'Récifs coralliens', 'Plongée sous-marine'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      },
+      {
+        id: 31,
+        name: 'Seychelles',
+        price: '€1,199',
+        originalPrice: '€1,699',
+        image: 'https://images.unsplash.com/photo-1496281955129-ad3ba33b7591?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '9h',
+        stops: '1 escale',
+        rating: 4.8,
+        reviews: 234,
+        description: 'Archipel de rêve aux plages immaculées',
+        highlights: ['Anse Source d\'Argent', 'Tortues géantes', 'Forêt primaire'],
+        baggage: {
+          cabin: '1 bagage cabine (8kg)',
+          checked: '1 bagage en soute (23kg)',
+          backpack: 'Sac à dos inclus'
+        }
+      }
     ]
   };
 
