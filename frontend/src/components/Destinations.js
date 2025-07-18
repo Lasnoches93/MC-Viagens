@@ -206,7 +206,7 @@ const Destinations = () => {
         name: 'Salar de Uyuni, Bolivie',
         price: '€899',
         originalPrice: '€1,299',
-        image: 'https://images.pexels.com/photos/6041284/pexels-photo-6041284.jpeg?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1530812074867-b93347a3bd10?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '9 jours',
         flightTime: '13h',
         stops: '2 escales',
