@@ -187,7 +187,7 @@ const Destinations = () => {
         name: 'Rio de Janeiro, Brésil',
         price: '€799',
         originalPrice: '€1,199',
-        image: 'https://images.unsplash.com/flagged/photo-1575402669213-639549555a2c?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1662504431607-6714410af32f?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '9h',
         stops: 'Direct',
