@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Plane, Users, Star, Heart } from 'lucide-react';
 
