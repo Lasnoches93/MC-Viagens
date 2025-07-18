@@ -809,7 +809,7 @@ const Destinations = () => {
               onClick={() => setShowAllDestinations(true)}
               className="bg-gold-500 text-black px-8 py-3 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200"
             >
-              Voir toutes les destinations ({totalDestinations})
+              Voir toutes les destinations ({allDestinations.length})
             </motion.button>
           </motion.div>
         )}
