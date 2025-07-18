@@ -748,13 +748,16 @@ const Destinations = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.5 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
           {regions.map((region) => (
             <button
               key={region}
-              onClick={() => setSelectedRegion(region)}
+              onClick={() => {
+                setSelectedRegion(region);
+                setShowAllDestinations(false); // Reset lors du changement de région
+              }}
               className={`px-6 py-3 rounded-full transition-all duration-200 font-semibold ${
                 selectedRegion === region
                   ? 'bg-gold-500 text-black'
