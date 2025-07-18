@@ -130,7 +130,7 @@ const Destinations = () => {
         name: 'Buenos Aires, Argentine',
         price: '€749',
         originalPrice: '€1,099',
-        image: 'https://images.unsplash.com/photo-1509362657489-b9bd8c0089c8?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '6 jours',
         flightTime: '11h',
         stops: 'Direct',
