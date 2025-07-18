@@ -111,7 +111,7 @@ const Destinations = () => {
         name: 'Machu Picchu, Pérou',
         price: '€899',
         originalPrice: '€1,299',
-        image: 'https://images.unsplash.com/photo-1530469525856-cf37954301f7?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1479299784244-c5262363c5df?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '8 jours',
         flightTime: '12h',
         stops: '1 escale',
