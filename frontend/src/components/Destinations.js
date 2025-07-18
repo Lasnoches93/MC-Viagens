@@ -766,7 +766,7 @@ const Destinations = () => {
               key={region}
               onClick={() => {
                 setSelectedRegion(region);
-                setShowAllDestinations(false); // Reset lors du changement de région
+                setShowAllDestinations(false);
               }}
               className={`px-6 py-3 rounded-full transition-all duration-200 font-semibold ${
                 selectedRegion === region
