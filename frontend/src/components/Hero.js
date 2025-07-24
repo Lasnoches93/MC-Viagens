@@ -28,7 +28,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <h1 className="text-5xl md:text-7xl font-luxury font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-brand font-bold mb-6 leading-tight">
             {t('hero.title')}
             <br />
             <span className="bg-gradient-gold bg-clip-text text-transparent relative">
