@@ -9,7 +9,7 @@
   }
   
   body {
-    @apply bg-black-900 text-white;
+    @apply bg-luxury-blue text-white;
   }
 }
 
@@ -20,19 +20,19 @@
   }
   
   .btn-primary {
-    @apply bg-gold-500 text-black hover:bg-gold-400;
+    @apply bg-gradient-gold text-luxury-blue shadow-gold;
   }
   
   .btn-secondary {
-    @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-black;
+    @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-luxury-blue;
   }
   
   .card {
-    @apply bg-black-800 rounded-xl p-6 shadow-lg;
+    @apply bg-luxury-blue-light rounded-xl p-6 shadow-luxury;
   }
   
   .input {
-    @apply w-full px-4 py-3 bg-black-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-500;
+    @apply w-full px-4 py-3 bg-luxury-blue-light border border-luxury-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-luxury-gold;
   }
   
   .section-padding {
@@ -44,7 +44,7 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-gold-500 to-gold-600 bg-clip-text text-transparent;
+    @apply bg-gradient-gold bg-clip-text text-transparent;
   }
   
   .glass {
@@ -120,27 +120,27 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #0F1419;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e5b841;
+  background: #D4AF37;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4a233;
+  background: #F4E078;
 }
 
 /* Selection styles */
 ::selection {
-  background: #e5b841;
-  color: #0f0f0f;
+  background: #D4AF37;
+  color: #0F1419;
 }
 
 /* Focus styles */
 :focus {
-  outline: 2px solid #e5b841;
+  outline: 2px solid #D4AF37;
   outline-offset: 2px;
 }
 
@@ -152,7 +152,7 @@ html {
 /* Dark mode optimization */
 @media (prefers-color-scheme: dark) {
   body {
-    @apply bg-black-900 text-white;
+    @apply bg-luxury-blue text-white;
   }
 }
 
@@ -166,3 +166,6 @@ html {
     @apply text-gray-200;
   }
 }
+
+/* Import Google Fonts pour Cinzel (luxury font) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap');
