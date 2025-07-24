@@ -41,7 +41,8 @@ module.exports = {
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'serif': ['Playfair Display', 'serif'],
-        'luxury': ['Cinzel', 'serif'], // Font luxueuse
+        'luxury': ['Montserrat', 'sans-serif'], // Police moderne et élégante pour le luxe
+        'brand': ['Poppins', 'sans-serif'], // Police clean pour la marque
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
