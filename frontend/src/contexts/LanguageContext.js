@@ -16,7 +16,7 @@ const translations = {
     nav: {
       home: 'Início',
       destinations: 'Destinos',
-      about: 'Sobre',
+      about: 'Sobre Nós',
       blog: 'Blog',
       testimonials: 'Depoimentos',
       contact: 'Contato'
@@ -24,28 +24,56 @@ const translations = {
     // Hero
     hero: {
       title: 'Descubra o Mundo',
-      subtitle: 'com Preços Acessíveis',
-      description: 'Explore os destinos mais fascinantes com MC Viagens, especialista em viagens internacionais com os melhores preços competitivos.',
-      cta1: 'Descobrir Destinos',
-      cta2: 'Orçamento Personalizado'
+      subtitle: 'com Preços Exclusivos',
+      description: 'Explore os destinos mais fascinantes com MC Viagens, especialista em viagens internacionais com os melhores preços competitivos do mercado.',
+      cta1: 'Descobrir Nossos Destinos',
+      cta2: 'Orçamento Personalizado',
+      features: {
+        unique: {
+          title: 'Destinos Únicos',
+          desc: 'Descubra lugares excepcionais selecionados por nossa equipe especializada'
+        },
+        optimized: {
+          title: 'Viagens Otimizadas',
+          desc: 'Tempo de voo reduzido e escalas mínimas para máximo conforto'
+        },
+        couples: {
+          title: 'Casais & Famílias',
+          desc: 'Experiências personalizadas para todos os tipos de viajantes'
+        }
+      }
     },
     // About
     about: {
-      title: 'Conheça MC Viagens',
-      intro: 'Apaixonada por viagens desde sempre, me especializo na busca dos melhores preços para viagens internacionais, com expertise particular na América Latina.',
-      description: 'Com 5 anos de experiência na indústria do turismo, percorro o mundo para encontrar os destinos mais fascinantes aos preços mais competitivos. Minha expertise tarifária cobre América do Norte, América do Sul, Europa, Ásia, Oceania e ilhas paradisíacas.',
+      title: 'Conheça a MC Viagens',
+      subtitle: 'Sua Especialista em Viagens de Luxo',
+      intro: 'Apaixonados por viagens desde sempre, nos especializamos na busca dos melhores preços para viagens internacionais, com expertise particular na América Latina.',
+      description: 'Com 5 anos de experiência na indústria do turismo, percorremos o mundo para encontrar os destinos mais fascinantes aos preços mais competitivos. Nossa expertise tarifária cobre América do Norte, América do Sul, Europa, Ásia, Oceania e ilhas paradisíacas.',
       stats: {
-        travelers: 'Viajantes satisfeitos',
-        countries: 'Países explorados',
-        experience: 'Anos de experiência',
-        rating: 'Nota média'
+        travelers: 'Viajantes Satisfeitos',
+        countries: 'Países Explorados',
+        experience: 'Anos de Experiência',
+        rating: 'Nota Média'
       },
       specialties: {
-        international: 'Viagens Internacionais',
-        couples: 'Viagens de Casal',
-        prices: 'Melhores Preços',
-        service: 'Serviço Personalizado'
-      }
+        international: {
+          title: 'Viagens Internacionais',
+          desc: 'Especialista em viagens internacionais com expertise em América Latina, Europa, Ásia e ilhas paradisíacas.'
+        },
+        couples: {
+          title: 'Viagens de Casal',
+          desc: 'Criamos momentos inesquecíveis para casais com experiências românticas únicas.'
+        },
+        prices: {
+          title: 'Melhores Preços',
+          desc: 'Negociação direta com parceiros locais para oferecer as tarifas mais competitivas.'
+        },
+        service: {
+          title: 'Serviço Personalizado',
+          desc: 'Cada viagem é projetada sob medida conforme seus desejos e orçamento.'
+        }
+      },
+      instagram: 'Acompanhe nossas aventuras'
     },
     // Destinations
     destinations: {
@@ -60,14 +88,53 @@ const translations = {
         'Océanie': 'Oceania',
         'Îles Paradisiaques': 'Ilhas Paradisíacas'
       },
-      details: 'Ver detalhes',
-      book: 'Reservar agora',
-      person: 'por pessoa'
+      details: 'Ver Detalhes',
+      book: 'Reservar Agora',
+      person: 'por pessoa',
+      seeAll: 'Ver Todas as Destinações',
+      seeLess: 'Ver Menos',
+      duration: 'Duração',
+      flightTime: 'Tempo de Voo',
+      stops: 'Escalas',
+      travelers: 'Pessoas'
+    },
+    // Testimonials
+    testimonials: {
+      title: 'Depoimentos de',
+      subtitle: 'Nossos Clientes',
+      description: 'Descubra o que nossos viajantes pensam sobre suas experiências com MC Viagens',
+      stats: {
+        rating: 'Nota Média',
+        clients: 'Clientes Satisfeitos',
+        recommendations: 'Recomendações'
+      }
+    },
+    // Blog
+    blog: {
+      title: 'Blog de',
+      subtitle: 'Viagem',
+      description: 'Conselhos de especialista, guias de viagem e inspirações para suas próximas aventuras',
+      categories: {
+        all: 'Todos',
+        destinations: 'Destinos',
+        tips: 'Dicas',
+        guides: 'Guias',
+        culture: 'Cultura',
+        couples: 'Casais'
+      },
+      readMore: 'Ler Mais',
+      readArticle: 'Ler Artigo',
+      newsletter: {
+        title: 'Fique informado sobre nossos últimos artigos',
+        description: 'Receba minhas dicas de viagem, descobertas e ofertas especiais diretamente em seu email.',
+        placeholder: 'Seu endereço de email',
+        subscribe: 'Inscrever-se'
+      }
     },
     // Contact
     contact: {
       title: 'Entre em Contato',
-      subtitle: 'conosco',
+      subtitle: 'com a MC Viagens',
       description: 'Pronto para partir na aventura? Obtenha um orçamento personalizado para sua próxima viagem',
       whyChoose: 'Por que escolher MC Viagens?',
       advantages: [
@@ -75,18 +142,135 @@ const translations = {
         'Busca de preços competitivos internacionalmente',
         'Acompanhamento personalizado 24/7',
         'Em caso de insatisfação, um crédito de 15% para outro destino será oferecido'
-      ]
+      ],
+      info: {
+        title: 'Vamos falar sobre sua viagem dos sonhos',
+        description: 'Cada viagem é única, por isso dedicamos tempo para entender seus desejos, restrições e orçamento para criar a experiência perfeita.',
+        phone: 'Telefone',
+        email: 'Email',
+        location: 'Localização',
+        hours: 'Horários',
+        schedule: {
+          weekdays: 'Seg-Sex: 9h-18h',
+          saturday: 'Sáb: 10h-16h'
+        }
+      },
+      form: {
+        title: 'Solicitação de orçamento gratuito',
+        fullName: 'Nome completo',
+        email: 'Email',
+        phone: 'Telefone',
+        travelers: 'Número de viajantes',
+        destination: 'Destino desejado',
+        budget: 'Orçamento aproximado',
+        dates: 'Datas preferidas',
+        message: 'Mensagem',
+        placeholders: {
+          name: 'Seu nome',
+          email: 'seu@email.com',
+          phone: '+55 11 99999-9999',
+          dates: 'Ex: Março 2024, Verão 2024, Flexível',
+          message: 'Descreva sua viagem ideal, suas expectativas particulares...'
+        },
+        travelers_options: {
+          select: 'Selecione',
+          one: '1 pessoa',
+          two: '2 pessoas',
+          three: '3 pessoas',
+          four: '4 pessoas',
+          five: '5+ pessoas'
+        },
+        destinations: [
+          'Peru (Machu Picchu)',
+          'Argentina (Buenos Aires)',
+          'Colômbia (Cartagena)',
+          'Chile (Patagônia)',
+          'Brasil (Rio de Janeiro)',
+          'Bolívia (Salar de Uyuni)',
+          'Equador (Quito)',
+          'Outro destino'
+        ],
+        budget_ranges: [
+          'Menos de R$ 5.000',
+          'R$ 5.000 - R$ 10.000',
+          'R$ 10.000 - R$ 15.000',
+          'R$ 15.000 - R$ 25.000',
+          'Mais de R$ 25.000'
+        ],
+        submit: 'Enviar Minha Solicitação',
+        guarantee: 'Resposta em 24h • Orçamento gratuito e sem compromisso'
+      }
     },
     // Footer
     footer: {
+      cta: {
+        title: 'Pronto para descobrir a América Latina?',
+        description: 'Obtenha um orçamento gratuito e personalizado para sua próxima viagem',
+        button: 'Solicitar Orçamento'
+      },
+      whyChoose: 'Por que escolher MC Viagens?',
       navigation: 'Navegação',
       destinations: 'Destinos',
       services: 'Serviços',
       followUs: 'Siga-nos:',
       personalizedAdvice: 'Conte com uma assessoria personalizada',
       support: 'Suporte pós-venda',
-      mcViagens: 'MC Viagens',
-      howItWorks: 'Como Funciona'
+      mcViagens: 'MC Viagens Exclusivo',
+      howItWorks: 'Como Funciona',
+      pointsForts: {
+        support: {
+          title: 'Suporte Pós-Venda',
+          desc: 'Suporte completo antes, durante e após sua viagem'
+        },
+        advice: {
+          title: 'Assessoria Personalizada',
+          desc: 'Consultoria especializada para cada tipo de viajante'
+        },
+        exclusive: {
+          title: 'MC Viagens Exclusivo',
+          desc: 'Experiência exclusiva com padrão de luxo acessível'
+        },
+        howWorks: {
+          title: 'Como Funciona',
+          desc: 'Processo simples e transparente do orçamento à viagem'
+        }
+      },
+      company: {
+        description: 'Sua especialista em viagens internacionais. Experiências autênticas aos preços mais competitivos do mercado.',
+        address: {
+          street: '123 Rue des Voyages',
+          city: '75001 Paris, França',
+          service: 'Atendimento online mundial'
+        }
+      },
+      destinations_list: [
+        'Peru - Machu Picchu',
+        'Argentina - Buenos Aires',
+        'Colômbia - Cartagena',
+        'Chile - Patagônia',
+        'Brasil - Rio de Janeiro',
+        'Bolívia - Salar de Uyuni'
+      ],
+      services_list: [
+        'Viagens personalizadas',
+        'Grupos privados',
+        'Viagens de lua de mel',
+        'Circuitos organizados',
+        'Consultoria de viagem',
+        'Assistência 24/7'
+      ],
+      newsletter: {
+        title: 'Fique Conectado',
+        description: 'Receba nossas últimas ofertas e dicas de viagem',
+        placeholder: 'Seu email',
+        subscribe: 'Inscrever-se'
+      },
+      legal: {
+        terms: 'Termos Legais',
+        privacy: 'Política de Privacidade',
+        conditions: 'Condições Gerais'
+      },
+      copyright: '© 2024 MC Viagens. Todos os direitos reservados. Criado com ❤️ para os amantes de viagens.'
     }
   },
   fr: {
@@ -102,27 +286,23 @@ const translations = {
     // Hero
     hero: {
       title: 'Découvrez le Monde',
-      subtitle: 'à Prix Accessible',
+      subtitle: 'à Prix Exclusifs',
       description: 'Explorez les destinations les plus fascinantes avec MC Viagens, spécialiste des voyages internationaux aux meilleurs prix compétitifs.',
       cta1: 'Découvrir nos Destinations',
-      cta2: 'Devis Personnalisé'
-    },
-    // About
-    about: {
-      title: 'Rencontrez MC Viagens',
-      intro: 'Passionnée de voyages depuis toujours, je me spécialise dans la recherche des meilleurs bons plans pour les voyages internationaux, avec une expertise particulière en Amérique latine.',
-      description: 'Forte de 5 années d\'expérience dans l\'industrie du tourisme, je parcours le monde pour vous dénicher les destinations les plus fascinantes aux prix les plus compétitifs. Mon expertise tarifaire couvre l\'Amérique du Nord, l\'Amérique du Sud, l\'Europe, l\'Asie, l\'Océanie, mais également les îles paradisiaques.',
-      stats: {
-        travelers: 'Voyageurs satisfaits',
-        countries: 'Pays explorés',
-        experience: 'Années d\'expérience',
-        rating: 'Note moyenne'
-      },
-      specialties: {
-        international: 'Voyages Internationaux',
-        couples: 'Voyages de Couple',
-        prices: 'Meilleurs Prix',
-        service: 'Service Personnalisé'
+      cta2: 'Devis Personnalisé',
+      features: {
+        unique: {
+          title: 'Destinations Uniques',
+          desc: 'Découvrez des lieux exceptionnels sélectionnés par notre équipe experte'
+        },
+        optimized: {
+          title: 'Voyages Optimisés',
+          desc: 'Temps de vol réduits et escales minimales pour plus de confort'
+        },
+        couples: {
+          title: 'Couples & Familles',
+          desc: 'Expériences personnalisées pour tous les types de voyageurs'
+        }
       }
     },
     // Destinations
@@ -180,27 +360,23 @@ const translations = {
     // Hero
     hero: {
       title: 'Discover the World',
-      subtitle: 'at Affordable Prices',
+      subtitle: 'at Exclusive Prices',
       description: 'Explore the most fascinating destinations with MC Viagens, specialist in international travel at the most competitive prices.',
       cta1: 'Discover our Destinations',
-      cta2: 'Custom Quote'
-    },
-    // About
-    about: {
-      title: 'Meet MC Viagens',
-      intro: 'Passionate about travel since always, I specialize in finding the best deals for international travel, with particular expertise in Latin America.',
-      description: 'With 5 years of experience in the tourism industry, I travel the world to find you the most fascinating destinations at the most competitive prices. My pricing expertise covers North America, South America, Europe, Asia, Oceania, as well as paradise islands.',
-      stats: {
-        travelers: 'Satisfied travelers',
-        countries: 'Countries explored',
-        experience: 'Years of experience',
-        rating: 'Average rating'
-      },
-      specialties: {
-        international: 'International Travel',
-        couples: 'Couple Travel',
-        prices: 'Best Prices',
-        service: 'Personalized Service'
+      cta2: 'Custom Quote',
+      features: {
+        unique: {
+          title: 'Unique Destinations',
+          desc: 'Discover exceptional places selected by our expert team'
+        },
+        optimized: {
+          title: 'Optimized Travel',
+          desc: 'Reduced flight time and minimal stopovers for maximum comfort'
+        },
+        couples: {
+          title: 'Couples & Families',
+          desc: 'Personalized experiences for all types of travelers'
+        }
       }
     },
     // Destinations
