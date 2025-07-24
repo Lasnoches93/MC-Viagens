@@ -13,47 +13,57 @@ module.exports = {
           200: '#faf0c3',
           300: '#f5e194',
           400: '#eece63',
-          500: '#e5b841',
-          600: '#d4a233',
-          700: '#c1892d',
-          800: '#a06d2b',
-          900: '#855928',
+          500: '#D4AF37', // Or luxueux
+          600: '#c1971f',
+          700: '#a67c00',
+          800: '#8b6914',
+          900: '#755c1a',
         },
-        black: {
-          50: '#f6f6f6',
-          100: '#e7e7e7',
-          200: '#d1d1d1',
-          300: '#b0b0b0',
-          400: '#888888',
-          500: '#6d6d6d',
-          600: '#5d5d5d',
-          700: '#4f4f4f',
-          800: '#454545',
-          900: '#0f0f0f',
+        navy: {
+          50: '#f0f4ff',
+          100: '#e0e9ff',
+          200: '#c7d6ff',  
+          300: '#a5b8ff',
+          400: '#8292ff',
+          500: '#1e3a8a', // Bleu marine luxueux
+          600: '#1e40af',
+          700: '#1d4ed8',
+          800: '#1e3a8a',
+          900: '#0f1419', // Bleu très foncé
+        },
+        luxury: {
+          blue: '#0F1419', // Bleu luxueux principal
+          'blue-light': '#1e3a8a',
+          gold: '#D4AF37', // Or brillant
+          'gold-light': '#F4E078',
         }
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
         'serif': ['Playfair Display', 'serif'],
+        'luxury': ['Cinzel', 'serif'], // Font luxueuse
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-luxury': 'linear-gradient(135deg, #0F1419 0%, #1e3a8a 50%, #D4AF37 100%)',
+        'gradient-gold': 'linear-gradient(135deg, #D4AF37 0%, #F4E078 100%)',
       },
-      backdropBlur: {
-        'xs': '2px',
-        'sm': '4px',
-        'md': '12px',
-        'lg': '24px',
-        'xl': '40px',
+      boxShadow: {
+        'luxury': '0 25px 50px -12px rgba(212, 175, 55, 0.25)',
+        'gold': '0 10px 30px rgba(212, 175, 55, 0.3)',
       },
       animation: {
+        'shine': 'shine 2s linear infinite',
+        'float': 'float 3s ease-in-out infinite',
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
-        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
+        shine: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
