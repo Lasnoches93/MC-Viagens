@@ -167,5 +167,5 @@ html {
   }
 }
 
-/* Import Google Fonts pour Cinzel (luxury font) */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap');
+/* Import Google Fonts pour les polices luxury modernes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
