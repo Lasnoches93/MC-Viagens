@@ -53,8 +53,8 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-3xl md:text-4xl font-luxury font-bold mb-4">
-              Pronto para descobrir a <span className="bg-gradient-gold bg-clip-text text-transparent">América Latina</span>?
+            <h3 className="text-3xl md:text-4xl font-brand font-bold mb-4">
+              {t('footer.cta.title')}
             </h3>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Obtenha um orçamento gratuito e personalizado para sua próxima viagem
