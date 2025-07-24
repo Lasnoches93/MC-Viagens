@@ -95,8 +95,8 @@ const Footer = () => {
               <div className="bg-gradient-gold/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Headphones className="h-8 w-8 text-luxury-gold" />
               </div>
-              <h4 className="text-lg font-semibold mb-2">{t('footer.support')}</h4>
-              <p className="text-gray-300 text-sm">Suporte completo antes, durante e após sua viagem</p>
+              <h4 className="text-lg font-semibold mb-2">{t('footer.pointsForts.support.title')}</h4>
+              <p className="text-gray-300 text-sm">{t('footer.pointsForts.support.desc')}</p>
             </motion.div>
 
             {/* Assessoria personalizada */}
