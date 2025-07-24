@@ -79,8 +79,8 @@ const Footer = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-8"
           >
-            <h3 className="text-2xl font-luxury font-bold mb-4 bg-gradient-gold bg-clip-text text-transparent">
-              Por que escolher MC Viagens?
+            <h3 className="text-2xl font-brand font-bold mb-4 bg-gradient-gold bg-clip-text text-transparent">
+              {t('footer.whyChoose')}
             </h3>
           </motion.div>
           
