@@ -57,14 +57,14 @@ const Footer = () => {
               {t('footer.cta.title')}
             </h3>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Obtenha um orçamento gratuito e personalizado para sua próxima viagem
+              {t('footer.cta.description')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(212, 175, 55, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-gold text-luxury-blue px-8 py-4 rounded-full font-semibold text-lg shadow-gold transition-all duration-200"
             >
-              Solicitar orçamento
+              {t('footer.cta.button')}
             </motion.button>
           </motion.div>
         </div>
