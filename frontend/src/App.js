@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
+// Contexts
+import { LanguageProvider } from './contexts/LanguageContext';
+
 // Components
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -14,20 +17,22 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <main>
-          <Hero />
-          <Destinations />
-          <About />
-          <Testimonials />
-          <Blog />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <main>
+            <Hero />
+            <Destinations />
+            <About />
+            <Testimonials />
+            <Blog />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
