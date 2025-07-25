@@ -807,9 +807,9 @@ const Destinations = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gold-500 text-black px-8 py-3 rounded-lg font-semibold hover:bg-gold-400 transition-colors duration-200"
+                className="bg-luxury-gold text-luxury-blue px-8 py-3 rounded-lg font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
               >
-                Réserver maintenant
+                Reservar agora
               </motion.button>
             </div>
           </motion.div>
