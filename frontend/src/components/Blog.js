@@ -94,10 +94,10 @@ const Blog = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Blog <span className="text-gold-500">Voyage</span>
+            {t('blog.title')} <span className="text-gold-500">{t('blog.subtitle')}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Conseils d'experte, guides de voyage et inspirations pour vos prochaines aventures
+            {t('blog.description')}
           </p>
         </motion.div>
 
