@@ -189,7 +189,7 @@ const Blog = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {(selectedCategory === 'Tous' ? regularPosts : filteredPosts).map((post, index) => (
+          {(selectedCategory === t('blog.categories.all') ? regularPosts : filteredPosts).map((post, index) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
