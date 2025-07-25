@@ -174,15 +174,15 @@ const Testimonials = () => {
         >
           <div className="text-center">
             <div className="text-4xl font-bold text-gold-500 mb-2">4.9/5</div>
-            <p className="text-gray-300">Note moyenne</p>
+            <p className="text-gray-300">{t('testimonials.stats.rating')}</p>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-gold-500 mb-2">500+</div>
-            <p className="text-gray-300">Clients satisfaits</p>
+            <p className="text-gray-300">{t('testimonials.stats.clients')}</p>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-gold-500 mb-2">98%</div>
-            <p className="text-gray-300">Recommandations</p>
+            <p className="text-gray-300">{t('testimonials.stats.recommendations')}</p>
           </div>
         </motion.div>
       </div>
