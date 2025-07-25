@@ -227,7 +227,7 @@ const Blog = () => {
                   whileTap={{ scale: 0.95 }}
                   className="text-gold-500 hover:text-gold-400 font-semibold flex items-center space-x-2 transition-colors duration-200"
                 >
-                  <span>Lire plus</span>
+                  <span>{t('blog.readMore')}</span>
                   <ArrowRight className="h-4 w-4" />
                 </motion.button>
               </div>
