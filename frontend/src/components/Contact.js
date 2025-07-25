@@ -60,11 +60,10 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-2xl font-serif font-bold text-white mb-6">
-                Parlons de votre voyage de rêve
+                {t('contact.info.title')}
               </h3>
               <p className="text-gray-300 mb-8">
-                Chaque voyage est unique, c'est pourquoi je prends le temps de comprendre vos envies, 
-                vos contraintes et votre budget pour créer l'expérience parfaite.
+                {t('contact.info.description')}
               </p>
             </div>
 
