@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight, MapPin, User } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Blog = () => {
+  const { t } = useLanguage();
   const blogPosts = [
     {
       id: 1,
