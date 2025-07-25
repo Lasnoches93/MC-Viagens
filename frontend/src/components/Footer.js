@@ -123,8 +123,8 @@ const Footer = () => {
               <div className="bg-gradient-gold/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Award className="h-8 w-8 text-luxury-gold" />
               </div>
-              <h4 className="text-lg font-semibold mb-2">{t('footer.mcViagens')}</h4>
-              <p className="text-gray-300 text-sm">Experiência exclusiva com padrão de luxe acessível</p>
+              <h4 className="text-lg font-semibold mb-2">{t('footer.pointsForts.exclusive.title')}</h4>
+              <p className="text-gray-300 text-sm">{t('footer.pointsForts.exclusive.desc')}</p>
             </motion.div>
 
             {/* Como Funciona */}
