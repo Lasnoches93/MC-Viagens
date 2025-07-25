@@ -76,22 +76,22 @@ const Hero = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center border border-luxury-gold/20">
               <MapPin className="h-8 w-8 text-luxury-gold" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Destinos Únicos</h3>
-            <p className="text-gray-300">Descubra lugares excepcionais selecionados por nossa experte</p>
+            <h3 className="text-xl font-semibold mb-2">{t('hero.features.unique.title')}</h3>
+            <p className="text-gray-300">{t('hero.features.unique.desc')}</p>
           </div>
           <div className="text-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center border border-luxury-gold/20">
               <Clock className="h-8 w-8 text-luxury-gold" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Viagens Otimizadas</h3>
-            <p className="text-gray-300">Tempo de voo reduzido e escalas mínimas para mais conforto</p>
+            <h3 className="text-xl font-semibold mb-2">{t('hero.features.optimized.title')}</h3>
+            <p className="text-gray-300">{t('hero.features.optimized.desc')}</p>
           </div>
           <div className="text-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center border border-luxury-gold/20">
               <Users className="h-8 w-8 text-luxury-gold" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Casais & Famílias</h3>
-            <p className="text-gray-300">Experiências personalizadas para todos os tipos de viajantes</p>
+            <h3 className="text-xl font-semibold mb-2">{t('hero.features.couples.title')}</h3>
+            <p className="text-gray-300">{t('hero.features.couples.desc')}</p>
           </div>
         </motion.div>
       </div>
