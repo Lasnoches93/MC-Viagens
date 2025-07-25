@@ -619,6 +619,111 @@ const translations = {
         'In case of dissatisfaction, a 15% credit for another destination will be offered'
       ]
     },
+    // Testimonials
+    testimonials: {
+      title: 'Testimonials from',
+      subtitle: 'Our Clients',
+      description: 'Discover what our travelers think about their experiences with MC Viagens',
+      voyage: 'Trip',
+      stats: {
+        rating: 'Average Rating',
+        clients: 'Satisfied Clients',
+        recommendations: 'Recommendations'
+      }
+    },
+    // Blog
+    blog: {
+      title: 'Travel',
+      subtitle: 'Blog',
+      description: 'Expert advice, travel guides and inspiration for your next adventures',
+      categories: {
+        all: 'All',
+        destinations: 'Destinations',
+        tips: 'Tips',
+        guides: 'Guides',
+        culture: 'Culture',
+        couples: 'Couples'
+      },
+      readMore: 'Read More',
+      readArticle: 'Read Article',
+      featuredArticle: 'Featured Article',
+      newsletter: {
+        title: 'Stay updated on our latest articles',
+        description: 'Receive my travel tips, discoveries and special offers directly in your email.',
+        placeholder: 'Your email address',
+        subscribe: 'Subscribe'
+      }
+    },
+    // Contact
+    contact: {
+      title: 'Contact',
+      subtitle: 'MC Viagens',
+      description: 'Ready to embark on an adventure? Get a personalized quote for your next trip',
+      whyChoose: 'Why choose MC Viagens?',
+      advantages: [
+        'Exclusive expertise in Latin America',
+        'Competitive price search internationally',
+        'Personalized 24/7 support',
+        'In case of dissatisfaction, a 15% credit for another destination will be offered'
+      ],
+      info: {
+        title: 'Let\'s talk about your dream trip',
+        description: 'Each trip is unique, so we take the time to understand your desires, constraints and budget to create the perfect experience.',
+        phone: 'Phone',
+        email: 'Email',
+        location: 'Location',
+        hours: 'Hours',
+        schedule: {
+          weekdays: 'Mon-Fri: 9am-6pm',
+          saturday: 'Sat: 10am-4pm'
+        }
+      },
+      form: {
+        title: 'Free quote request',
+        fullName: 'Full name',
+        email: 'Email',
+        phone: 'Phone',
+        travelers: 'Number of travelers',
+        destination: 'Desired destination',
+        budget: 'Approximate budget',
+        dates: 'Preferred dates',
+        message: 'Message',
+        placeholders: {
+          name: 'Your name',
+          email: 'your@email.com',
+          phone: '+1 555-123-4567',
+          dates: 'Ex: March 2024, Summer 2024, Flexible',
+          message: 'Describe your ideal trip, your specific expectations...'
+        },
+        travelers_options: {
+          select: 'Select',
+          one: '1 person',
+          two: '2 people',
+          three: '3 people',
+          four: '4 people',
+          five: '5+ people'
+        },
+        destinations: [
+          'Peru (Machu Picchu)',
+          'Argentina (Buenos Aires)',
+          'Colombia (Cartagena)',
+          'Chile (Patagonia)',
+          'Brazil (Rio de Janeiro)',
+          'Bolivia (Salar de Uyuni)',
+          'Ecuador (Quito)',
+          'Other destination'
+        ],
+        budget_ranges: [
+          'Less than $2,000',
+          '$2,000 - $4,000',
+          '$4,000 - $6,000',
+          '$6,000 - $10,000',
+          'More than $10,000'
+        ],
+        submit: 'Send My Request',
+        guarantee: 'Response within 24h • Free quote with no commitment'
+      }
+    },
     // Footer
     footer: {
       navigation: 'Navigation',
