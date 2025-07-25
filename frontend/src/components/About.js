@@ -16,23 +16,23 @@ const About = () => {
   const specialties = [
     {
       icon: <MapPin className="h-8 w-8" />,
-      title: 'Voyages Internationaux',
-      description: 'Spécialiste des voyages internationaux avec expertise en Amérique latine, Europe, Asie et îles paradisiaques.'
+      title: t('about.specialties.international.title'),
+      description: t('about.specialties.international.desc')
     },
     {
       icon: <Heart className="h-8 w-8" />,
-      title: 'Voyages de Couple',
-      description: 'Créer des moments inoubliables pour les couples avec des expériences romantiques uniques.'
+      title: t('about.specialties.couples.title'),
+      description: t('about.specialties.couples.desc')
     },
     {
       icon: <Award className="h-8 w-8" />,
-      title: 'Meilleurs Prix',
-      description: 'Négociation directe avec les partenaires locaux pour vous offrir les tarifs les plus compétitifs.'
+      title: t('about.specialties.prices.title'),
+      description: t('about.specialties.prices.desc')
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: 'Service Personnalisé',
-      description: 'Chaque voyage est conçu sur mesure selon vos envies et votre budget.'
+      title: t('about.specialties.service.title'),
+      description: t('about.specialties.service.desc')
     }
   ];
 
