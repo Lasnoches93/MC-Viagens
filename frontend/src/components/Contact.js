@@ -43,10 +43,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Contactez <span className="text-gold-500">Jheny</span>
+            {t('contact.title')} <span className="text-gold-500">{t('contact.subtitle')}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Prêt à partir à l'aventure ? Obtenez un devis personnalisé pour votre prochain voyage
+            {t('contact.description')}
           </p>
         </motion.div>
 
