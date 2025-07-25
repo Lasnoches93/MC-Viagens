@@ -83,7 +83,7 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0, t }) => {
             <span className="text-2xl font-bold text-gold-500">{destination.price}</span>
             <span className="text-sm text-gray-500 line-through ml-2">{destination.originalPrice}</span>
           </div>
-          <span className="text-sm text-gray-400">par personne</span>
+          <span className="text-sm text-gray-400">{t('destinations.person')}</span>
         </div>
 
         <motion.button
