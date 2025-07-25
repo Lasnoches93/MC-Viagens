@@ -92,7 +92,7 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0 }) => {
           onClick={() => onClick(destination)}
           className="w-full bg-luxury-gold text-luxury-blue py-3 rounded-lg font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
         >
-          Ver Detalhes
+          {t('destinations.details')}
         </motion.button>
       </div>
     </motion.div>
