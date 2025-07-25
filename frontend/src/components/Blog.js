@@ -141,7 +141,7 @@ const Blog = () => {
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-gold-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-                      Article vedette
+                      {t('blog.featuredArticle')}
                     </span>
                   </div>
                 </div>
