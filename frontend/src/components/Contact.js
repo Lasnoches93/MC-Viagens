@@ -73,7 +73,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-gold-500" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Téléphone</h4>
+                  <h4 className="text-white font-semibold">{t('contact.info.phone')}</h4>
                   <p className="text-gray-300">+33 1 23 45 67 89</p>
                 </div>
               </div>
@@ -83,8 +83,8 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-gold-500" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Email</h4>
-                  <p className="text-gray-300">contact@jhenyvoyages.com</p>
+                  <h4 className="text-white font-semibold">{t('contact.info.email')}</h4>
+                  <p className="text-gray-300">contact@mcviagens.com</p>
                 </div>
               </div>
 
@@ -93,8 +93,8 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-gold-500" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Localisation</h4>
-                  <p className="text-gray-300">France (Consultation en ligne)</p>
+                  <h4 className="text-white font-semibold">{t('contact.info.location')}</h4>
+                  <p className="text-gray-300">França (Consultoria online)</p>
                 </div>
               </div>
 
@@ -103,9 +103,9 @@ const Contact = () => {
                   <Clock className="h-6 w-6 text-gold-500" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Horaires</h4>
-                  <p className="text-gray-300">Lun-Ven: 9h-18h</p>
-                  <p className="text-gray-300">Sam: 10h-16h</p>
+                  <h4 className="text-white font-semibold">{t('contact.info.hours')}</h4>
+                  <p className="text-gray-300">{t('contact.info.schedule.weekdays')}</p>
+                  <p className="text-gray-300">{t('contact.info.schedule.saturday')}</p>
                 </div>
               </div>
             </div>
