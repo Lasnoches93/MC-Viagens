@@ -684,7 +684,7 @@ const Destinations = () => {
                   : 'bg-black-800 text-gray-300 hover:bg-black-700 hover:text-white'
               }`}
             >
-              {region}
+              {t(`destinations.regions.${region}`)}
             </button>
           ))}
         </motion.div>
