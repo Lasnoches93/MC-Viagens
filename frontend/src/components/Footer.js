@@ -177,8 +177,7 @@ const Footer = () => {
               </div>
               
               <p className="text-gray-300 mb-6">
-                Sua especialista em viagens internacionais. Experiências autênticas 
-                aos preços mais competitivos do mercado.
+                {t('footer.company.description')}
               </p>
               
               <div className="space-y-3">
