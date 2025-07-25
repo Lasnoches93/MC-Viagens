@@ -1,6 +1,7 @@
 import React, { useState, useMemo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Plane, Users, Star, Heart } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Composant optimisé pour les cartes de destination
 const DestinationCard = React.memo(({ destination, onClick, delay = 0 }) => {
