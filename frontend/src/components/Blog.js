@@ -244,15 +244,15 @@ const Blog = () => {
         >
           <div className="bg-gradient-to-r from-gold-500/20 to-gold-600/20 rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-serif font-bold text-white mb-4">
-              Restez informé de mes derniers articles
+              {t('blog.newsletter.title')}
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Recevez mes conseils de voyage, mes découvertes et mes offres spéciales directement dans votre boîte mail.
+              {t('blog.newsletter.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Votre adresse email"
+                placeholder={t('blog.newsletter.placeholder')}
                 className="flex-1 px-6 py-3 rounded-full bg-black-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
               />
               <motion.button
@@ -260,7 +260,7 @@ const Blog = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gold-500 text-black px-8 py-3 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200"
               >
-                S'abonner
+                {t('blog.newsletter.subscribe')}
               </motion.button>
             </div>
           </div>
