@@ -267,16 +267,16 @@ const Footer = () => {
             className="mt-12 pt-8 border-t border-luxury-gold/20"
           >
             <div className="text-center">
-              <h4 className="text-xl font-semibold mb-4 text-luxury-gold">
-                Fique conectado
+              <h4 className="text-xl font-semibold mb-6 text-luxury-gold">
+                {t('footer.newsletter.title')}
               </h4>
               <p className="text-gray-300 mb-6">
-                Receba nossas últimas ofertas e dicas de viagem
+                {t('footer.newsletter.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-6">
                 <input
                   type="email"
-                  placeholder="Seu email"
+                  placeholder={t('footer.newsletter.placeholder')}
                   className="flex-1 px-6 py-3 rounded-full bg-luxury-blue-light/50 text-white placeholder-gray-400 border border-luxury-gold/30 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                 />
                 <motion.button
@@ -284,7 +284,7 @@ const Footer = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-gold text-luxury-blue px-8 py-3 rounded-full font-semibold shadow-gold transition-all duration-200"
                 >
-                  Inscrever-se
+                  {t('footer.newsletter.subscribe')}
                 </motion.button>
               </div>
             </div>
