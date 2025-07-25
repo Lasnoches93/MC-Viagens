@@ -85,16 +85,13 @@ const About = () => {
           >
             <div className="mb-8">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-                Rencontrez <span className="text-gold-500">Jheny Mamani</span>
+                {t('about.title')}
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                Passionnée de voyages depuis toujours, je me spécialise dans la recherche des meilleurs bons plans 
-                pour les voyages internationaux, avec une expertise particulière en Amérique latine.
+                {t('about.intro')}
               </p>
               <p className="text-lg text-gray-400 mb-8">
-                Forte de 5 années d'expérience dans l'industrie du tourisme, je parcours le monde pour vous dénicher 
-                les destinations les plus fascinantes aux prix les plus compétitifs. Mon expertise tarifaire couvre 
-                l'Amérique du Nord, l'Amérique du Sud, l'Europe, l'Asie, l'Océanie, mais également les îles paradisiaques.
+                {t('about.description')}
               </p>
             </div>
 
