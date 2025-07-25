@@ -720,7 +720,7 @@ const Destinations = () => {
               onClick={() => setShowAllDestinations(true)}
               className="bg-luxury-gold text-luxury-blue px-8 py-3 rounded-full font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
             >
-              Ver todas as destinações ({allDestinations.length})
+              {t('destinations.seeAll')} ({allDestinations.length})
             </motion.button>
           </motion.div>
         )}
