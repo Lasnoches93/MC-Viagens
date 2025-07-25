@@ -350,7 +350,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="mt-8 pt-8 border-t border-luxury-gold/20 text-center">
             <p className="text-gray-400">
-              © 2024 MC Viagens. Todos os direitos reservados. Criado com ❤️ para os amantes de viagens.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>
