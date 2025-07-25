@@ -55,8 +55,8 @@ const About = () => {
               />
               <div className="absolute -bottom-6 -right-6 bg-gold-500 text-black p-4 rounded-xl">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">500+</div>
-                  <div className="text-sm">Voyageurs</div>
+                  <div className="text-2xl font-bold">{stats[0].number}</div>
+                  <div className="text-sm">{t('about.stats.travelers')}</div>
                 </div>
               </div>
             </div>
