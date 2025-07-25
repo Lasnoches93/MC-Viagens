@@ -810,7 +810,7 @@ const Destinations = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-luxury-gold text-luxury-blue px-8 py-3 rounded-lg font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
               >
-                Reservar agora
+                {t('destinations.book')}
               </motion.button>
             </div>
           </motion.div>
