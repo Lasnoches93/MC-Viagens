@@ -90,9 +90,9 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0 }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => onClick(destination)}
-          className="w-full bg-gold-500 text-black py-3 rounded-lg font-semibold hover:bg-gold-400 transition-colors duration-200"
+          className="w-full bg-luxury-gold text-luxury-blue py-3 rounded-lg font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
         >
-          Voir les détails
+          Ver Detalhes
         </motion.button>
       </div>
     </motion.div>
