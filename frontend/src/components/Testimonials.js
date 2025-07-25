@@ -124,7 +124,7 @@ const Testimonials = () => {
                   </h4>
                   <p className="text-gray-400 mb-2">{testimonials[currentTestimonial].location}</p>
                   <p className="text-gold-500 font-medium">
-                    Voyage: {testimonials[currentTestimonial].destination}
+                    {t('testimonials.voyage')}: {testimonials[currentTestimonial].destination}
                   </p>
                 </div>
               </div>
