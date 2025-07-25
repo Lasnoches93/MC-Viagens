@@ -335,13 +335,13 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-6">
                 <a href="#" className="text-gray-300 hover:text-luxury-gold transition-colors duration-200">
-                  Termos legais
+                  {t('footer.legal.terms')}
                 </a>
                 <a href="#" className="text-gray-300 hover:text-luxury-gold transition-colors duration-200">
-                  Política de privacidade
+                  {t('footer.legal.privacy')}
                 </a>
                 <a href="#" className="text-gray-300 hover:text-luxury-gold transition-colors duration-200">
-                  CGV
+                  {t('footer.legal.conditions')}
                 </a>
               </div>
             </div>
