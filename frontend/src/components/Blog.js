@@ -124,7 +124,7 @@ const Blog = () => {
         </motion.div>
 
         {/* Featured Post */}
-        {featuredPost && selectedCategory === 'Tous' && (
+        {featuredPost && selectedCategory === t('blog.categories.all') && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
