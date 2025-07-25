@@ -717,9 +717,9 @@ const Destinations = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowAllDestinations(true)}
-              className="bg-gold-500 text-black px-8 py-3 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200"
+              className="bg-luxury-gold text-luxury-blue px-8 py-3 rounded-full font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
             >
-              Voir toutes les destinations ({allDestinations.length})
+              Ver todas as destinações ({allDestinations.length})
             </motion.button>
           </motion.div>
         )}
