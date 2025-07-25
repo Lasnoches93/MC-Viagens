@@ -74,10 +74,10 @@ const Blog = () => {
     }
   ];
 
-  const categories = ['Tous', 'Destinations', 'Conseils', 'Guides', 'Culture', 'Couples'];
-  const [selectedCategory, setSelectedCategory] = React.useState('Tous');
+  const categories = [t('blog.categories.all'), t('blog.categories.destinations'), t('blog.categories.tips'), t('blog.categories.guides'), t('blog.categories.culture'), t('blog.categories.couples')];
+  const [selectedCategory, setSelectedCategory] = React.useState(t('blog.categories.all'));
 
-  const filteredPosts = selectedCategory === 'Tous' 
+  const filteredPosts = selectedCategory === t('blog.categories.all') 
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
 
