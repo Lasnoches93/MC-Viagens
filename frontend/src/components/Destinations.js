@@ -4,7 +4,7 @@ import { MapPin, Clock, Plane, Users, Star, Heart } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // Composant optimisé pour les cartes de destination
-const DestinationCard = React.memo(({ destination, onClick, delay = 0 }) => {
+const DestinationCard = React.memo(({ destination, onClick, delay = 0, t }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   // Préchargement optimisé des images
