@@ -440,6 +440,111 @@ const translations = {
         'En cas d\'insatisfaction, un avoir de 15% pour une autre destination vous sera proposée'
       ]
     },
+    // Testimonials
+    testimonials: {
+      title: 'Témoignages',
+      subtitle: 'Clients',
+      description: 'Découvrez ce que nos voyageurs pensent de leurs expériences avec MC Viagens',
+      voyage: 'Voyage',
+      stats: {
+        rating: 'Note moyenne',
+        clients: 'Clients satisfaits',
+        recommendations: 'Recommandations'
+      }
+    },
+    // Blog
+    blog: {
+      title: 'Blog',
+      subtitle: 'Voyage',
+      description: 'Conseils d\'experte, guides de voyage et inspirations pour vos prochaines aventures',
+      categories: {
+        all: 'Tous',
+        destinations: 'Destinations',
+        tips: 'Conseils',
+        guides: 'Guides',
+        culture: 'Culture',
+        couples: 'Couples'
+      },
+      readMore: 'Lire plus',
+      readArticle: 'Lire l\'article',
+      featuredArticle: 'Article vedette',
+      newsletter: {
+        title: 'Restez informé de mes derniers articles',
+        description: 'Recevez mes conseils de voyage, mes découvertes et mes offres spéciales directement dans votre boîte mail.',
+        placeholder: 'Votre adresse email',
+        subscribe: 'S\'abonner'
+      }
+    },
+    // Contact
+    contact: {
+      title: 'Contactez',
+      subtitle: 'MC Viagens',
+      description: 'Prêt à partir à l\'aventure ? Obtenez un devis personnalisé pour votre prochain voyage',
+      whyChoose: 'Pourquoi choisir MC Viagens ?',
+      advantages: [
+        'Expertise exclusive de l\'Amérique latine',
+        'Recherche de prix compétitifs à l\'international',
+        'Accompagnement personnalisé 24/7',
+        'En cas d\'insatisfaction, un avoir de 15% pour une autre destination vous sera proposée'
+      ],
+      info: {
+        title: 'Parlons de votre voyage de rêve',
+        description: 'Chaque voyage est unique, c\'est pourquoi je prends le temps de comprendre vos envies, vos contraintes et votre budget pour créer l\'expérience parfaite.',
+        phone: 'Téléphone',
+        email: 'Email',
+        location: 'Localisation',
+        hours: 'Horaires',
+        schedule: {
+          weekdays: 'Lun-Ven: 9h-18h',
+          saturday: 'Sam: 10h-16h'
+        }
+      },
+      form: {
+        title: 'Demande de devis gratuit',
+        fullName: 'Nom complet',
+        email: 'Email',
+        phone: 'Téléphone',
+        travelers: 'Nombre de voyageurs',
+        destination: 'Destination souhaitée',
+        budget: 'Budget approximatif',
+        dates: 'Dates préférées',
+        message: 'Message',
+        placeholders: {
+          name: 'Votre nom',
+          email: 'votre@email.com',
+          phone: '+33 1 23 45 67 89',
+          dates: 'Ex: Mars 2024, Été 2024, Flexible',
+          message: 'Décrivez-nous votre voyage idéal, vos attentes particulières...'
+        },
+        travelers_options: {
+          select: 'Sélectionnez',
+          one: '1 personne',
+          two: '2 personnes',
+          three: '3 personnes',
+          four: '4 personnes',
+          five: '5+ personnes'
+        },
+        destinations: [
+          'Pérou (Machu Picchu)',
+          'Argentine (Buenos Aires)',
+          'Colombie (Carthagène)',
+          'Chili (Patagonie)',
+          'Brésil (Rio de Janeiro)',
+          'Bolivie (Salar de Uyuni)',
+          'Équateur (Quito)',
+          'Autre destination'
+        ],
+        budget_ranges: [
+          'Moins de 1000€',
+          '1000€ - 2000€',
+          '2000€ - 3000€',
+          '3000€ - 5000€',
+          'Plus de 5000€'
+        ],
+        submit: 'Envoyer ma demande',
+        guarantee: 'Réponse sous 24h • Devis gratuit et sans engagement'
+      }
+    },
     // Footer
     footer: {
       navigation: 'Navigation',
