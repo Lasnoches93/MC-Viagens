@@ -109,8 +109,8 @@ const Footer = () => {
               <div className="bg-gradient-gold/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <UserCheck className="h-8 w-8 text-luxury-gold" />
               </div>
-              <h4 className="text-lg font-semibold mb-2">{t('footer.personalizedAdvice')}</h4>
-              <p className="text-gray-300 text-sm">Consultoria especializada para cada tipo de viajante</p>
+              <h4 className="text-lg font-semibold mb-2">{t('footer.pointsForts.advice.title')}</h4>
+              <p className="text-gray-300 text-sm">{t('footer.pointsForts.advice.desc')}</p>
             </motion.div>
 
             {/* MC Viagens Exclusive */}
