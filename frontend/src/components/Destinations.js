@@ -736,9 +736,9 @@ const Destinations = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowAllDestinations(false)}
-              className="bg-black-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-black-600 transition-colors duration-200"
+              className="bg-luxury-blue-light text-white px-8 py-3 rounded-full font-semibold hover:bg-luxury-blue transition-colors duration-200"
             >
-              Voir moins
+              Ver menos
             </motion.button>
           </motion.div>
         )}
