@@ -739,7 +739,7 @@ const Destinations = () => {
               onClick={() => setShowAllDestinations(false)}
               className="bg-luxury-blue-light text-white px-8 py-3 rounded-full font-semibold hover:bg-luxury-blue transition-colors duration-200"
             >
-              Ver menos
+              {t('destinations.seeLess')}
             </motion.button>
           </motion.div>
         )}
