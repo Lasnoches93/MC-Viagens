@@ -4,11 +4,13 @@ import { MapPin, Award, Heart, Globe, Users, Star } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   const stats = [
-    { number: '500+', label: 'Voyageurs satisfaits' },
-    { number: '30+', label: 'Pays explorés' },
-    { number: '5', label: 'Années d\'expérience' },
-    { number: '4.9', label: 'Note moyenne' }
+    { number: '500+', label: t('about.stats.travelers') },
+    { number: '30+', label: t('about.stats.countries') },
+    { number: '5', label: t('about.stats.experience') },
+    { number: '4.9', label: t('about.stats.rating') }
   ];
 
   const specialties = [
