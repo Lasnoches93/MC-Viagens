@@ -701,6 +701,7 @@ const Destinations = () => {
               destination={destination}
               onClick={setSelectedDestination}
               delay={index * 0.1}
+              t={t}
             />
           ))}
         </motion.div>
