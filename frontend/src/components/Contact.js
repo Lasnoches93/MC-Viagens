@@ -111,24 +111,14 @@ const Contact = () => {
             </div>
 
             <div className="bg-black-900 rounded-2xl p-6">
-              <h4 className="text-white font-semibold mb-4">Pourquoi choisir Jheny ?</h4>
+              <h4 className="text-white font-semibold mb-4">{t('contact.whyChoose')}</h4>
               <ul className="space-y-2">
-                <li className="flex items-center space-x-2 text-gray-300">
-                  <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                  <span>Expertise exclusive de l'Amérique latine</span>
-                </li>
-                <li className="flex items-center space-x-2 text-gray-300">
-                  <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                  <span>Recherche de prix compétitifs à l'international</span>
-                </li>
-                <li className="flex items-center space-x-2 text-gray-300">
-                  <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                  <span>Accompagnement personnalisé 24/7</span>
-                </li>
-                <li className="flex items-center space-x-2 text-gray-300">
-                  <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                  <span>En cas d'insatisfaction, un avoir de 15% pour une autre destination vous sera proposée</span>
-                </li>
+                {t('contact.advantages').map((advantage, index) => (
+                  <li key={index} className="flex items-center space-x-2 text-gray-300">
+                    <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
+                    <span>{advantage}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>
