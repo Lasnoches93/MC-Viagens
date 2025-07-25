@@ -201,6 +201,111 @@ const translations = {
         guarantee: 'Resposta em 24h • Orçamento gratuito e sem compromisso'
       }
     },
+    // Testimonials
+    testimonials: {
+      title: 'Depoimentos de',
+      subtitle: 'Nossos Clientes',
+      description: 'Descubra o que nossos viajantes pensam sobre suas experiências com MC Viagens',
+      voyage: 'Viagem',
+      stats: {
+        rating: 'Nota Média',
+        clients: 'Clientes Satisfeitos',
+        recommendations: 'Recomendações'
+      }
+    },
+    // Blog
+    blog: {
+      title: 'Blog de',
+      subtitle: 'Viagem',
+      description: 'Conselhos de especialista, guias de viagem e inspirações para suas próximas aventuras',
+      categories: {
+        all: 'Todos',
+        destinations: 'Destinos',
+        tips: 'Dicas',
+        guides: 'Guias',
+        culture: 'Cultura',
+        couples: 'Casais'
+      },
+      readMore: 'Ler Mais',
+      readArticle: 'Ler Artigo',
+      featuredArticle: 'Artigo em destaque',
+      newsletter: {
+        title: 'Fique informado sobre nossos últimos artigos',
+        description: 'Receba minhas dicas de viagem, descobertas e ofertas especiais diretamente em seu email.',
+        placeholder: 'Seu endereço de email',
+        subscribe: 'Inscrever-se'
+      }
+    },
+    // Contact
+    contact: {
+      title: 'Entre em Contato',
+      subtitle: 'com a MC Viagens',
+      description: 'Pronto para partir na aventura? Obtenha um orçamento personalizado para sua próxima viagem',
+      whyChoose: 'Por que escolher MC Viagens?',
+      advantages: [
+        'Expertise exclusiva da América Latina',
+        'Busca de preços competitivos internacionalmente',
+        'Acompanhamento personalizado 24/7',
+        'Em caso de insatisfação, um crédito de 15% para outro destino será oferecido'
+      ],
+      info: {
+        title: 'Vamos falar sobre sua viagem dos sonhos',
+        description: 'Cada viagem é única, por isso dedicamos tempo para entender seus desejos, restrições e orçamento para criar a experiência perfeita.',
+        phone: 'Telefone',
+        email: 'Email',
+        location: 'Localização',
+        hours: 'Horários',
+        schedule: {
+          weekdays: 'Seg-Sex: 9h-18h',
+          saturday: 'Sáb: 10h-16h'
+        }
+      },
+      form: {
+        title: 'Solicitação de orçamento gratuito',
+        fullName: 'Nome completo',
+        email: 'Email',
+        phone: 'Telefone',
+        travelers: 'Número de viajantes',
+        destination: 'Destino desejado',
+        budget: 'Orçamento aproximado',
+        dates: 'Datas preferidas',
+        message: 'Mensagem',
+        placeholders: {
+          name: 'Seu nome',
+          email: 'seu@email.com',
+          phone: '+55 11 99999-9999',
+          dates: 'Ex: Março 2024, Verão 2024, Flexível',
+          message: 'Descreva sua viagem ideal, suas expectativas particulares...'
+        },
+        travelers_options: {
+          select: 'Selecione',
+          one: '1 pessoa',
+          two: '2 pessoas',
+          three: '3 pessoas',
+          four: '4 pessoas',
+          five: '5+ pessoas'
+        },
+        destinations: [
+          'Peru (Machu Picchu)',
+          'Argentina (Buenos Aires)',
+          'Colômbia (Cartagena)',
+          'Chile (Patagônia)',
+          'Brasil (Rio de Janeiro)',
+          'Bolívia (Salar de Uyuni)',
+          'Equador (Quito)',
+          'Outro destino'
+        ],
+        budget_ranges: [
+          'Menos de R$ 5.000',
+          'R$ 5.000 - R$ 10.000',
+          'R$ 10.000 - R$ 15.000',
+          'R$ 15.000 - R$ 25.000',
+          'Mais de R$ 25.000'
+        ],
+        submit: 'Enviar Minha Solicitação',
+        guarantee: 'Resposta em 24h • Orçamento gratuito e sem compromisso'
+      }
+    },
     // Footer
     footer: {
       cta: {
