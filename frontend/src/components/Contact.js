@@ -131,13 +131,13 @@ const Contact = () => {
             className="bg-black-900 rounded-2xl p-8"
           >
             <h3 className="text-2xl font-serif font-bold text-white mb-6">
-              Demande de devis gratuit
+              {t('contact.form.title')}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-300 mb-2">Nom complet *</label>
+                  <label className="block text-gray-300 mb-2">{t('contact.form.fullName')} *</label>
                   <input
                     type="text"
                     name="name"
@@ -145,11 +145,11 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
-                    placeholder="Votre nom"
+                    placeholder={t('contact.form.placeholders.name')}
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-300 mb-2">Email *</label>
+                  <label className="block text-gray-300 mb-2">{t('contact.form.email')} *</label>
                   <input
                     type="email"
                     name="email"
@@ -157,25 +157,25 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
-                    placeholder="votre@email.com"
+                    placeholder={t('contact.form.placeholders.email')}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-300 mb-2">Téléphone</label>
+                  <label className="block text-gray-300 mb-2">{t('contact.form.phone')}</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
-                    placeholder="+33 1 23 45 67 89"
+                    placeholder={t('contact.form.placeholders.phone')}
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-300 mb-2">Nombre de voyageurs *</label>
+                  <label className="block text-gray-300 mb-2">{t('contact.form.travelers')} *</label>
                   <select
                     name="travelers"
                     value={formData.travelers}
@@ -183,19 +183,19 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
                   >
-                    <option value="">Sélectionnez</option>
-                    <option value="1">1 personne</option>
-                    <option value="2">2 personnes</option>
-                    <option value="3">3 personnes</option>
-                    <option value="4">4 personnes</option>
-                    <option value="5+">5+ personnes</option>
+                    <option value="">{t('contact.form.travelers_options.select')}</option>
+                    <option value="1">{t('contact.form.travelers_options.one')}</option>
+                    <option value="2">{t('contact.form.travelers_options.two')}</option>
+                    <option value="3">{t('contact.form.travelers_options.three')}</option>
+                    <option value="4">{t('contact.form.travelers_options.four')}</option>
+                    <option value="5+">{t('contact.form.travelers_options.five')}</option>
                   </select>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-300 mb-2">Destination souhaitée *</label>
+                  <label className="block text-gray-300 mb-2">{t('contact.form.destination')} *</label>
                   <select
                     name="destination"
                     value={formData.destination}
@@ -203,14 +203,14 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
                   >
-                    <option value="">Choisissez une destination</option>
+                    <option value="">{t('contact.form.travelers_options.select')}</option>
                     {destinations.map((dest) => (
                       <option key={dest} value={dest}>{dest}</option>
                     ))}
                   </select>
                 </div>
                 <div>
-                  <label className="block text-gray-300 mb-2">Budget approximatif *</label>
+                  <label className="block text-gray-300 mb-2">{t('contact.form.budget')} *</label>
                   <select
                     name="budget"
                     value={formData.budget}
@@ -218,7 +218,7 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
                   >
-                    <option value="">Sélectionnez votre budget</option>
+                    <option value="">{t('contact.form.travelers_options.select')}</option>
                     {budgetRanges.map((range) => (
                       <option key={range} value={range}>{range}</option>
                     ))}
@@ -227,19 +227,19 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-2">Dates préférées</label>
+                <label className="block text-gray-300 mb-2">{t('contact.form.dates')}</label>
                 <input
                   type="text"
                   name="dates"
                   value={formData.dates}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
-                  placeholder="Ex: Mars 2024, Été 2024, Flexible"
+                  placeholder={t('contact.form.placeholders.dates')}
                 />
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-2">Message *</label>
+                <label className="block text-gray-300 mb-2">{t('contact.form.message')} *</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -247,7 +247,7 @@ const Contact = () => {
                   required
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
-                  placeholder="Décrivez-nous votre voyage idéal, vos attentes particulières..."
+                  placeholder={t('contact.form.placeholders.message')}
                 />
               </div>
 
@@ -258,13 +258,13 @@ const Contact = () => {
                 className="w-full bg-gold-500 text-black py-4 rounded-lg font-semibold hover:bg-gold-400 transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Send className="h-5 w-5" />
-                <span>Envoyer ma demande</span>
+                <span>{t('contact.form.submit')}</span>
               </motion.button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-gray-400 text-sm">
-                Réponse sous 24h • Devis gratuit et sans engagement
+                {t('contact.form.guarantee')}
               </p>
             </div>
           </motion.div>
