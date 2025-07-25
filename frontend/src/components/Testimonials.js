@@ -82,10 +82,10 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Témoignages <span className="text-gold-500">Clients</span>
+            {t('testimonials.title')} <span className="text-gold-500">{t('testimonials.subtitle')}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Découvrez ce que nos voyageurs pensent de leurs expériences avec Jheny Voyages
+            {t('testimonials.description')}
           </p>
         </motion.div>
 
