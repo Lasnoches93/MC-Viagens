@@ -2,9 +2,34 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Users, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import Carousel from './Carousel';
 
 const Hero = () => {
   const { t } = useLanguage();
+
+  // Images pour le carrousel en arrière-plan
+  const backgroundImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1530812074867-b93347a3bd10?w=1920&h=1080&fit=crop&auto=format&q=80',
+      alt: 'Salar de Uyuni, Bolívia'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1479299784244-c5262363c5df?w=1920&h=1080&fit=crop&auto=format&q=80',
+      alt: 'Machu Picchu, Peru'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=1920&h=1080&fit=crop&auto=format&q=80',
+      alt: 'Buenos Aires, Argentina'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1547483238-f400e65ccd56?w=1920&h=1080&fit=crop&auto=format&q=80',
+      alt: 'Patagônia, Chile'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1662504431607-6714410af32f?w=1920&h=1080&fit=crop&auto=format&q=80',
+      alt: 'Rio de Janeiro, Brasil'
+    }
+  ];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
