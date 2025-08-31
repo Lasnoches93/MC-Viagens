@@ -7,6 +7,32 @@ const Blog = () => {
   const { t } = useLanguage();
   const blogPosts = [
     {
+      id: 'about-me',
+      title: 'Sobre Mim',
+      excerpt: 'Conheça minha jornada pelos 6 países da América do Sul e como transformei minha paixão por viagens em profissão.',
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop&auto=format&q=80',
+      author: 'MC Viagens',
+      date: '20 Janeiro 2025',
+      readTime: '5 min',
+      category: 'Sobre Mim',
+      featured: true,
+      isAbout: true,
+      aboutType: 'aboutMe'
+    },
+    {
+      id: 'about-company',
+      title: 'Sobre a MC Viagens',
+      excerpt: 'Descubra nossa expertise em viagens internacionais e nosso compromisso com experiências únicas e preços competitivos.',
+      image: 'https://images.unsplash.com/photo-2544005313-94ddf0286df2?w=600&h=400&fit=crop&auto=format&q=80',
+      author: 'MC Viagens',
+      date: '18 Janeiro 2025',
+      readTime: '4 min',
+      category: 'Sobre Nós',
+      featured: false,
+      isAbout: true,
+      aboutType: 'about'
+    },
+    {
       id: 1,
       title: 'Salar de Uyuni: O Maior Espelho do Mundo',
       excerpt: 'Descubra a magia do Salar de Uyuni na Bolívia, onde o céu se encontra com a terra em uma experiência única no mundo.',
@@ -15,7 +41,7 @@ const Blog = () => {
       date: '15 Janeiro 2025',
       readTime: '8 min',
       category: 'Destinos',
-      featured: true,
+      featured: false,
       destination: 'bolivia',
       link: '#destinations'
     },
