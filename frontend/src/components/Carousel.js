@@ -78,7 +78,7 @@ const Carousel = ({ images, autoPlay = true, interval = 5000, showControls = tru
       </AnimatePresence>
 
       {/* Navigation Arrows */}
-      {images.length > 1 && (
+      {images.length > 1 && showControls && (
         <>
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: 'rgba(212, 175, 55, 0.9)' }}
