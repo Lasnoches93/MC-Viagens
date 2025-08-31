@@ -117,6 +117,8 @@ const translations = {
       description: 'Conselhos de especialista, guias de viagem e inspirações para suas próximas aventuras',
       categories: {
         all: 'Todos',
+        aboutMe: 'Sobre Mim',
+        about: 'Sobre Nós', 
         destinations: 'Destinos',
         tips: 'Dicas',
         guides: 'Guias',
