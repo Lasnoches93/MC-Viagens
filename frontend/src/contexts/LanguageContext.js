@@ -336,6 +336,21 @@ const translations = {
         experience: 'Anos de Experiência'
       }
     },
+    // My Journey - Minha Trajetória
+    myJourney: {
+      title: 'Minha Trajetória',
+      content: {
+        intro: 'Viajar sempre foi mais do que um simples hobby para mim: é a forma que encontrei de me conectar com culturas, histórias e pessoas ao redor do mundo. Ao longo da minha jornada, tive a oportunidade de conhecer seis países da América do Sul — experiências que transformaram não apenas a minha visão de mundo, mas também a maneira como escolhi trabalhar com turismo.',
+        brazil: 'Comecei pelo Brasil, país de cores, sabores e diversidade que me ensinou a valorizar cada detalhe de uma viagem.',
+        peru: 'Depois, atravessei fronteiras e vivi momentos únicos no Peru, onde me encantei com a grandiosidade de Machu Picchu e com a riqueza da cultura inca.',
+        bolivia: 'Na Bolívia, fui surpreendida pela beleza surreal do Salar de Uyuni e pela força de um povo cheio de tradições.',
+        argentina: 'A Argentina me recebeu com sua energia vibrante, de Buenos Aires até as paisagens exuberantes da Patagônia.',
+        chile: 'No Chile, descobri desde o charme de Santiago até cenários deslumbrantes como o Deserto do Atacama.',
+        uruguay: 'E no Uruguai, mergulhei na tranquilidade de Montevidéu e no charme sofisticado de Punta del Este.',
+        reflection: 'Essas experiências me mostraram que cada destino é único e que cada viajante merece viver momentos inesquecíveis. Por isso, escolhi transformar minha paixão em profissão: hoje ajudo pessoas a realizarem o sonho de viajar, oferecendo roteiros personalizados, suporte completo e, principalmente, a garantia de uma viagem cheia de significado.',
+        commitment: 'Meu compromisso é compartilhar com você tudo o que aprendi ao longo do caminho, para que sua experiência de viagem seja tão marcante quanto foi para mim.'
+      }
+    },
     // Footer
     footer: {
       cta: {
