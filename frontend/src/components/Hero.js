@@ -33,17 +33,20 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=1920&h=1080&fit=crop&crop=entropy&auto=format&q=80)',
-          }}
+        <Carousel 
+          images={backgroundImages}
+          autoPlay={true}
+          interval={6000}
+          showControls={false}
+          showDots={false}
         />
-        <div className="absolute inset-0 bg-luxury-blue/70" />
-        <div className="absolute inset-0 bg-gradient-to-b from-luxury-blue/40 via-transparent to-luxury-blue/60" />
       </div>
+
+      {/* Overlay gradients */}
+      <div className="absolute inset-0 bg-luxury-blue/60 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-luxury-blue/40 via-transparent to-luxury-blue/60 z-10" />
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
