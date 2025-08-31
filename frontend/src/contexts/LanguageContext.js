@@ -618,6 +618,21 @@ const translations = {
         experience: 'Années d\'Expérience'
       }
     },
+    // My Journey - Ma Trajectoire
+    myJourney: {
+      title: 'Ma Trajectoire',
+      content: {
+        intro: 'Voyager a toujours été plus qu\'un simple hobby pour moi : c\'est la façon que j\'ai trouvée de me connecter avec les cultures, les histoires et les gens du monde entier. Au cours de mon voyage, j\'ai eu l\'opportunité de connaître six pays d\'Amérique du Sud — des expériences qui ont transformé non seulement ma vision du monde, mais aussi la façon dont j\'ai choisi de travailler dans le tourisme.',
+        brazil: 'J\'ai commencé par le Brésil, pays de couleurs, de saveurs et de diversité qui m\'a appris à valoriser chaque détail d\'un voyage.',
+        peru: 'Ensuite, j\'ai traversé les frontières et vécu des moments uniques au Pérou, où j\'ai été enchantée par la grandeur du Machu Picchu et la richesse de la culture inca.',
+        bolivia: 'En Bolivie, j\'ai été surprise par la beauté surréaliste du Salar de Uyuni et la force d\'un peuple plein de traditions.',
+        argentina: 'L\'Argentine m\'a accueillie avec son énergie vibrante, de Buenos Aires aux paysages exubérants de la Patagonie.',
+        chile: 'Au Chili, j\'ai découvert depuis le charme de Santiago jusqu\'aux paysages éblouissants comme le désert d\'Atacama.',
+        uruguay: 'Et en Uruguay, j\'ai plongé dans la tranquillité de Montevideo et le charme sophistiqué de Punta del Este.',
+        reflection: 'Ces expériences m\'ont montré que chaque destination est unique et que chaque voyageur mérite de vivre des moments inoubliables. C\'est pourquoi j\'ai choisi de transformer ma passion en profession : aujourd\'hui j\'aide les gens à réaliser leur rêve de voyager, en offrant des itinéraires personnalisés, un support complet et, surtout, la garantie d\'un voyage plein de sens.',
+        commitment: 'Mon engagement est de partager avec vous tout ce que j\'ai appris en cours de route, pour que votre expérience de voyage soit aussi marquante qu\'elle l\'a été pour moi.'
+      }
+    },
     // Footer
     footer: {
       navigation: 'Navigation',
