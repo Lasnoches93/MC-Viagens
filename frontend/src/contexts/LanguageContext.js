@@ -17,6 +17,7 @@ const translations = {
       home: 'Início',
       destinations: 'Destinos',
       about: 'Sobre Nós',
+      aboutMe: 'Sobre Mim',
       blog: 'Blog',
       testimonials: 'Depoimentos',
       contact: 'Contato'
