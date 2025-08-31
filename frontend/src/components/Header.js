@@ -245,6 +245,24 @@ const Header = () => {
           </motion.div>
         )}
       </div>
+
+      {/* Carousel Section */}
+      {!isScrolled && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="container mx-auto px-4 py-6"
+        >
+          <div className="h-64 md:h-80 lg:h-96 overflow-hidden">
+            <Carousel 
+              images={carouselImages} 
+              autoPlay={true} 
+              interval={4000}
+            />
+          </div>
+        </motion.div>
+      )}
     </motion.header>
   );
 };
