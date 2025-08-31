@@ -128,7 +128,7 @@ const Blog = () => {
     }
   ];
 
-  const categories = [t('blog.categories.all'), t('blog.categories.aboutMe'), t('blog.categories.about'), t('blog.categories.destinations'), t('blog.categories.tips'), t('blog.categories.guides'), t('blog.categories.culture'), t('blog.categories.couples')];
+  const categories = [t('blog.categories.all'), t('blog.categories.aboutMe'), t('blog.categories.about'), t('blog.categories.myJourney'), t('blog.categories.destinations'), t('blog.categories.tips'), t('blog.categories.guides'), t('blog.categories.culture'), t('blog.categories.couples')];
   const [selectedCategory, setSelectedCategory] = React.useState(t('blog.categories.all'));
 
   const filteredPosts = selectedCategory === t('blog.categories.all') 
