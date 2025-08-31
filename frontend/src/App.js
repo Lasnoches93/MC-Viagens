@@ -9,8 +9,6 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Destinations from './components/Destinations';
-import About from './components/About';
-import AboutMe from './components/AboutMe';
 import Testimonials from './components/Testimonials';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
