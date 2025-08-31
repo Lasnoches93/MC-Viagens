@@ -94,22 +94,22 @@ const AboutMe = () => {
             <div className="text-center bg-black-900 rounded-xl p-6">
               <Globe className="h-8 w-8 text-gold-500 mx-auto mb-3" />
               <div className="text-3xl font-bold text-gold-500 mb-2">6</div>
-              <div className="text-sm text-gray-300">Países Visitados</div>
+              <div className="text-sm text-gray-300">{t('aboutMe.stats.countries')}</div>
             </div>
             <div className="text-center bg-black-900 rounded-xl p-6">
               <MapPin className="h-8 w-8 text-gold-500 mx-auto mb-3" />
               <div className="text-3xl font-bold text-gold-500 mb-2">20+</div>
-              <div className="text-sm text-gray-300">Cidades Exploradas</div>
+              <div className="text-sm text-gray-300">{t('aboutMe.stats.cities')}</div>
             </div>
             <div className="text-center bg-black-900 rounded-xl p-6">
               <Heart className="h-8 w-8 text-gold-500 mx-auto mb-3" />
               <div className="text-3xl font-bold text-gold-500 mb-2">500+</div>
-              <div className="text-sm text-gray-300">Viagens Organizadas</div>
+              <div className="text-sm text-gray-300">{t('aboutMe.stats.trips')}</div>
             </div>
             <div className="text-center bg-black-900 rounded-xl p-6">
               <Star className="h-8 w-8 text-gold-500 mx-auto mb-3" />
               <div className="text-3xl font-bold text-gold-500 mb-2">5</div>
-              <div className="text-sm text-gray-300">Anos de Experiência</div>
+              <div className="text-sm text-gray-300">{t('aboutMe.stats.experience')}</div>
             </div>
           </motion.div>
         </div>
