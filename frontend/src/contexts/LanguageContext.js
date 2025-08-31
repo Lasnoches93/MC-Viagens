@@ -762,6 +762,25 @@ const translations = {
         guarantee: 'Response within 24h • Free quote with no commitment'
       }
     },
+    // About Me
+    aboutMe: {
+      title: 'About Me',
+      content: {
+        intro: 'Traveling has always been more than just a dream — it\'s the way I found to connect with the world, discover cultures, and transform each experience into learning.',
+        journey: 'Throughout my journey, I have already explored six countries in South America:',
+        countries: {
+          brazil: '🌎 Brazil, the starting point where I learned to value the diversity and riches of our own country.',
+          peru: '🇵🇪 Peru, with the grandeur of Machu Picchu and the charms of the Andes.',
+          bolivia: '🇧🇴 Bolivia, where I lived unique moments at Salar de Uyuni and in the snowy mountains.',
+          argentina: '🇦🇷 Argentina, with its vibrant energy and imposing architecture in Buenos Aires.',
+          chile: '🇨🇱 Chile, which gifted me with stunning landscapes, from the Atacama Desert to the snow of the Cordillera.',
+          uruguay: '🇺🇾 Uruguay, a welcoming country that mixes charm, tranquility and art, like in Punta del Este and Casapueblo.'
+        },
+        reflection: 'Each trip marked not only a destination on the map, but also a part of my history. I experienced everything from urban life in major capitals to the serenity of natural landscapes. I\'ve been to colorful casinos, explored snow for the first time, built ice sculptures, and lived moments of pure contemplation in front of crystalline lakes and snowy mountains.',
+        mission: 'These experiences awakened in me the certainty that traveling is an investment in memories, emotions and discoveries. That\'s why I transformed this passion into a profession: today I work as a tourism agent, helping people live the same emotions that marked my life.',
+        goal: 'My goal is simple: to plan trips that are unique, unforgettable and full of meaning — because every client deserves to experience the world in the most special way possible.'
+      }
+    },
     // Footer
     footer: {
       navigation: 'Navigation',
