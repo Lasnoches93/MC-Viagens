@@ -275,7 +275,10 @@ const Blog = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
-                    if (post.link) {
+                    if (post.isAbout) {
+                      setAboutModalType(post.aboutType);
+                      setAboutModalOpen(true);
+                    } else if (post.link) {
                       const element = document.querySelector(post.link);
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
