@@ -329,6 +329,13 @@ const Blog = () => {
           </div>
         </motion.div>
       </div>
+      
+      {/* About Modal */}
+      <AboutModal 
+        isOpen={aboutModalOpen}
+        onClose={() => setAboutModalOpen(false)}
+        type={aboutModalType}
+      />
     </section>
   );
 };
