@@ -118,7 +118,8 @@ const translations = {
       categories: {
         all: 'Todos',
         aboutMe: 'Sobre Mim',
-        about: 'Sobre Nós', 
+        about: 'Sobre Nós',
+        myJourney: 'Minha Trajetória', 
         destinations: 'Destinos',
         tips: 'Dicas',
         guides: 'Guias',
