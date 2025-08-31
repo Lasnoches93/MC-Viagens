@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const Carousel = ({ images, autoPlay = true, interval = 5000 }) => {
+const Carousel = ({ images, autoPlay = true, interval = 5000, showControls = true, showDots = true }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Auto-play functionality
