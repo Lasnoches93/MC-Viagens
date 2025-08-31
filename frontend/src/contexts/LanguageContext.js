@@ -697,6 +697,8 @@ const translations = {
       description: 'Expert advice, travel guides and inspiration for your next adventures',
       categories: {
         all: 'All',
+        aboutMe: 'About Me',
+        about: 'About Us',
         destinations: 'Destinations',
         tips: 'Tips',
         guides: 'Guides',
