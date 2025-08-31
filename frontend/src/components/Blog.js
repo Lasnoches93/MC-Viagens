@@ -36,6 +36,19 @@ const Blog = () => {
       aboutType: 'about'
     },
     {
+      id: 'my-journey',
+      title: 'Minha Trajetória',
+      excerpt: 'Descubra como minha jornada pelos 6 países da América do Sul transformou minha paixão por viagens em profissão.',
+      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop&auto=format&q=80',
+      author: 'MC Viagens',
+      date: '17 Janeiro 2025',
+      readTime: '6 min',
+      category: 'Minha Trajetória',
+      featured: false,
+      isAbout: true,
+      aboutType: 'myJourney'
+    },
+    {
       id: 1,
       title: 'Salar de Uyuni: O Maior Espelho do Mundo',
       excerpt: 'Descubra a magia do Salar de Uyuni na Bolívia, onde o céu se encontra com a terra em uma experiência única no mundo.',
