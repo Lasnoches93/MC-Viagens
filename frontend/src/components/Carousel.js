@@ -101,7 +101,7 @@ const Carousel = ({ images, autoPlay = true, interval = 5000, showControls = tru
       )}
 
       {/* Dots Indicator */}
-      {images.length > 1 && (
+      {images.length > 1 && showDots && (
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {images.map((_, index) => (
             <motion.button
