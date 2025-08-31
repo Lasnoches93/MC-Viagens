@@ -15,6 +15,47 @@ const AboutModal = ({ isOpen, onClose, type }) => {
     { key: 'uruguay', flag: '🇺🇾', name: 'Uruguai' }
   ];
 
+  const renderMyJourneyContent = () => (
+    <div className="space-y-6">
+      <p className="text-lg text-gray-300 leading-relaxed">
+        {t('myJourney.content.intro')}
+      </p>
+      
+      <div className="space-y-4">
+        <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
+          <p className="text-gray-300 leading-relaxed">🇧🇷 {t('myJourney.content.brazil')}</p>
+        </div>
+        <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
+          <p className="text-gray-300 leading-relaxed">🇵🇪 {t('myJourney.content.peru')}</p>
+        </div>
+        <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
+          <p className="text-gray-300 leading-relaxed">🇧🇴 {t('myJourney.content.bolivia')}</p>
+        </div>
+        <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
+          <p className="text-gray-300 leading-relaxed">🇦🇷 {t('myJourney.content.argentina')}</p>
+        </div>
+        <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
+          <p className="text-gray-300 leading-relaxed">🇨🇱 {t('myJourney.content.chile')}</p>
+        </div>
+        <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
+          <p className="text-gray-300 leading-relaxed">🇺🇾 {t('myJourney.content.uruguay')}</p>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <p className="text-gray-300 leading-relaxed">
+          {t('myJourney.content.reflection')}
+        </p>
+        
+        <div className="bg-gradient-to-r from-gold-500/20 to-gold-600/20 rounded-xl p-4 border border-gold-500/30">
+          <p className="text-white font-semibold text-center">
+            {t('myJourney.content.commitment')}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+
   const renderAboutMeContent = () => (
     <div className="space-y-6">
       <p className="text-lg text-gray-300 leading-relaxed">
