@@ -2,47 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, MapPin, Phone, Mail, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import Carousel from './Carousel';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const { language, changeLanguage, t } = useLanguage();
-
-  // Images for the carousel - using the travel photos from the user's journey
-  const carouselImages = [
-    {
-      url: 'https://images.unsplash.com/photo-1530812074867-b93347a3bd10?w=600&h=300&fit=crop&auto=format&q=80',
-      alt: 'Salar de Uyuni, Bolívia',
-      caption: 'Salar de Uyuni - Bolívia',
-      location: 'O maior espelho do mundo'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1479299784244-c5262363c5df?w=600&h=300&fit=crop&auto=format&q=80',
-      alt: 'Machu Picchu, Peru',
-      caption: 'Machu Picchu - Peru',
-      location: 'Cidadela Inca nos Andes'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=600&h=300&fit=crop&auto=format&q=80',
-      alt: 'Buenos Aires, Argentina',
-      caption: 'Buenos Aires - Argentina',
-      location: 'Capital do tango e da paixão'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1547483238-f400e65ccd56?w=600&h=300&fit=crop&auto=format&q=80',
-      alt: 'Patagônia, Chile',
-      caption: 'Patagônia - Chile',
-      location: 'Paisagens grandiosas'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1662504431607-6714410af32f?w=600&h=300&fit=crop&auto=format&q=80',
-      alt: 'Rio de Janeiro, Brasil',
-      caption: 'Rio de Janeiro - Brasil',
-      location: 'Cidade maravilhosa'
-    }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
