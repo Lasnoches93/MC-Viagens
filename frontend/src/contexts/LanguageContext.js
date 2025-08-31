@@ -306,6 +306,25 @@ const translations = {
         guarantee: 'Resposta em 24h • Orçamento gratuito e sem compromisso'
       }
     },
+    // About Me - Sobre mim
+    aboutMe: {
+      title: 'Sobre Mim',
+      content: {
+        intro: 'Viajar sempre foi mais do que um simples sonho — é a forma que encontrei de me conectar com o mundo, conhecer culturas e transformar cada experiência em aprendizado.',
+        journey: 'Ao longo da minha jornada, já explorei seis países da América do Sul:',
+        countries: {
+          brazil: '🌎 Brasil, ponto de partida onde aprendi a valorizar a diversidade e as riquezas do nosso próprio país.',
+          peru: '🇵🇪 Peru, com a grandiosidade de Machu Picchu e os encantos dos Andes.',
+          bolivia: '🇧🇴 Bolívia, onde vivi momentos únicos no Salar de Uyuni e nas montanhas nevadas.',
+          argentina: '🇦🇷 Argentina, com sua energia vibrante e arquitetura imponente em Buenos Aires.',
+          chile: '🇨🇱 Chile, que me presenteou com paisagens deslumbrantes, desde o Deserto do Atacama até a neve da Cordilheira.',
+          uruguay: '🇺🇾 Uruguai, um país acolhedor que mistura charme, tranquilidade e arte, como em Punta del Este e Casapueblo.'
+        },
+        reflection: 'Cada viagem marcou não apenas um destino no mapa, mas também uma parte da minha história. Conheci desde a vida urbana das grandes capitais até a serenidade das paisagens naturais. Estive em cassinos coloridos, explorei neve pela primeira vez, construí bonecos de gelo e vivi momentos de pura contemplação diante de lagos cristalinos e montanhas nevadas.',
+        mission: 'Essas vivências despertaram em mim a certeza de que viajar é um investimento em memórias, emoções e descobertas. Por isso, transformei essa paixão em profissão: hoje atuo como agente de turismo, ajudando pessoas a viverem as mesmas emoções que marcaram minha vida.',
+        goal: 'Meu objetivo é simples: planejar viagens que sejam únicas, inesquecíveis e cheias de significado — porque cada cliente merece viver o mundo da forma mais especial possível.'
+      }
+    },
     // Footer
     footer: {
       cta: {
