@@ -840,6 +840,21 @@ const translations = {
         experience: 'Years of Experience'
       }
     },
+    // My Journey
+    myJourney: {
+      title: 'My Journey',
+      content: {
+        intro: 'Traveling has always been more than just a hobby for me: it\'s the way I found to connect with cultures, stories and people around the world. Throughout my journey, I had the opportunity to visit six countries in South America — experiences that transformed not only my worldview, but also the way I chose to work in tourism.',
+        brazil: 'I started with Brazil, a country of colors, flavors and diversity that taught me to value every detail of a trip.',
+        peru: 'Then, I crossed borders and lived unique moments in Peru, where I was enchanted by the grandeur of Machu Picchu and the richness of Inca culture.',
+        bolivia: 'In Bolivia, I was surprised by the surreal beauty of Salar de Uyuni and the strength of a people full of traditions.',
+        argentina: 'Argentina welcomed me with its vibrant energy, from Buenos Aires to the exuberant landscapes of Patagonia.',
+        chile: 'In Chile, I discovered everything from the charm of Santiago to stunning scenery like the Atacama Desert.',
+        uruguay: 'And in Uruguay, I immersed myself in the tranquility of Montevideo and the sophisticated charm of Punta del Este.',
+        reflection: 'These experiences showed me that each destination is unique and that each traveler deserves to live unforgettable moments. That\'s why I chose to transform my passion into a profession: today I help people realize their dream of traveling, offering personalized itineraries, complete support and, mainly, the guarantee of a meaningful trip.',
+        commitment: 'My commitment is to share with you everything I learned along the way, so that your travel experience is as remarkable as it was for me.'
+      }
+    },
     // Footer
     footer: {
       navigation: 'Navigation',
