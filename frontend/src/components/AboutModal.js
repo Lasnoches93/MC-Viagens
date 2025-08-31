@@ -190,10 +190,14 @@ const AboutModal = ({ isOpen, onClose, type }) => {
 
             <div className="pr-12">
               <h2 className="text-3xl font-serif font-bold text-white mb-6">
-                {type === 'aboutMe' ? t('aboutMe.title') : t('about.title')}
+                {type === 'aboutMe' ? t('aboutMe.title') : 
+                 type === 'myJourney' ? t('myJourney.title') : 
+                 t('about.title')}
               </h2>
               
-              {type === 'aboutMe' ? renderAboutMeContent() : renderAboutContent()}
+              {type === 'aboutMe' ? renderAboutMeContent() : 
+               type === 'myJourney' ? renderMyJourneyContent() :
+               renderAboutContent()}
             </div>
           </motion.div>
         </div>
