@@ -732,6 +732,7 @@ const translations = {
         all: 'All',
         aboutMe: 'About Me',
         about: 'About Us',
+        myJourney: 'My Journey',
         destinations: 'Destinations',
         tips: 'Tips',
         guides: 'Guides',
