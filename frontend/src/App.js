@@ -26,6 +26,7 @@ function App() {
             <Hero />
             <Destinations />
             <About />
+            <AboutMe />
             <Testimonials />
             <Blog />
             <Contact />
