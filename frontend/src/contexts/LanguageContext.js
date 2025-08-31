@@ -404,6 +404,7 @@ const translations = {
       home: 'Accueil',
       destinations: 'Destinations',
       about: 'À propos',
+      aboutMe: 'À propos de Moi',
       blog: 'Blog',
       testimonials: 'Témoignages',
       contact: 'Contact'
