@@ -509,6 +509,7 @@ const translations = {
         all: 'Tous',
         aboutMe: 'À propos de Moi',
         about: 'À propos de Nous',
+        myJourney: 'Ma Trajectoire',
         destinations: 'Destinations',
         tips: 'Conseils',
         guides: 'Guides',
