@@ -564,6 +564,25 @@ const translations = {
         guarantee: 'Réponse sous 24h • Devis gratuit et sans engagement'
       }
     },
+    // About Me - À propos de moi
+    aboutMe: {
+      title: 'À propos de Moi',
+      content: {
+        intro: 'Voyager a toujours été plus qu\'un simple rêve — c\'est la façon que j\'ai trouvée de me connecter au monde, de découvrir des cultures et de transformer chaque expérience en apprentissage.',
+        journey: 'Au cours de mon voyage, j\'ai déjà exploré six pays d\'Amérique du Sud :',
+        countries: {
+          brazil: '🌎 Brésil, point de départ où j\'ai appris à valoriser la diversité et les richesses de notre propre pays.',
+          peru: '🇵🇪 Pérou, avec la grandeur du Machu Picchu et les charmes des Andes.',
+          bolivia: '🇧🇴 Bolivie, où j\'ai vécu des moments uniques au Salar de Uyuni et dans les montagnes enneigées.',
+          argentina: '🇦🇷 Argentine, avec son énergie vibrante et son architecture imposante à Buenos Aires.',
+          chile: '🇨🇱 Chili, qui m\'a offert des paysages éblouissants, du désert d\'Atacama à la neige de la Cordillère.',
+          uruguay: '🇺🇾 Uruguay, un pays accueillant qui mélange charme, tranquillité et art, comme à Punta del Este et Casapueblo.'
+        },
+        reflection: 'Chaque voyage a marqué non seulement une destination sur la carte, mais aussi une partie de mon histoire. J\'ai connu depuis la vie urbaine des grandes capitales jusqu\'à la sérénité des paysages naturels. J\'ai été dans des casinos colorés, exploré la neige pour la première fois, construit des bonhommes de glace et vécu des moments de pure contemplation devant des lacs cristallins et des montagnes enneigées.',
+        mission: 'Ces expériences ont éveillé en moi la certitude que voyager est un investissement en souvenirs, émotions et découvertes. C\'est pourquoi j\'ai transformé cette passion en profession : aujourd\'hui j\'agis comme agent de tourisme, aidant les gens à vivre les mêmes émotions qui ont marqué ma vie.',
+        goal: 'Mon objectif est simple : planifier des voyages uniques, inoubliables et pleins de sens — parce que chaque client mérite de vivre le monde de la façon la plus spéciale possible.'
+      }
+    },
     // Footer
     footer: {
       navigation: 'Navigation',
