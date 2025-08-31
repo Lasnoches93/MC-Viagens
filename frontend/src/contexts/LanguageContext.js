@@ -324,6 +324,12 @@ const translations = {
         reflection: 'Cada viagem marcou não apenas um destino no mapa, mas também uma parte da minha história. Conheci desde a vida urbana das grandes capitais até a serenidade das paisagens naturais. Estive em cassinos coloridos, explorei neve pela primeira vez, construí bonecos de gelo e vivi momentos de pura contemplação diante de lagos cristalinos e montanhas nevadas.',
         mission: 'Essas vivências despertaram em mim a certeza de que viajar é um investimento em memórias, emoções e descobertas. Por isso, transformei essa paixão em profissão: hoje atuo como agente de turismo, ajudando pessoas a viverem as mesmas emoções que marcaram minha vida.',
         goal: 'Meu objetivo é simples: planejar viagens que sejam únicas, inesquecíveis e cheias de significado — porque cada cliente merece viver o mundo da forma mais especial possível.'
+      },
+      stats: {
+        countries: 'Países Visitados',
+        cities: 'Cidades Exploradas',
+        trips: 'Viagens Organizadas',
+        experience: 'Anos de Experiência'
       }
     },
     // Footer
