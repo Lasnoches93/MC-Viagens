@@ -794,6 +794,12 @@ const translations = {
         reflection: 'Each trip marked not only a destination on the map, but also a part of my history. I experienced everything from urban life in major capitals to the serenity of natural landscapes. I\'ve been to colorful casinos, explored snow for the first time, built ice sculptures, and lived moments of pure contemplation in front of crystalline lakes and snowy mountains.',
         mission: 'These experiences awakened in me the certainty that traveling is an investment in memories, emotions and discoveries. That\'s why I transformed this passion into a profession: today I work as a tourism agent, helping people live the same emotions that marked my life.',
         goal: 'My goal is simple: to plan trips that are unique, unforgettable and full of meaning — because every client deserves to experience the world in the most special way possible.'
+      },
+      stats: {
+        countries: 'Countries Visited',
+        cities: 'Cities Explored',
+        trips: 'Trips Organized',
+        experience: 'Years of Experience'
       }
     },
     // Footer
