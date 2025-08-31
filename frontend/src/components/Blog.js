@@ -182,6 +182,14 @@ const Blog = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => {
+                        if (featuredPost.link) {
+                          const element = document.querySelector(featuredPost.link);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }
+                      }}
                       className="bg-gold-500 text-black px-6 py-2 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200 flex items-center space-x-2"
                     >
                       <span>{t('blog.readArticle')}</span>
