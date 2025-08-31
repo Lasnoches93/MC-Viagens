@@ -23,8 +23,6 @@ function App() {
           <main>
             <Hero />
             <Destinations />
-            <About />
-            <AboutMe />
             <Testimonials />
             <Blog />
             <Contact />
