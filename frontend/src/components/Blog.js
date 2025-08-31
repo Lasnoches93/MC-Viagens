@@ -2,9 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight, MapPin, User } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import AboutModal from './AboutModal';
 
 const Blog = () => {
   const { t } = useLanguage();
+  const [aboutModalOpen, setAboutModalOpen] = React.useState(false);
+  const [aboutModalType, setAboutModalType] = React.useState(null);
   const blogPosts = [
     {
       id: 'about-me',
