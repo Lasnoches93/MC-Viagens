@@ -603,6 +603,7 @@ const translations = {
       home: 'Home',
       destinations: 'Destinations',
       about: 'About',
+      aboutMe: 'About Me',
       blog: 'Blog',
       testimonials: 'Testimonials',
       contact: 'Contact'
