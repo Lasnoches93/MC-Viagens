@@ -135,6 +135,45 @@ const translations = {
         subscribe: 'Inscrever-se'
       }
     },
+    // Blog Articles
+    blogArticles: {
+      aboutMe: {
+        title: 'Sobre Mim',
+        excerpt: 'Conheça minha jornada pelos 6 países da América do Sul e como transformei minha paixão por viagens em profissão.'
+      },
+      aboutCompany: {
+        title: 'Sobre a MC Viagens',
+        excerpt: 'Descubra nossa expertise em viagens internacionais e nosso compromisso com experiências únicas e preços competitivos.'
+      },
+      myJourney: {
+        title: 'Minha Trajetória',
+        excerpt: 'Descubra como minha jornada pelos 6 países da América do Sul transformou minha paixão por viagens em profissão.'
+      },
+      salarUyuni: {
+        title: 'Salar de Uyuni: O Maior Espelho do Mundo',
+        excerpt: 'Descubra a magia do Salar de Uyuni na Bolívia, onde o céu se encontra com a terra em uma experiência única no mundo.'
+      },
+      machuPicchu: {
+        title: 'Machu Picchu: Guia Completo da Cidadela Inca',
+        excerpt: 'Tudo o que você precisa saber para visitar esta maravilha do mundo no Peru.'
+      },
+      buenosAires: {
+        title: 'Buenos Aires: Tango, Gastronomia e Cultura',
+        excerpt: 'A capital argentina oferece uma mistura única de tradição e modernidade.'
+      },
+      patagonia: {
+        title: 'Patagônia Chilena: Paisagens de Tirar o Fôlego',
+        excerpt: 'Explore as paisagens mais dramáticas da América do Sul na Patagônia chilena.'
+      },
+      rioJaneiro: {
+        title: 'Rio de Janeiro: Entre Montanhas e Praias',
+        excerpt: 'A cidade maravilhosa oferece o melhor do Brasil: cultura, natureza e hospitalidade.'
+      },
+      uruguay: {
+        title: 'Uruguai: Charme e Tranquilidade em Punta del Este',
+        excerpt: 'Descubra o lado sofisticado e relaxante do Uruguai.'
+      }
+    },
     // Contact
     contact: {
       title: 'Entre em Contato',
