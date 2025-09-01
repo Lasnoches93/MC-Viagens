@@ -565,6 +565,45 @@ const translations = {
         subscribe: 'S\'abonner'
       }
     },
+    // Blog Articles
+    blogArticles: {
+      aboutMe: {
+        title: 'À propos de Moi',
+        excerpt: 'Découvrez mon voyage à travers 6 pays d\'Amérique du Sud et comment j\'ai transformé ma passion pour les voyages en profession.'
+      },
+      aboutCompany: {
+        title: 'À propos de MC Viagens',
+        excerpt: 'Découvrez notre expertise en voyages internationaux et notre engagement envers des expériences uniques à des prix compétitifs.'
+      },
+      myJourney: {
+        title: 'Ma Trajectoire',
+        excerpt: 'Découvrez comment mon voyage à travers 6 pays d\'Amérique du Sud a transformé ma passion pour les voyages en profession.'
+      },
+      salarUyuni: {
+        title: 'Salar de Uyuni : Le Plus Grand Miroir du Monde',
+        excerpt: 'Découvrez la magie du Salar de Uyuni en Bolivie, où le ciel rencontre la terre dans une expérience unique au monde.'
+      },
+      machuPicchu: {
+        title: 'Machu Picchu : Guide Complet de la Citadelle Inca',
+        excerpt: 'Tout ce que vous devez savoir pour visiter cette merveille du monde au Pérou.'
+      },
+      buenosAires: {
+        title: 'Buenos Aires : Tango, Gastronomie et Culture',
+        excerpt: 'La capitale argentine offre un mélange unique de tradition et de modernité.'
+      },
+      patagonia: {
+        title: 'Patagonie Chilienne : Paysages à Couper le Souffle',
+        excerpt: 'Explorez les paysages les plus dramatiques d\'Amérique du Sud dans la Patagonie chilienne.'
+      },
+      rioJaneiro: {
+        title: 'Rio de Janeiro : Entre Montagnes et Plages',
+        excerpt: 'La ville merveilleuse offre le meilleur du Brésil : culture, nature et hospitalité.'
+      },
+      uruguay: {
+        title: 'Uruguay : Charme et Tranquillité à Punta del Este',
+        excerpt: 'Découvrez le côté sophistiqué et relaxant de l\'Uruguay.'
+      }
+    },
     // Contact
     contact: {
       title: 'Contactez',
