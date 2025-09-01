@@ -28,7 +28,7 @@ const Blog = () => {
       id: 'about-company',
       title: t('blogArticles.aboutCompany.title'),
       excerpt: t('blogArticles.aboutCompany.excerpt'),
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&auto=format&q=80',
+      image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBvZmZpY2V8ZW58MHx8fGJsdWV8MTc1NjcyNTAxNXww&ixlib=rb-4.1.0&q=85&w=600&h=400&fit=crop&auto=format',
       author: 'MC Viagens',
       date: '18 Janeiro 2025',
       readTime: '4 min',
