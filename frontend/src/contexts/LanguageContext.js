@@ -827,6 +827,45 @@ const translations = {
         subscribe: 'Subscribe'
       }
     },
+    // Blog Articles
+    blogArticles: {
+      aboutMe: {
+        title: 'About Me',
+        excerpt: 'Learn about my journey through 6 South American countries and how I transformed my passion for travel into a profession.'
+      },
+      aboutCompany: {
+        title: 'About MC Viagens',
+        excerpt: 'Discover our expertise in international travel and our commitment to unique experiences at competitive prices.'
+      },
+      myJourney: {
+        title: 'My Journey',
+        excerpt: 'Discover how my journey through 6 South American countries transformed my passion for travel into a profession.'
+      },
+      salarUyuni: {
+        title: 'Salar de Uyuni: The World\'s Largest Mirror',
+        excerpt: 'Discover the magic of Salar de Uyuni in Bolivia, where sky meets earth in a unique experience in the world.'
+      },
+      machuPicchu: {
+        title: 'Machu Picchu: Complete Guide to the Inca Citadel',
+        excerpt: 'Everything you need to know to visit this wonder of the world in Peru.'
+      },
+      buenosAires: {
+        title: 'Buenos Aires: Tango, Gastronomy and Culture',
+        excerpt: 'The Argentine capital offers a unique blend of tradition and modernity.'
+      },
+      patagonia: {
+        title: 'Chilean Patagonia: Breathtaking Landscapes',
+        excerpt: 'Explore the most dramatic landscapes in South America in Chilean Patagonia.'
+      },
+      rioJaneiro: {
+        title: 'Rio de Janeiro: Between Mountains and Beaches',
+        excerpt: 'The wonderful city offers the best of Brazil: culture, nature and hospitality.'
+      },
+      uruguay: {
+        title: 'Uruguay: Charm and Tranquility in Punta del Este',
+        excerpt: 'Discover the sophisticated and relaxing side of Uruguay.'
+      }
+    },
     // Contact
     contact: {
       title: 'Contact',
