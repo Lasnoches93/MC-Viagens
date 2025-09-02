@@ -80,8 +80,8 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0, t }) => {
 
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-2xl font-bold text-gold-500">{destination.price}</span>
-            <span className="text-sm text-gray-500 line-through ml-2">{destination.originalPrice}</span>
+            <span className="text-2xl font-bold text-gold-500">{t.convertPrice ? t.convertPrice(destination.price) : destination.price}</span>
+            <span className="text-sm text-gray-500 line-through ml-2">{t.convertPrice ? t.convertPrice(destination.originalPrice) : destination.originalPrice}</span>
           </div>
           <span className="text-sm text-gray-400">{t('destinations.person')}</span>
         </div>
