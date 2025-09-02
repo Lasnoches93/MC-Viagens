@@ -625,8 +625,11 @@ const translations = {
         title: 'Parlons de votre voyage de rêve',
         description: 'Chaque voyage est unique, c\'est pourquoi je prends le temps de comprendre vos envies, vos contraintes et votre budget pour créer l\'expérience parfaite.',
         phone: 'Téléphone',
+        phoneValue: '+55 11 91468-6123',
         email: 'Email',
+        emailValue: 'turismomc799@gmail.com',
         location: 'Localisation',
+        locationValue: 'Rua Quinze de Novembro 228 - 2e étage, Centre Historique de São Paulo/SP - 01013-911 - Brésil',
         hours: 'Horaires',
         schedule: {
           weekdays: 'Lun-Ven: 9h-18h',
