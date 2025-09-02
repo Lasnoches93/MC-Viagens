@@ -952,8 +952,11 @@ const translations = {
         title: 'Let\'s talk about your dream trip',
         description: 'Each trip is unique, so we take the time to understand your desires, constraints and budget to create the perfect experience.',
         phone: 'Phone',
+        phoneValue: '+55 11 91468-6123',
         email: 'Email',
+        emailValue: 'turismomc799@gmail.com',
         location: 'Location',
+        locationValue: 'Rua Quinze de Novembro 228 - 2nd floor, Historic Center of São Paulo/SP - 01013-911 - Brazil',
         hours: 'Hours',
         schedule: {
           weekdays: 'Mon-Fri: 9am-6pm',
