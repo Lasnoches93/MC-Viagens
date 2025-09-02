@@ -138,11 +138,11 @@ const Header = () => {
             <div className="flex items-center space-x-4 text-sm">
               <div className="flex items-center space-x-2 text-white">
                 <Phone className="h-4 w-4 text-luxury-gold" />
-                <span>+33 1 23 45 67 89</span>
+                <span>{t('contact.info.phoneValue')}</span>
               </div>
               <div className="flex items-center space-x-2 text-white">
                 <Mail className="h-4 w-4 text-luxury-gold" />
-                <span>contact@mcviagens.com</span>
+                <span>{t('contact.info.emailValue')}</span>
               </div>
             </div>
           </div>
