@@ -1042,14 +1042,76 @@ const translations = {
     },
     // Footer
     footer: {
+      cta: {
+        title: 'Ready to discover Latin America?',
+        description: 'Get a free and personalized quote for your next trip',
+        button: 'Request Quote'
+      },
+      whyChoose: 'Why choose MC Viagens?',
       navigation: 'Navigation',
       destinations: 'Destinations',
       services: 'Services',
       followUs: 'Follow us:',
       personalizedAdvice: 'Count on personalized advice',
       support: 'After-sales support',
-      mcViagens: 'MC Viagens',
-      howItWorks: 'How it Works'
+      mcViagens: 'MC Viagens Exclusive',
+      howItWorks: 'How it Works',
+      pointsForts: {
+        support: {
+          title: 'After-sales Support',
+          desc: 'Complete support before, during and after your trip'
+        },
+        advice: {
+          title: 'Personalized Advice',
+          desc: 'Specialized consulting for every type of traveler'
+        },
+        exclusive: {
+          title: 'MC Viagens Exclusive',
+          desc: 'Exclusive experience with accessible luxury standard'
+        },
+        howWorks: {
+          title: 'How it Works',
+          desc: 'Simple and transparent process from quote to trip'
+        }
+      },
+      company: {
+        description: 'Your specialist in international travel. Authentic experiences at the most competitive prices in the market.',
+        address: {
+          street: 'Rua Quinze de Novembro 228 - 2nd floor',
+          city: 'Historic Center of São Paulo/SP - 01013-911 - Brazil',
+          service: 'In-person and online service',
+          phone: '+55 11 91468-6123',
+          email: 'turismomc799@gmail.com'
+        }
+      },
+      destinations_list: [
+        'Peru - Machu Picchu',
+        'Argentina - Buenos Aires',
+        'Colombia - Cartagena',
+        'Chile - Patagonia',
+        'Brazil - Rio de Janeiro',
+        'Bolivia - Salar de Uyuni'
+      ],
+      services_list: [
+        'Personalized trips',
+        'Private groups',
+        'Honeymoon trips',
+        'Organized circuits',
+        'Travel consulting',
+        '24/7 assistance'
+      ],
+      newsletter: {
+        title: 'Stay Connected',
+        description: 'Receive our latest offers and travel tips',
+        placeholder: 'Your email',
+        subscribe: 'Subscribe'
+      },
+      legal: {
+        terms: 'Legal Terms',
+        privacy: 'Privacy Policy',
+        conditions: 'General Conditions'
+      },
+      copyright: '© 2024 MC Viagens. All rights reserved. Created with ❤️ for travel lovers.'
     }
   }
 };
