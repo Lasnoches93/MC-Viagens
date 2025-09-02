@@ -31,7 +31,7 @@ const Contact = () => {
 
   const destinations = t('contact.form.destinations');
 
-  const budgetRanges = convertBudgetRanges(t('contact.form.budget_ranges'));
+  const budgetRanges = t('contact.form.budget_ranges');
 
   return (
     <section id="contact" className="py-20 bg-black-800">
