@@ -104,7 +104,7 @@ const Destinations = () => {
   const [selectedRegion, setSelectedRegion] = useState('Amérique du Sud');
   const [showAllDestinations, setShowAllDestinations] = useState(false);
   const [destinationsToShow, setDestinationsToShow] = useState(6);
-  const { t } = useLanguage();
+  const { t, convertPrice } = useLanguage();
 
   const destinationsByRegion = {
     'Amérique du Sud': [
