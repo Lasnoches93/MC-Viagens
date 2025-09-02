@@ -702,6 +702,7 @@ const Destinations = () => {
               onClick={setSelectedDestination}
               delay={index * 0.1}
               t={t}
+              convertPrice={convertPrice}
             />
           ))}
         </motion.div>
