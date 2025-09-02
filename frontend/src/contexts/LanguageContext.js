@@ -1055,8 +1055,7 @@ export const LanguageProvider = ({ children }) => {
       changeLanguage, 
       t, 
       convertPrice, 
-      formatPrice, 
-      convertBudgetRanges,
+      formatPrice,
       exchangeRates 
     }}>
       {children}
