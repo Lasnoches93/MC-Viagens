@@ -429,9 +429,11 @@ const translations = {
       company: {
         description: 'Sua especialista em viagens internacionais. Experiências autênticas aos preços mais competitivos do mercado.',
         address: {
-          street: '123 Rue des Voyages',
-          city: '75001 Paris, França',
-          service: 'Atendimento online mundial'
+          street: 'Rua Quinze de Novembro 228 - 2° andar',
+          city: 'Centro Histórico de São Paulo/SP - 01013-911 - Brasil',
+          service: 'Atendimento presencial e online',
+          phone: '+55 11 91468-6123',
+          email: 'turismomc799@gmail.com'
         }
       },
       destinations_list: [
