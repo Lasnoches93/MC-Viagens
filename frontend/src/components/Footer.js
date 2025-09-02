@@ -183,18 +183,18 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-luxury-gold" />
-                  <span className="text-gray-300">+33 1 23 45 67 89</span>
+                  <span className="text-gray-300">{t('footer.company.address.phone')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-luxury-gold" />
-                  <span className="text-gray-300">contact@mcviagens.com</span>
+                  <span className="text-gray-300">{t('footer.company.address.email')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-luxury-gold" />
                   <div className="text-gray-300">
-                    <p>123 Rue des Voyages</p>
-                    <p>75001 Paris, França</p>
-                    <p>Atendimento online mundial</p>
+                    <p>{t('footer.company.address.street')}</p>
+                    <p>{t('footer.company.address.city')}</p>
+                    <p>{t('footer.company.address.service')}</p>
                   </div>
                 </div>
               </div>
