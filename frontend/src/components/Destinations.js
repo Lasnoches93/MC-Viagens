@@ -803,8 +803,8 @@ const Destinations = () => {
 
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-3xl font-bold text-gold-500">{selectedDestination.price}</span>
-                <span className="text-lg text-gray-500 line-through ml-2">{selectedDestination.originalPrice}</span>
+                <span className="text-3xl font-bold text-gold-500">{convertPrice(selectedDestination.price)}</span>
+                <span className="text-lg text-gray-500 line-through ml-2">{convertPrice(selectedDestination.originalPrice)}</span>
               </div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
