@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Send, MessageCircle, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
-  const { t, convertBudgetRanges } = useLanguage();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
