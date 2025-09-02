@@ -190,8 +190,11 @@ const translations = {
         title: 'Vamos falar sobre sua viagem dos sonhos',
         description: 'Cada viagem é única, por isso dedicamos tempo para entender seus desejos, restrições e orçamento para criar a experiência perfeita.',
         phone: 'Telefone',
+        phoneValue: '+55 11 91468-6123',
         email: 'Email',
+        emailValue: 'turismomc799@gmail.com',
         location: 'Localização',
+        locationValue: 'Rua Quinze de Novembro 228 - 2° andar, Centro Histórico de São Paulo/SP - 01013-911 - Brasil',
         hours: 'Horários',
         schedule: {
           weekdays: 'Seg-Sex: 9h-18h',
