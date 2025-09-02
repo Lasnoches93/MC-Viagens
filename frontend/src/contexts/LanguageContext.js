@@ -993,6 +993,13 @@ const translations = {
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState('pt');
 
+  // Taux de change fixes (approximatifs janvier 2025)
+  const exchangeRates = {
+    pt: { currency: 'BRL', symbol: 'R$', rate: 6.20 }, // 1 EUR = 6.20 BRL
+    en: { currency: 'USD', symbol: '$', rate: 1.05 },  // 1 EUR = 1.05 USD
+    fr: { currency: 'EUR', symbol: '€', rate: 1.00 }   // 1 EUR = 1.00 EUR
+  };
+
   const t = (key) => {
     const keys = key.split('.');
     let value = translations[language];
@@ -1008,8 +1015,91 @@ export const LanguageProvider = ({ children }) => {
     setLanguage(lang);
   };
 
+  // Fonction pour convertir et formater les prix
+  const convertPrice = (euroPrice) => {
+    const currentCurrency = exchangeRates[language];
+    if (!currentCurrency) return euroPrice;
+
+    // Extraire le nombre depuis une chaîne comme "€899" ou "€1,199"
+    const numericPrice = parseFloat(euroPrice.replace(/[€$R,]/g, '').replace(',', '.'));
+    if (isNaN(numericPrice)) return euroPrice;
+
+    // Convertir le prix
+    const convertedPrice = numericPrice * currentCurrency.rate;
+
+    // Formater selon la devise et la langue
+    return formatPrice(convertedPrice, currentCurrency);
+  };
+
+  // Fonction pour formater les prix selon la devise
+  const formatPrice = (price, currencyInfo) => {
+    const { currency, symbol } = currencyInfo;
+    
+    switch (currency) {
+      case 'BRL':
+        // Format brésilien: R$ 1.240,50
+        return `${symbol} ${price.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`;
+      case 'USD':
+        // Format américain: $1,240
+        return `${symbol}${price.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+      case 'EUR':
+      default:
+        // Format européen: €1,240
+        return `${symbol}${price.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+    }
+  };
+
+  // Fonction pour convertir les fourchettes de budget
+  const convertBudgetRanges = (ranges) => {
+    const currentCurrency = exchangeRates[language];
+    if (!currentCurrency || language === 'fr') return ranges;
+
+    return ranges.map(range => {
+      // Gérer les cas comme "Moins de R$ 5.000", "R$ 5.000 - R$ 10.000", "Plus de R$ 25.000"
+      if (range.includes('Moins de') || range.includes('Less than')) {
+        const match = range.match(/(\d+)[\.,]?(\d+)?/);
+        if (match) {
+          const value = parseInt(match[1] + (match[2] || ''));
+          const converted = (value * currentCurrency.rate / 6.20).toFixed(0); // Convertir depuis BRL
+          const formatted = formatPrice(parseFloat(converted), currentCurrency);
+          return language === 'en' ? `Less than ${formatted}` : `Moins de ${formatted}`;
+        }
+      } else if (range.includes('Plus de') || range.includes('More than')) {
+        const match = range.match(/(\d+)[\.,]?(\d+)?/);
+        if (match) {
+          const value = parseInt(match[1] + (match[2] || ''));
+          const converted = (value * currentCurrency.rate / 6.20).toFixed(0);
+          const formatted = formatPrice(parseFloat(converted), currentCurrency);
+          return language === 'en' ? `More than ${formatted}` : `Plus de ${formatted}`;
+        }
+      } else if (range.includes(' - ')) {
+        const parts = range.split(' - ');
+        const value1Match = parts[0].match(/(\d+)[\.,]?(\d+)?/);
+        const value2Match = parts[1].match(/(\d+)[\.,]?(\d+)?/);
+        if (value1Match && value2Match) {
+          const value1 = parseInt(value1Match[1] + (value1Match[2] || ''));
+          const value2 = parseInt(value2Match[1] + (value2Match[2] || ''));
+          const converted1 = (value1 * currentCurrency.rate / 6.20).toFixed(0);
+          const converted2 = (value2 * currentCurrency.rate / 6.20).toFixed(0);
+          const formatted1 = formatPrice(parseFloat(converted1), currentCurrency);
+          const formatted2 = formatPrice(parseFloat(converted2), currentCurrency);
+          return `${formatted1} - ${formatted2}`;
+        }
+      }
+      return range;
+    });
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, changeLanguage, t }}>
+    <LanguageContext.Provider value={{ 
+      language, 
+      changeLanguage, 
+      t, 
+      convertPrice, 
+      formatPrice, 
+      convertBudgetRanges,
+      exchangeRates 
+    }}>
       {children}
     </LanguageContext.Provider>
   );
