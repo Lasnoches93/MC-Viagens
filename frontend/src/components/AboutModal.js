@@ -117,7 +117,7 @@ const AboutModal = ({ isOpen, onClose, type }) => {
           <div className="text-xl font-bold text-gold-500">500+</div>
           <div className="text-xs text-gray-300">{t('aboutMe.stats.trips')}</div>
         </div>
-        <div className="text-center bg-black-800 rounded-lg p-4">
+        <div className="text-center bg-luxury-blue/60 rounded-lg p-4">
           <Star className="h-6 w-6 text-gold-500 mx-auto mb-2" />
           <div className="text-xl font-bold text-gold-500">5</div>
           <div className="text-xs text-gray-300">{t('aboutMe.stats.experience')}</div>
