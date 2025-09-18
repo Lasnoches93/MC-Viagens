@@ -74,7 +74,7 @@ const AboutModal = ({ isOpen, onClose, type }) => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex items-start space-x-3 p-4 bg-black-800 rounded-lg"
+            className="flex items-start space-x-3 p-4 bg-luxury-blue/60 rounded-lg"
           >
             <span className="text-xl">{country.flag}</span>
             <p className="text-gray-300 text-sm leading-relaxed">
