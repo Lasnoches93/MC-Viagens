@@ -128,7 +128,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-black-900 rounded-2xl p-8"
+            className="bg-luxury-blue/70 rounded-2xl p-8 border border-luxury-gold/20"
           >
             <h3 className="text-2xl font-serif font-bold text-white mb-6">
               {t('contact.form.title')}
