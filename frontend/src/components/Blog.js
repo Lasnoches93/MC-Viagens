@@ -173,7 +173,7 @@ const Blog = () => {
               className={`px-6 py-2 rounded-full transition-all duration-200 ${
                 selectedCategory === category
                   ? 'bg-gold-500 text-black font-semibold'
-                  : 'bg-black-800 text-gray-300 hover:bg-black-700'
+                  : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
               }`}
             >
               {category}
