@@ -45,7 +45,7 @@ const Hero = () => {
       </div>
 
       {/* Overlay gradients */}
-      <div className="absolute inset-0 bg-luxury-blue/60 z-10" />
+      <div className="absolute inset-0" style={{background: 'linear-gradient(180deg, rgba(14,15,17,0.75) 0%, rgba(26,47,110,0.55) 100%)'}} />
       <div className="absolute inset-0 bg-gradient-to-b from-luxury-blue/40 via-transparent to-luxury-blue/60 z-10" />
 
       {/* Content */}
