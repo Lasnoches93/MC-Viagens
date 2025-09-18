@@ -1076,7 +1076,7 @@ const translations = {
         },
         exclusive: {
           title: 'MC Viagens Exclusive',
-          desc: 'Exclusive experience with accessible luxury standard'
+          desc: 'Exclusive experience with accessible standard'
         },
         howWorks: {
           title: 'How it Works',
