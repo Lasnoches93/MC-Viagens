@@ -189,7 +189,7 @@ const Blog = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mb-16"
           >
-            <div className="bg-black-800 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl border border-luxury-gold/20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
                   <img
