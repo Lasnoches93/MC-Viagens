@@ -96,7 +96,7 @@ const Testimonials = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="bg-black-900 rounded-2xl p-8 md:p-12 relative"
+            className="bg-luxury-blue/70 rounded-2xl p-8 md:p-12 relative border border-luxury-gold/20"
           >
             <Quote className="h-12 w-12 text-gold-500/20 absolute top-6 left-6" />
             
