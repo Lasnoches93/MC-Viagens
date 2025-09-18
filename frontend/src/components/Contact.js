@@ -110,7 +110,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-black-900 rounded-2xl p-6">
+            <div className="bg-luxury-blue/60 rounded-2xl p-6 border border-luxury-gold/20">
               <h4 className="text-white font-semibold mb-4">{t('contact.whyChoose')}</h4>
               <ul className="space-y-2">
                 {t('contact.advantages').map((advantage, index) => (
