@@ -265,7 +265,7 @@ const Blog = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="bg-black-800 rounded-2xl overflow-hidden shadow-2xl hover:shadow-gold-500/10 transition-all duration-300"
+              className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl hover:shadow-gold-500/10 transition-all duration-300 border border-luxury-gold/10"
             >
               <div className="relative">
                 <img
