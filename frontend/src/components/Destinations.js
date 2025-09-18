@@ -681,7 +681,7 @@ const Destinations = () => {
               className={`px-6 py-3 rounded-full transition-all duration-200 font-semibold ${
                 selectedRegion === region
                   ? 'bg-gold-500 text-black'
-                  : 'bg-black-800 text-gray-300 hover:bg-black-700 hover:text-white'
+                  : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80 hover:text-white'
               }`}
             >
               {t(`destinations.regions.${region}`)}
