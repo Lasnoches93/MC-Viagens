@@ -34,7 +34,7 @@ const Contact = () => {
   const budgetRanges = t('contact.form.budget_ranges');
 
   return (
-    <section id="contact" className="py-20 bg-black-800">
+    <section id="contact" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
