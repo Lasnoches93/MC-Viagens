@@ -137,7 +137,7 @@ const Testimonials = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={prevTestimonial}
-              className="bg-black-700 hover:bg-black-600 text-white p-3 rounded-full transition-colors duration-200"
+              className="bg-luxury-blue/60 hover:bg-luxury-blue/80 text-white p-3 rounded-full transition-colors duration-200 border border-luxury-gold/10"
             >
               <ChevronLeft className="h-6 w-6" />
             </motion.button>
