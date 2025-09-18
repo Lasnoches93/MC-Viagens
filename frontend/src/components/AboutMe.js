@@ -106,7 +106,7 @@ const AboutMe = () => {
               <div className="text-3xl font-bold text-gold-500 mb-2">500+</div>
               <div className="text-sm text-gray-300">{t('aboutMe.stats.trips')}</div>
             </div>
-            <div className="text-center bg-black-900 rounded-xl p-6">
+            <div className="text-center bg-luxury-blue/70 border border-luxury-gold/20 rounded-xl p-6">
               <Star className="h-8 w-8 text-gold-500 mx-auto mb-3" />
               <div className="text-3xl font-bold text-gold-500 mb-2">5</div>
               <div className="text-sm text-gray-300">{t('aboutMe.stats.experience')}</div>
