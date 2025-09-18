@@ -41,7 +41,7 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0, t, conver
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-black-900/70 backdrop-blur-sm p-2 rounded-full text-white hover:text-gold-500 transition-colors"
+            className="bg-luxury-blue/70 backdrop-blur-sm p-2 rounded-full text-white hover:text-gold-500 transition-colors"
           >
             <Heart className="h-5 w-5" />
           </motion.button>
