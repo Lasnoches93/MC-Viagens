@@ -759,7 +759,7 @@ const Destinations = () => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-black-800 rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+            className="bg-luxury-blue/70 rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto border border-luxury-gold/20"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-start mb-6">
