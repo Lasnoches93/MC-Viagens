@@ -25,7 +25,7 @@ const AboutModal = ({ isOpen, onClose, type }) => {
         <div className="p-4 bg-luxury-blue/60 rounded-lg border-l-4 border-gold-500">
           <p className="text-gray-300 leading-relaxed">🇧🇷 {t('myJourney.content.brazil')}</p>
         </div>
-        <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
+        <div className="p-4 bg-luxury-blue/60 rounded-lg border-l-4 border-gold-500">
           <p className="text-gray-300 leading-relaxed">🇵🇪 {t('myJourney.content.peru')}</p>
         </div>
         <div className="p-4 bg-black-800 rounded-lg border-l-4 border-gold-500">
