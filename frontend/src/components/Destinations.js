@@ -20,7 +20,7 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0, t, conver
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay }}
       whileHover={{ y: -5 }}
-      className="bg-black-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300"
+      className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl border border-luxury-gold/20 hover:border-luxury-gold/40 transition-all duration-300"
     >
       <div className="relative">
         <div className="w-full h-48 bg-gray-700 flex items-center justify-center">
