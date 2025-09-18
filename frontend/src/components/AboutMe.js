@@ -16,7 +16,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id="about-me" className="py-20 bg-gradient-to-b from-black-800 to-black-900">
+    <section id="about-me" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
