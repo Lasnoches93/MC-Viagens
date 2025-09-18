@@ -172,7 +172,7 @@ const Footer = () => {
                     <span className="bg-gradient-gold bg-clip-text text-transparent">MC</span>
                     <span className="text-white ml-1">Viagens</span>
                   </h3>
-                  <span className="text-xs text-luxury-gold-light font-medium tracking-wider">LUXURY TRAVEL</span>
+                  
                 </div>
               </div>
               
