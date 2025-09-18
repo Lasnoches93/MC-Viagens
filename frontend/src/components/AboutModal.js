@@ -153,7 +153,7 @@ const AboutModal = ({ isOpen, onClose, type }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {t('about.services').map((service, index) => (
-            <div key={index} className="flex items-center space-x-3 p-3 bg-black-800 rounded-lg">
+            <div key={index} className="flex items-center space-x-3 p-3 bg-luxury-blue/60 rounded-lg">
               <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
               <span className="text-gray-300">{service}</span>
             </div>
