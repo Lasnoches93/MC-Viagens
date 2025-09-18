@@ -422,7 +422,7 @@ const translations = {
         },
         exclusive: {
           title: 'MC Viagens Exclusivo',
-          desc: 'Experiência exclusiva com padrão de luxo acessível'
+          desc: 'Experiência exclusiva com padrão acessível'
         },
         howWorks: {
           title: 'Como Funciona',
