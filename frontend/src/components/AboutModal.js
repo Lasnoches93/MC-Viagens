@@ -179,7 +179,7 @@ const AboutModal = ({ isOpen, onClose, type }) => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative bg-black-800 rounded-2xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+            className="relative bg-luxury-blue/60 rounded-2xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto"
           >
             <button
               onClick={onClose}
