@@ -77,7 +77,7 @@ const Header = () => {
                 {/* Effet brillant sur le texte */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-luxury-gold-light to-transparent opacity-20 animate-shine"></div>
               </h1>
-              <span className="text-xs text-luxury-gold-light font-brand font-medium tracking-wider">LUXURY TRAVEL</span>
+              
             </div>
           </motion.div>
 
