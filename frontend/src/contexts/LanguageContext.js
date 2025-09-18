@@ -47,7 +47,7 @@ const translations = {
     // About
     about: {
       title: 'Conheça a MC Viagens',
-      subtitle: 'Sua Especialista em Viagens de Luxo',
+      subtitle: 'MC Viagens',
       intro: 'Apaixonados por viagens desde sempre, nos especializamos na busca dos melhores preços para viagens internacionais, com expertise particular na América Latina.',
       description: 'Com 5 anos de experiência na indústria do turismo, percorremos o mundo para encontrar os destinos mais fascinantes aos preços mais competitivos. Nossa expertise tarifária cobre América do Norte, América do Sul, Europa, Ásia, Oceania e ilhas paradisíacas.',
       stats: {
