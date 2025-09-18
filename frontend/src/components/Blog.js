@@ -333,7 +333,7 @@ const Blog = () => {
               <input
                 type="email"
                 placeholder={t('blog.newsletter.placeholder')}
-                className="flex-1 px-6 py-3 rounded-full bg-black-800 text-white placeholder-gray-400 border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                className="flex-1 px-6 py-3 rounded-full bg-luxury-blue/60 text-white placeholder-gray-400 border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
