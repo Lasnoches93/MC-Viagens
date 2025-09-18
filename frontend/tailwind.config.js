@@ -32,7 +32,7 @@ module.exports = {
           900: '#0f1419', // Bleu très foncé
         },
         luxury: {
-          blue: '#0F1419', // Bleu luxueux principal
+          blue: '#0E0F11', // Bleu luxueux principal
           'blue-light': '#1e3a8a',
           gold: '#D4AF37', // Or brillant
           'gold-light': '#F4E078',
