@@ -143,7 +143,7 @@ const Blog = () => {
   const regularPosts = blogPosts.filter(post => !post.featured);
 
   return (
-    <section id="blog" className="py-20 bg-black-900">
+    <section id="blog" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
