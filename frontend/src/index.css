@@ -9,7 +9,9 @@
   }
   
   body {
-    @apply bg-luxury-blue text-white;
+    @apply text-white;
+    /* Harmonized site-wide vertical gradient matching header/footer */
+    background: linear-gradient(180deg, #0F1419 0%, #1e3a8a 100%);
   }
 }
 
@@ -152,7 +154,8 @@ html {
 /* Dark mode optimization */
 @media (prefers-color-scheme: dark) {
   body {
-    @apply bg-luxury-blue text-white;
+    @apply text-white;
+    background: linear-gradient(180deg, #0F1419 0%, #1e3a8a 100%);
   }
 }
 

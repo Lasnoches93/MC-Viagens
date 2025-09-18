@@ -37,7 +37,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-black-900 to-black-800">
+    <section id="about" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Image and info */}
@@ -69,7 +69,7 @@ const About = () => {
               className="grid grid-cols-2 gap-4 mt-8"
             >
               {stats.map((stat, index) => (
-                <div key={index} className="text-center bg-black-800 rounded-lg p-4">
+                <div key={index} className="text-center bg-luxury-blue/50 rounded-lg p-4">
                   <div className="text-2xl font-bold text-gold-500">{stat.number}</div>
                   <div className="text-sm text-gray-300">{stat.label}</div>
                 </div>
@@ -103,7 +103,7 @@ const About = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-black-800 rounded-lg p-6 hover:bg-black-700 transition-colors duration-300"
+                  className="bg-luxury-blue/50 rounded-lg p-6 hover:bg-luxury-blue/70 transition-colors duration-300"
                 >
                   <div className="text-gold-500 mb-3">{specialty.icon}</div>
                   <h3 className="text-lg font-semibold text-white mb-2">{specialty.title}</h3>

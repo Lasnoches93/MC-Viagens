@@ -52,7 +52,7 @@ const Carousel = ({ images, autoPlay = true, interval = 5000, showControls = tru
           />
           
           {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black-900/60 via-transparent to-black-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-luxury-blue/60 via-transparent to-luxury-blue/30" />
           
           {/* Caption if available */}
           {images[currentIndex].caption && (
@@ -61,7 +61,7 @@ const Carousel = ({ images, autoPlay = true, interval = 5000, showControls = tru
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="bg-black-900/70 backdrop-blur-sm rounded-lg p-4"
+                className="bg-luxury-blue/70 backdrop-blur-sm rounded-lg p-4"
               >
                 <p className="text-white text-lg font-medium">
                   {images[currentIndex].caption}
@@ -84,7 +84,7 @@ const Carousel = ({ images, autoPlay = true, interval = 5000, showControls = tru
             whileHover={{ scale: 1.1, backgroundColor: 'rgba(212, 175, 55, 0.9)' }}
             whileTap={{ scale: 0.9 }}
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black-900/50 backdrop-blur-sm hover:bg-gold-500/80 text-white p-2 rounded-full transition-all duration-200 z-10"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-luxury-blue/50 backdrop-blur-sm hover:bg-gold-500/80 text-white p-2 rounded-full transition-all duration-200 z-10"
           >
             <ChevronLeft className="h-6 w-6" />
           </motion.button>
@@ -93,7 +93,7 @@ const Carousel = ({ images, autoPlay = true, interval = 5000, showControls = tru
             whileHover={{ scale: 1.1, backgroundColor: 'rgba(212, 175, 55, 0.9)' }}
             whileTap={{ scale: 0.9 }}
             onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black-900/50 backdrop-blur-sm hover:bg-gold-500/80 text-white p-2 rounded-full transition-all duration-200 z-10"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-luxury-blue/50 backdrop-blur-sm hover:bg-gold-500/80 text-white p-2 rounded-full transition-all duration-200 z-10"
           >
             <ChevronRight className="h-6 w-6" />
           </motion.button>
