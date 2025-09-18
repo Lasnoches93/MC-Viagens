@@ -102,7 +102,7 @@ const AboutModal = ({ isOpen, onClose, type }) => {
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-        <div className="text-center bg-black-800 rounded-lg p-4">
+        <div className="text-center bg-luxury-blue/60 rounded-lg p-4">
           <Globe className="h-6 w-6 text-gold-500 mx-auto mb-2" />
           <div className="text-xl font-bold text-gold-500">6</div>
           <div className="text-xs text-gray-300">{t('aboutMe.stats.countries')}</div>
