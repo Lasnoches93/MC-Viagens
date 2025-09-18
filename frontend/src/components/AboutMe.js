@@ -34,7 +34,7 @@ const AboutMe = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-black-900 rounded-2xl p-8 md:p-12 mb-12"
+            className="bg-luxury-blue/70 border border-luxury-gold/20 rounded-2xl p-8 md:p-12 mb-12"
           >
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               {t('aboutMe.content.intro')}
