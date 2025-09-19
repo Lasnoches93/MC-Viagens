@@ -1,0 +1,29 @@
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+msgid "Mentions légales"
+msgstr "Legal Notice"
+
+msgid "Politique de confidentialité"
+msgstr "Privacy Policy"
+
+msgid "Téléphone"
+msgstr "Phone"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Adresse"
+msgstr "Address"
+
+msgid "Horaires"
+msgstr "Hours"
+
+msgid "Contactez-nous"
+msgstr "Contact us"
+
+msgid "Remplissez le formulaire, nous vous répondrons sous 24h."
+msgstr "Fill out the form, we will get back to you within 24 hours."

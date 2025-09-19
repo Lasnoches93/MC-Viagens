@@ -1,0 +1,32 @@
+msgid "Destinations"
+msgstr "Destinos"
+
+msgid "Destination"
+msgstr "Destino"
+
+msgid "Add New"
+msgstr "Adicionar novo"
+
+msgid "Add New Destination"
+msgstr "Adicionar novo destino"
+
+msgid "Edit Destination"
+msgstr "Editar destino"
+
+msgid "New Destination"
+msgstr "Novo destino"
+
+msgid "View Destination"
+msgstr "Ver destino"
+
+msgid "Search Destinations"
+msgstr "Pesquisar destinos"
+
+msgid "No destinations found"
+msgstr "Nenhum destino encontrado"
+
+msgid "Regions"
+msgstr "Regiões"
+
+msgid "Region"
+msgstr "Região"

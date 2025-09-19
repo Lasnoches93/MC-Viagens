@@ -68,3 +68,91 @@ add_action('init', function () {
         'active' => true,
     ]);
 });
+
+// On theme activation: ensure menus, pages and legal links are created & assigned
+add_action('after_switch_theme', function () {
+    // Create pages if missing
+    $pages = [
+        'mentions-legales' => __('Mentions légales', 'mc-viagens'),
+        'politique-de-confidentialite' => __('Politique de confidentialité', 'mc-viagens'),
+    ];
+    $page_ids = [];
+    foreach ($pages as $slug => $title) {
+        $existing = get_page_by_path($slug);
+        if ($existing) {
+            $page_ids[$slug] = $existing->ID;
+        } else {
+            $page_ids[$slug] = wp_insert_post([
+                'post_title'   => $title,
+                'post_name'    => $slug,
+                'post_type'    => 'page',
+                'post_status'  => 'publish',
+                'post_content' => ''
+            ]);
+        }
+    }
+
+    // Ensure Primary menu
+    $primary_menu_name = 'Primary';
+    $primary_menu = wp_get_nav_menu_object($primary_menu_name);
+    if (!$primary_menu) {
+        $primary_menu_id = wp_create_nav_menu($primary_menu_name);
+    } else {
+        $primary_menu_id = $primary_menu->term_id;
+    }
+
+    // Ensure Footer menu
+    $footer_menu_name = 'Footer';
+    $footer_menu = wp_get_nav_menu_object($footer_menu_name);
+    if (!$footer_menu) {
+        $footer_menu_id = wp_create_nav_menu($footer_menu_name);
+    } else {
+        $footer_menu_id = $footer_menu->term_id;
+    }
+
+    // Assign to theme locations
+    $locations = get_theme_mod('nav_menu_locations');
+    if (!is_array($locations)) $locations = [];
+    $locations['primary'] = $primary_menu_id;
+    $locations['footer']  = $footer_menu_id;
+    set_theme_mod('nav_menu_locations', $locations);
+
+    // Add legal links to both menus if not present
+    foreach (['mentions-legales', 'politique-de-confidentialite'] as $slug) {
+        $pid = isset($page_ids[$slug]) ? intval($page_ids[$slug]) : 0;
+        if ($pid) {
+            // Primary
+            $items = wp_get_nav_menu_items($primary_menu_id, ['post_status' => 'publish']);
+            $exists = false;
+            if ($items) {
+                foreach ($items as $it) {
+                    if (intval($it->object_id) === $pid) { $exists = true; break; }
+                }
+            }
+            if (!$exists) {
+                wp_update_nav_menu_item($primary_menu_id, 0, [
+                    'menu-item-object-id' => $pid,
+                    'menu-item-object'    => 'page',
+                    'menu-item-type'      => 'post_type',
+                    'menu-item-status'    => 'publish',
+                ]);
+            }
+            // Footer
+            $items = wp_get_nav_menu_items($footer_menu_id, ['post_status' => 'publish']);
+            $exists = false;
+            if ($items) {
+                foreach ($items as $it) {
+                    if (intval($it->object_id) === $pid) { $exists = true; break; }
+                }
+            }
+            if (!$exists) {
+                wp_update_nav_menu_item($footer_menu_id, 0, [
+                    'menu-item-object-id' => $pid,
+                    'menu-item-object'    => 'page',
+                    'menu-item-type'      => 'post_type',
+                    'menu-item-status'    => 'publish',
+                ]);
+            }
+        }
+    }
+});

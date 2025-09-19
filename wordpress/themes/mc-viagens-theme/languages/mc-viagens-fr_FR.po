@@ -1,0 +1,29 @@
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+msgid "Footer Menu"
+msgstr "Menu de pied de page"
+
+msgid "Mentions légales"
+msgstr "Mentions légales"
+
+msgid "Politique de confidentialité"
+msgstr "Politique de confidentialité"
+
+msgid "Téléphone"
+msgstr "Téléphone"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Adresse"
+msgstr "Adresse"
+
+msgid "Horaires"
+msgstr "Horaires"
+
+msgid "Contactez-nous"
+msgstr "Contactez-nous"
+
+msgid "Remplissez le formulaire, nous vous répondrons sous 24h."
+msgstr "Remplissez le formulaire, nous vous répondrons sous 24h."
