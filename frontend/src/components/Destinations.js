@@ -334,7 +334,7 @@ const Destinations = () => {
         name: 'Maldives',
         price: '€1,299',
         originalPrice: '€1,799',
-        image: 'https://images.unsplash.com/photo-1501117716987-c8e0bdde6653?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '12h',
         stops: '1 escale',
