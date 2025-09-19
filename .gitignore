@@ -90,3 +90,7 @@ android-sdk/ -e
 *.env
 *.env.*
 mc-viagens-wp-bundle.zip
+-e 
+# Environment files
+*.env
+*.env.*
