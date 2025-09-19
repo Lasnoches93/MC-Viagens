@@ -54,7 +54,7 @@ const Destinations = () => {
       { id: 102, name: 'Toronto, Canada', price: '€799', originalPrice: '€1099', image: 'https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop', duration: '6 jours', flightTime: '7h', stops: 'Direct', rating: 4.6, reviews: 320, description: 'Métropole cosmopolite au bord du lac Ontario.' }
     ],
     'Amérique Centrale': [
-      { id: 201, name: 'Cancún, Mexique', price: '€699', originalPrice: '€999', image: 'https://images.unsplash.com/photo-1590080876460-95be4f1baf1d?w=600&h=400&fit=crop&auto=format&q=80', duration: '7 jours', flightTime: '11h', stops: '1 escale', rating: 4.6, reviews: 410, description: 'Plages de sable blanc et eaux turquoise.' },
+      { id: 201, name: 'Cancún, Mexique', price: '€699', originalPrice: '€999', image: 'https://images.unsplash.com/photo-1509818139432-c67e4197a914?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxDYW5jdW4lMjBiZWFjaHxlbnwwfHx8fDE3NTgzMDA1NDZ8MA&ixlib=rb-4.1.0&q=85', duration: '7 jours', flightTime: '11h', stops: '1 escale', rating: 4.6, reviews: 410, description: 'Plages de sable blanc et eaux turquoise.' },
       { id: 202, name: 'San José, Costa Rica', price: '€749', originalPrice: '€1049', image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&h=400&fit=crop&auto=format&q=80', duration: '8 jours', flightTime: '12h', stops: '1 escale', rating: 4.7, reviews: 210, description: 'Volcans, forêts tropicales et plages.' }
     ],
     'Amérique du Sud': [
