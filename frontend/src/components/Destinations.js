@@ -317,7 +317,7 @@ const Destinations = () => {
         name: 'Auckland, Nouvelle-Zélande',
         price: '€1,499',
         originalPrice: '€1,999',
-        image: 'https://images.unsplash.com/photo-1512463539099-0b07fd0bc1bf?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1502784444185-4809f99c0382?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '10 jours',
         flightTime: '24h',
         stops: '2 escales',
