@@ -87,7 +87,8 @@ const translations = {
         'Amérique du Nord': 'América do Norte',
         'Asie': 'Ásia',
         'Océanie': 'Oceania',
-        'Îles Paradisiaques': 'Ilhas Paradisíacas'
+        'Îles Paradisiaques': 'Ilhas Paradisíacas',
+        'Amérique Centrale': 'América Central'
       },
       details: 'Ver Detalhes',
       book: 'Reservar Agora',
