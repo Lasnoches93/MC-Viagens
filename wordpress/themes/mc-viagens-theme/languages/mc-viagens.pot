@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mc-viagens-theme 1.0.0\n"
+"POT-Creation-Date: 2025-09-19 00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: mc-viagens\n"
+
+#: functions.php:12
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:13
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:25
+msgid "Téléphone"
+msgstr ""
+#: functions.php:26
+msgid "Email"
+msgstr ""
+#: functions.php:27
+msgid "Adresse"
+msgstr ""
+#: functions.php:28
+msgid "Horaires"
+msgstr ""
+#: functions.php:33
+msgid "Lun–Ven: 09:00–18:00"
+msgstr ""
+#: functions.php:34
+msgid "Sam: 10:00–14:00"
+msgstr ""
+#: functions.php:36
+msgid "Contactez-nous"
+msgstr ""
+#: functions.php:37
+msgid "Remplissez le formulaire, nous vous répondrons sous 24h."
+msgstr ""
+
+#: front-page.php:6
+msgid "Découvrir nos Destinations"
+msgstr ""
+#: front-page.php:11
+msgid "Nos Voyages"
+msgstr ""
+#: front-page.php:11
+msgid "Internationaux"
+msgstr ""
+#: front-page.php:33
+msgid "Voir toutes les destinations"
+msgstr ""
+#: front-page.php:38
+msgid "Blog"
+msgstr ""
+#: front-page.php:38
+msgid "Voyage"
+msgstr ""
+#: front-page.php:49
+msgid "Lire l'article"
+msgstr ""
+
+#: archive-destination.php:4
+msgid "Toutes les"
+msgstr ""
+#: archive-destination.php:4
+msgid "Destinations"
+msgstr ""
+#: taxonomy-region.php:4
+msgid "Région:"
+msgstr ""
+#: archive-destination.php:28
+msgid "Aucune destination trouvée."
+msgstr ""
+
+#: single-destination.php:18
+msgid "Durée:"
+msgstr ""
+#: single-destination.php:19
+msgid "Vol:"
+msgstr ""
+#: single-destination.php:20
+msgid "Escale:"
+msgstr ""
+#: single-destination.php:28
+msgid "Points forts"
+msgstr ""
+#: single-destination.php:36
+msgid "Bagages inclus"
+msgstr ""

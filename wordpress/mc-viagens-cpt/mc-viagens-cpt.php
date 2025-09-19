@@ -4,23 +4,29 @@
  * Description: Custom Post Type "destination" + Taxonomy "region" + REST-exposed meta for MC Viagens.
  * Version: 1.0.0
  * Author: MC Viagens
+ * Text Domain: mc-viagens-cpt
+ * Domain Path: /languages
  */
 
 if (!defined('ABSPATH')) { exit; }
+
+add_action('plugins_loaded', function(){
+    load_plugin_textdomain('mc-viagens-cpt', false, dirname(plugin_basename(__FILE__)) . '/languages');
+});
 
 add_action('init', function () {
     // Register CPT: destination
     register_post_type('destination', [
         'labels' => [
-            'name' => __('Destinations', 'mc-viagens'),
-            'singular_name' => __('Destination', 'mc-viagens'),
-            'add_new' => __('Add New', 'mc-viagens'),
-            'add_new_item' => __('Add New Destination', 'mc-viagens'),
-            'edit_item' => __('Edit Destination', 'mc-viagens'),
-            'new_item' => __('New Destination', 'mc-viagens'),
-            'view_item' => __('View Destination', 'mc-viagens'),
-            'search_items' => __('Search Destinations', 'mc-viagens'),
-            'not_found' => __('No destinations found', 'mc-viagens'),
+            'name' => __('Destinations', 'mc-viagens-cpt'),
+            'singular_name' => __('Destination', 'mc-viagens-cpt'),
+            'add_new' => __('Add New', 'mc-viagens-cpt'),
+            'add_new_item' => __('Add New Destination', 'mc-viagens-cpt'),
+            'edit_item' => __('Edit Destination', 'mc-viagens-cpt'),
+            'new_item' => __('New Destination', 'mc-viagens-cpt'),
+            'view_item' => __('View Destination', 'mc-viagens-cpt'),
+            'search_items' => __('Search Destinations', 'mc-viagens-cpt'),
+            'not_found' => __('No destinations found', 'mc-viagens-cpt'),
         ],
         'public' => true,
         'has_archive' => true,
@@ -34,8 +40,8 @@ add_action('init', function () {
     // Register Taxonomy: region
     register_taxonomy('region', ['destination'], [
         'labels' => [
-            'name' => __('Regions', 'mc-viagens'),
-            'singular_name' => __('Region', 'mc-viagens'),
+            'name' => __('Regions', 'mc-viagens-cpt'),
+            'singular_name' => __('Region', 'mc-viagens-cpt'),
         ],
         'public' => true,
         'hierarchical' => true,
