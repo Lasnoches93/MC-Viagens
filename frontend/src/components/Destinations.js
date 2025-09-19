@@ -533,7 +533,7 @@ const Destinations = () => {
         name: 'Athènes, Grèce',
         price: '€699',
         originalPrice: '€999',
-        image: 'https://images.unsplash.com/photo-1542314981-1f61a29a5756?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1523293915678-4c7dda34e0d6?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '5 jours',
         flightTime: '3h',
         stops: '1 escale',
