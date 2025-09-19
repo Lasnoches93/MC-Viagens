@@ -1,11 +1,13 @@
-import React, { useState, useMemo, lazy, Suspense } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Plane, Users, Star, Heart } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { isWpConfigured } from '../config/wpConfig';
+import { fetchRegions, fetchDestinations } from '../services/wpDestinations';
 
 // Composant optimisé pour les cartes de destination
 const DestinationCard = React.memo(({ destination, onClick, delay = 0, t, convertPrice }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = React.useState(false);
 
   // Préchargement optimisé des images
   React.useEffect(() => {
@@ -13,6 +15,14 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0, t, conver
     img.src = destination.image;
     img.onload = () => setImageLoaded(true);
   }, [destination.image]);
+
+  const priceDisplay = destination.priceEUR !== undefined
+    ? convertPrice(`€${destination.priceEUR}`)
+    : convertPrice(destination.price);
+
+  const originalDisplay = destination.originalPriceEUR !== undefined
+    ? convertPrice(`€${destination.originalPriceEUR}`)
+    : convertPrice(destination.originalPrice);
 
   return (
     <motion.div
@@ -80,8 +90,8 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0, t, conver
 
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-2xl font-bold text-gold-500">{convertPrice(destination.price)}</span>
-            <span className="text-sm text-gray-500 line-through ml-2">{convertPrice(destination.originalPrice)}</span>
+            <span className="text-2xl font-bold text-gold-500">{priceDisplay}</span>
+            <span className="text-sm text-gray-500 line-through ml-2">{originalDisplay}</span>
           </div>
           <span className="text-sm text-gray-400">{t('destinations.person')}</span>
         </div>
@@ -101,12 +111,65 @@ const DestinationCard = React.memo(({ destination, onClick, delay = 0, t, conver
 
 const Destinations = () => {
   const [selectedDestination, setSelectedDestination] = useState(null);
-  const [selectedRegion, setSelectedRegion] = useState('Amérique du Sud');
   const [showAllDestinations, setShowAllDestinations] = useState(false);
   const [destinationsToShow, setDestinationsToShow] = useState(6);
   const { t, convertPrice } = useLanguage();
 
-  const destinationsByRegion = {
+  // WP integration
+  const wpEnabled = isWpConfigured();
+  const [wpRegions, setWpRegions] = useState([]);
+  const [wpRegionId, setWpRegionId] = useState(null);
+  const [wpItems, setWpItems] = useState([]);
+  const [wpLoading, setWpLoading] = useState(false);
+  const [wpError, setWpError] = useState('');
+
+  React.useEffect(() => {
+    let active = true;
+    async function load() {
+      if (!wpEnabled) return;
+      try {
+        setWpLoading(true);
+        setWpError('');
+        const [regions, items] = await Promise.all([
+          fetchRegions(),
+          fetchDestinations({ perPage: 12 })
+        ]);
+        if (!active) return;
+        setWpRegions(regions);
+        setWpItems(items);
+      } catch (e) {
+        if (!active) return;
+        setWpError(e.message || 'Failed to load destinations');
+      } finally {
+        if (active) setWpLoading(false);
+      }
+    }
+    load();
+    return () => { active = false; };
+  }, [wpEnabled]);
+
+  React.useEffect(() => {
+    let active = true;
+    async function loadByRegion() {
+      if (!wpEnabled) return;
+      try {
+        setWpLoading(true);
+        const items = await fetchDestinations({ perPage: 12, regionId: wpRegionId });
+        if (!active) return;
+        setWpItems(items);
+      } catch (e) {
+        if (!active) return;
+        setWpError(e.message || 'Failed to load destinations');
+      } finally {
+        if (active) setWpLoading(false);
+      }
+    }
+    if (wpEnabled) loadByRegion();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wpRegionId]);
+
+  // Fallback static data
+  const staticData = useMemo(() => ({
     'Amérique du Sud': [
       {
         id: 1,
@@ -121,11 +184,7 @@ const Destinations = () => {
         reviews: 245,
         description: 'Découvrez la citadelle inca perchée dans les Andes',
         highlights: ['Citadelle du Machu Picchu', 'Vallée Sacrée', 'Cusco colonial'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       },
       {
         id: 2,
@@ -140,11 +199,7 @@ const Destinations = () => {
         reviews: 189,
         description: 'La capitale du tango et de la passion latino-américaine',
         highlights: ['Quartier de San Telmo', 'Spectacle de tango', 'Gastronomie locale'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       },
       {
         id: 3,
@@ -159,11 +214,7 @@ const Destinations = () => {
         reviews: 156,
         description: 'Ville coloniale des Caraïbes aux mille couleurs',
         highlights: ['Centre historique', 'Plages paradisiaques', 'Architecture coloniale'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       },
       {
         id: 4,
@@ -178,11 +229,7 @@ const Destinations = () => {
         reviews: 203,
         description: 'Paysages grandioses aux confins du monde',
         highlights: ['Torres del Paine', 'Glaciers bleus', 'Faune sauvage'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       },
       {
         id: 5,
@@ -197,11 +244,7 @@ const Destinations = () => {
         reviews: 278,
         description: 'La ville merveilleuse entre mer et montagne',
         highlights: ['Christ Rédempteur', 'Plages de Copacabana', 'Quartier de Santa Teresa'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       },
       {
         id: 6,
@@ -216,11 +259,7 @@ const Destinations = () => {
         reviews: 134,
         description: 'Le plus grand miroir du monde sous les étoiles',
         highlights: ['Désert de sel', 'Lagunes colorées', 'Flamants roses'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       }
     ],
     'Europe': [
@@ -237,415 +276,14 @@ const Destinations = () => {
         reviews: 312,
         description: 'La capitale portugaise aux sept collines',
         highlights: ['Quartier de Alfama', 'Tramway 28', 'Pastéis de nata'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 8,
-        name: 'Madrid, Espagne',
-        price: '€749',
-        originalPrice: '€980',
-        image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4',
-        duration: '4 jours',
-        flightTime: '1h30',
-        stops: 'Direct',
-        rating: 4.5,
-        reviews: 267,
-        description: 'La capitale espagnole dynamique et culturelle',
-        highlights: ['Musée du Prado', 'Parc du Retiro', 'Puerta del Sol'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 9,
-        name: 'Paris, France',
-        price: '€849',
-        originalPrice: '€1,099',
-        image: 'https://images.unsplash.com/photo-1657057611558-a7ecf6323aff?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '4 jours',
-        flightTime: '1h',
-        stops: 'Direct',
-        rating: 4.8,
-        reviews: 445,
-        description: 'La ville lumière et ses monuments iconiques',
-        highlights: ['Tour Eiffel', 'Louvre', 'Champs-Élysées'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 10,
-        name: 'Athènes, Grèce',
-        price: '€1,199',
-        originalPrice: '€1,699',
-        image: 'https://images.unsplash.com/photo-1651307315426-8e276263951a?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '7 jours',
-        flightTime: '3h',
-        stops: 'Direct',
-        rating: 4.7,
-        reviews: 198,
-        description: 'Berceau de la démocratie et de la philosophie',
-        highlights: ['Acropole', 'Parthénon', 'Quartier de Plaka'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 11,
-        name: 'Rome, Italie',
-        price: '€799',
-        originalPrice: '€1,199',
-        image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b',
-        duration: '5 jours',
-        flightTime: '2h',
-        stops: 'Direct',
-        rating: 4.8,
-        reviews: 356,
-        description: 'La ville éternelle aux mille merveilles',
-        highlights: ['Colisée', 'Vatican', 'Fontaine de Trevi'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 12,
-        name: 'Istanbul, Turquie',
-        price: '€899',
-        originalPrice: '€1,299',
-        image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200',
-        duration: '6 jours',
-        flightTime: '3h30',
-        stops: 'Direct',
-        rating: 4.6,
-        reviews: 287,
-        description: 'Pont entre l\'Europe et l\'Asie',
-        highlights: ['Sainte-Sophie', 'Grand Bazar', 'Bosphore'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      }
-    ],
-    'Amérique du Nord': [
-      {
-        id: 13,
-        name: 'New York, USA',
-        price: '€899',
-        originalPrice: '€1,299',
-        image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9',
-        duration: '7 jours',
-        flightTime: '8h',
-        stops: 'Direct',
-        rating: 4.9,
-        reviews: 523,
-        description: 'La ville qui ne dort jamais',
-        highlights: ['Times Square', 'Central Park', 'Statue de la Liberté'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 14,
-        name: 'Quebec, Canada',
-        price: '€749',
-        originalPrice: '€1,099',
-        image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225',
-        duration: '6 jours',
-        flightTime: '7h',
-        stops: 'Direct',
-        rating: 4.7,
-        reviews: 234,
-        description: 'Charme français au cœur de l\'Amérique',
-        highlights: ['Vieux-Québec', 'Château Frontenac', 'Chutes Montmorency'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 15,
-        name: 'Mexico, Mexique',
-        price: '€649',
-        originalPrice: '€949',
-        image: 'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a',
-        duration: '8 jours',
-        flightTime: '10h',
-        stops: '1 escale',
-        rating: 4.6,
-        reviews: 345,
-        description: 'Culture aztèque et cuisine authentique',
-        highlights: ['Teotihuacan', 'Frida Kahlo', 'Coyoacan'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      }
-    ],
-    'Asie': [
-      {
-        id: 16,
-        name: 'Tokyo, Japon',
-        price: '€1,199',
-        originalPrice: '€1,599',
-        image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf',
-        duration: '8 jours',
-        flightTime: '11h',
-        stops: 'Direct',
-        rating: 4.9,
-        reviews: 456,
-        description: 'Modernité et tradition au pays du soleil levant',
-        highlights: ['Temples traditionnels', 'Quartier de Shibuya', 'Mont Fuji'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 17,
-        name: 'Bangkok, Thaïlande',
-        price: '€649',
-        originalPrice: '€899',
-        image: 'https://images.unsplash.com/photo-1653754502573-568b8ac7df43?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '7 jours',
-        flightTime: '10h',
-        stops: '1 escale',
-        rating: 4.6,
-        reviews: 378,
-        description: 'Temples dorés et street food authentique',
-        highlights: ['Grand Palais', 'Marchés flottants', 'Temples bouddhistes'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 18,
-        name: 'Singapour',
-        price: '€899',
-        originalPrice: '€1,299',
-        image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd',
-        duration: '6 jours',
-        flightTime: '12h',
-        stops: 'Direct',
-        rating: 4.8,
-        reviews: 289,
-        description: 'Cité-État futuriste entre Orient et Occident',
-        highlights: ['Marina Bay Sands', 'Gardens by the Bay', 'Chinatown'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 19,
-        name: 'Bali, Indonésie',
-        price: '€799',
-        originalPrice: '€1,199',
-        image: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1',
-        duration: '9 jours',
-        flightTime: '15h',
-        stops: '1 escale',
-        rating: 4.7,
-        reviews: 523,
-        description: 'Île des dieux aux paysages enchanteurs',
-        highlights: ['Rizières en terrasse', 'Temples hindous', 'Plages paradisiaques'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      }
-    ],
-    'Océanie': [
-      {
-        id: 25,
-        name: 'Sydney, Australie',
-        price: '€1,499',
-        originalPrice: '€1,999',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '10 jours',
-        flightTime: '20h',
-        stops: '1 escale',
-        rating: 4.9,
-        reviews: 445,
-        description: 'Métropole cosmopolite aux plages iconiques',
-        highlights: ['Opéra de Sydney', 'Harbour Bridge', 'Bondi Beach'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 26,
-        name: 'Auckland, Nouvelle-Zélande',
-        price: '€1,399',
-        originalPrice: '€1,899',
-        image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '9 jours',
-        flightTime: '22h',
-        stops: '1 escale',
-        rating: 4.8,
-        reviews: 267,
-        description: 'Paysages grandioses et culture maorie',
-        highlights: ['Baie des Îles', 'Milford Sound', 'Rotorua'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      }
-    ],
-    'Îles Paradisiaques': [
-      {
-        id: 27,
-        name: 'Île de la Réunion',
-        price: '€899',
-        originalPrice: '€1,299',
-        image: 'https://images.unsplash.com/photo-1700539944879-5fb98c9313a3?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '8 jours',
-        flightTime: '11h',
-        stops: 'Direct',
-        rating: 4.8,
-        reviews: 234,
-        description: 'Île intense aux paysages volcaniques',
-        highlights: ['Piton de la Fournaise', 'Cirques naturels', 'Plages de sable noir'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 28,
-        name: 'Punta Cana, République Dominicaine',
-        price: '€699',
-        originalPrice: '€999',
-        image: 'https://images.unsplash.com/photo-1529420979753-0c3395873630?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '7 jours',
-        flightTime: '8h',
-        stops: 'Direct',
-        rating: 4.6,
-        reviews: 456,
-        description: 'Plages de sable blanc et eaux cristallines',
-        highlights: ['Plages paradisiaques', 'Récifs coralliens', 'Cenotes naturels'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 29,
-        name: 'Zanzibar, Tanzanie',
-        price: '€799',
-        originalPrice: '€1,199',
-        image: 'https://images.unsplash.com/photo-1577199000360-1ee6cedba129?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '8 jours',
-        flightTime: '8h',
-        stops: '1 escale',
-        rating: 4.7,
-        reviews: 289,
-        description: 'Île aux épices de l\'océan Indien',
-        highlights: ['Stone Town', 'Plages de Nungwi', 'Épices locales'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 30,
-        name: 'Maldives',
-        price: '€1,299',
-        originalPrice: '€1,799',
-        image: 'https://images.unsplash.com/photo-1646491235517-cbf731b07591?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '7 jours',
-        flightTime: '9h',
-        stops: '1 escale',
-        rating: 4.9,
-        reviews: 367,
-        description: 'Paradis tropical sur pilotis',
-        highlights: ['Bungalows sur pilotis', 'Récifs coralliens', 'Plongée sous-marine'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
-      },
-      {
-        id: 31,
-        name: 'Seychelles',
-        price: '€1,199',
-        originalPrice: '€1,699',
-        image: 'https://images.unsplash.com/photo-1601764618179-facadecd701b?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '8 jours',
-        flightTime: '9h',
-        stops: '1 escale',
-        rating: 4.8,
-        reviews: 234,
-        description: 'Archipel de rêve aux plages immaculées',
-        highlights: ['Anse Source d\'Argent', 'Tortues géantes', 'Forêt primaire'],
-        baggage: {
-          cabin: '1 bagage cabine (8kg)',
-          checked: '1 bagage en soute (23kg)',
-          backpack: 'Sac à dos inclus'
-        }
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       }
     ]
-  };
+  }), []);
 
-  const regions = Object.keys(destinationsByRegion);
-  
-  // Logique simple et robuste pour la pagination
-  const allDestinations = destinationsByRegion[selectedRegion] || [];
-  const displayedDestinations = showAllDestinations ? allDestinations : allDestinations.slice(0, destinationsToShow);
-  const hasMoreDestinations = allDestinations.length > destinationsToShow;
-  const remainingCount = allDestinations.length - destinationsToShow;
-
-  // Reset lors du changement de région
-  React.useEffect(() => {
-    setShowAllDestinations(false);
-  }, [selectedRegion]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05 // Réduit le délai entre les animations
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3 } // Réduit la durée des animations
-    }
-  };
+  const [selectedRegion, setSelectedRegion] = useState('Amérique du Sud');
+  const staticRegions = Object.keys(staticData);
+  const itemsToRender = wpEnabled ? wpItems : (showAllDestinations ? staticData[selectedRegion] : staticData[selectedRegion].slice(0, destinationsToShow));
 
   return (
     <section id="destinations" className="py-20 bg-transparent">
@@ -654,9 +292,9 @@ const Destinations = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-3">
             {t('destinations.title')} <span className="text-gold-500">{t('destinations.subtitle')}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -664,159 +302,89 @@ const Destinations = () => {
           </p>
         </motion.div>
 
-        {/* Region Selector */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {regions.map((region) => (
-            <button
-              key={region}
-              onClick={() => {
-                setSelectedRegion(region);
-                setShowAllDestinations(false);
-              }}
-              className={`px-6 py-3 rounded-full transition-all duration-200 font-semibold ${
-                selectedRegion === region
-                  ? 'bg-gold-500 text-black'
-                  : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80 hover:text-white'
-              }`}
-            >
-              {t(`destinations.regions.${region}`)}
-            </button>
-          ))}
-        </motion.div>
+        {/* Regions Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {wpEnabled ? (
+            <>
+              <button
+                key="all"
+                onClick={() => setWpRegionId(null)}
+                className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                  wpRegionId === null ? 'bg-gold-500 text-black font-semibold' : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
+                }`}
+              >
+                Tous
+              </button>
+              {wpRegions.map((r) => (
+                <button
+                  key={r.id}
+                  onClick={() => setWpRegionId(r.id)}
+                  className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                    wpRegionId === r.id ? 'bg-gold-500 text-black font-semibold' : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
+                  }`}
+                >
+                  {r.name}
+                </button>
+              ))}
+            </>
+          ) : (
+            staticRegions.map((region) => (
+              <button
+                key={region}
+                onClick={() => {
+                  setSelectedRegion(region);
+                  setDestinationsToShow(6);
+                  setShowAllDestinations(false);
+                }}
+                className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                  selectedRegion === region ? 'bg-gold-500 text-black font-semibold' : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
+                }`}
+              >
+                {region}
+              </button>
+            ))
+          )}
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {displayedDestinations.map((destination, index) => (
-            <DestinationCard
-              key={destination.id}
-              destination={destination}
-              onClick={setSelectedDestination}
-              delay={index * 0.1}
-              t={t}
-              convertPrice={convertPrice}
-            />
-          ))}
-        </motion.div>
-
-        {/* Bouton "Voir plus" si il y a plus de 6 destinations */}
-        {hasMoreDestinations && !showAllDestinations && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center mt-8"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setShowAllDestinations(true)}
-              className="bg-luxury-gold text-luxury-blue px-8 py-3 rounded-full font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
-            >
-              {t('destinations.seeAll')} ({allDestinations.length})
-            </motion.button>
-          </motion.div>
-        )}
-
-        {/* Bouton "Voir moins" si on affiche toutes les destinations */}
-        {showAllDestinations && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mt-8"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setShowAllDestinations(false)}
-              className="bg-luxury-blue-light text-white px-8 py-3 rounded-full font-semibold hover:bg-luxury-blue transition-colors duration-200"
-            >
-              {t('destinations.seeLess')}
-            </motion.button>
-          </motion.div>
+        {/* Grid */}
+        {wpEnabled ? (
+          wpLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="h-80 bg-luxury-blue/60 rounded-2xl animate-pulse border border-luxury-gold/10" />
+              ))}
+            </div>
+          ) : wpError ? (
+            <div className="text-center text-red-400">{wpError}</div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {itemsToRender.map((destination, index) => (
+                <DestinationCard
+                  key={destination.id}
+                  destination={destination}
+                  onClick={setSelectedDestination}
+                  delay={index * 0.05}
+                  t={t}
+                  convertPrice={convertPrice}
+                />
+              ))}
+            </div>
+          )
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {itemsToRender.map((destination, index) => (
+              <DestinationCard
+                key={destination.id}
+                destination={destination}
+                onClick={setSelectedDestination}
+                delay={index * 0.05}
+                t={t}
+                convertPrice={convertPrice}
+              />
+            ))}
+          </div>
         )}
       </div>
-
-      {/* Modal for destination details */}
-      {selectedDestination && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedDestination(null)}
-        >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-luxury-blue/70 rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto border border-luxury-gold/20"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex justify-between items-start mb-6">
-              <h3 className="text-2xl font-serif font-bold text-white">{selectedDestination.name}</h3>
-              <button
-                onClick={() => setSelectedDestination(null)}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                ×
-              </button>
-            </div>
-
-            <img
-              src={selectedDestination.image}
-              alt={selectedDestination.name}
-              className="w-full h-64 object-cover rounded-lg mb-6"
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">Points forts</h4>
-                <ul className="space-y-2">
-                  {selectedDestination.highlights.map((highlight, index) => (
-                    <li key={index} className="text-gray-300 flex items-center space-x-2">
-                      <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">Bagages inclus</h4>
-                <ul className="space-y-2">
-                  <li className="text-gray-300">{selectedDestination.baggage.cabin}</li>
-                  <li className="text-gray-300">{selectedDestination.baggage.checked}</li>
-                  <li className="text-gray-300">{selectedDestination.baggage.backpack}</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div>
-                <span className="text-3xl font-bold text-gold-500">{convertPrice(selectedDestination.price)}</span>
-                <span className="text-lg text-gray-500 line-through ml-2">{convertPrice(selectedDestination.originalPrice)}</span>
-              </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-luxury-gold text-luxury-blue px-8 py-3 rounded-lg font-semibold hover:bg-luxury-gold-light transition-colors duration-200"
-              >
-                {t('destinations.book')}
-              </motion.button>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
     </section>
   );
 };
