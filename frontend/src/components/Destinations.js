@@ -191,7 +191,7 @@ const Destinations = () => {
         name: 'Toronto, Canada',
         price: '€799',
         originalPrice: '€1,099',
-        image: 'https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
         duration: '6 jours',
         flightTime: '7h',
         stops: 'Direct',
