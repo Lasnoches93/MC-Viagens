@@ -302,7 +302,7 @@ const Destinations = () => {
         name: 'Sydney, Australie',
         price: '€1,399',
         originalPrice: '€1,899',
-        image: 'https://images.unsplash.com/photo-1506976785307-8732e854ad89?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1510749041921-69cc20b8d8ee?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '9 jours',
         flightTime: '22h',
         stops: '1-2 escales',
