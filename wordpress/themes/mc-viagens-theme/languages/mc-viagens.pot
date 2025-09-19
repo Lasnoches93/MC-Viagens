@@ -7,36 +7,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: mc-viagens\n"
 
-#: functions.php:12
+#: functions.php:13
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:13
+#: functions.php:14
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:25
+#: functions.php:26
 msgid "Téléphone"
 msgstr ""
-#: functions.php:26
+#: functions.php:27
 msgid "Email"
 msgstr ""
-#: functions.php:27
+#: functions.php:28
 msgid "Adresse"
 msgstr ""
-#: functions.php:28
+#: functions.php:29
 msgid "Horaires"
 msgstr ""
-#: functions.php:33
+#: functions.php:34
 msgid "Lun–Ven: 09:00–18:00"
 msgstr ""
-#: functions.php:34
+#: functions.php:35
 msgid "Sam: 10:00–14:00"
 msgstr ""
-#: functions.php:36
+#: functions.php:37
 msgid "Contactez-nous"
 msgstr ""
-#: functions.php:37
+#: functions.php:38
 msgid "Remplissez le formulaire, nous vous répondrons sous 24h."
 msgstr ""
 
@@ -89,4 +89,14 @@ msgid "Points forts"
 msgstr ""
 #: single-destination.php:36
 msgid "Bagages inclus"
+msgstr ""
+
+#: page-mentions-legales.php:6
+msgid "Mentions légales"
+msgstr ""
+#: page-politique-de-confidentialite.php:6
+msgid "Politique de confidentialité"
+msgstr ""
+#: page-mentions-legales.php:9 page-politique-de-confidentialite.php:9
+msgid "Dernière mise à jour :"
 msgstr ""
