@@ -176,7 +176,7 @@ const Destinations = () => {
         name: 'New York, États-Unis',
         price: '€899',
         originalPrice: '€1,199',
-        image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
         duration: '6 jours',
         flightTime: '8h',
         stops: 'Direct',
