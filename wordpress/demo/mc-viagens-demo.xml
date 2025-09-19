@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+  xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+  <title>MC Viagens Demo</title>
+  <link>https://example.com</link>
+  <description>Demo import for MC Viagens</description>
+  <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:base_site_url>https://example.com</wp:base_site_url>
+  <wp:base_blog_url>https://example.com</wp:base_blog_url>
+
+  <!-- Taxonomy terms: Regions -->
+  <wp:term>
+    <wp:term_id>1001</wp:term_id>
+    <wp:term_taxonomy>region</wp:term_taxonomy>
+    <wp:term_slug>amerique-du-sud</wp:term_slug>
+    <wp:term_name><![CDATA[Amérique du Sud]]></wp:term_name>
+  </wp:term>
+  <wp:term>
+    <wp:term_id>1002</wp:term_id>
+    <wp:term_taxonomy>region</wp:term_taxonomy>
+    <wp:term_slug>europe</wp:term_slug>
+    <wp:term_name><![CDATA[Europe]]></wp:term_name>
+  </wp:term>
+
+  <!-- Destinations -->
+  <item>
+    <title><![CDATA[Machu Picchu, Pérou]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>machu-picchu-perou</wp:post_name>
+    <category domain="region" nicename="amerique-du-sud"><![CDATA[Amérique du Sud]]></category>
+    <content:encoded><![CDATA[Découvrez la citadelle inca perchée dans les Andes.]]></content:encoded>
+    <wp:postmeta>
+      <wp:meta_key>price_eur</wp:meta_key>
+      <wp:meta_value><![CDATA[899]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>original_price_eur</wp:meta_key>
+      <wp:meta_value><![CDATA[1299]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>duration</wp:meta_key>
+      <wp:meta_value><![CDATA[8 jours]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>flight_time</wp:meta_key>
+      <wp:meta_value><![CDATA[12h]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>stops</wp:meta_key>
+      <wp:meta_value><![CDATA[1 escale]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>rating</wp:meta_key>
+      <wp:meta_value><![CDATA[4.9]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>reviews</wp:meta_key>
+      <wp:meta_value><![CDATA[245]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>baggage_cabin</wp:meta_key>
+      <wp:meta_value><![CDATA[1 bagage cabine (8kg)]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>baggage_checked</wp:meta_key>
+      <wp:meta_value><![CDATA[1 bagage en soute (23kg)]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>baggage_backpack</wp:meta_key>
+      <wp:meta_value><![CDATA[Sac à dos inclus]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>description_long</wp:meta_key>
+      <wp:meta_value><![CDATA[<p>Programme détaillé disponible à la demande.</p>]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[Lisbonne, Portugal]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>lisbonne-portugal</wp:post_name>
+    <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
+    <content:encoded><![CDATA[La capitale portugaise aux sept collines.]]></content:encoded>
+    <wp:postmeta>
+      <wp:meta_key>price_eur</wp:meta_key>
+      <wp:meta_value><![CDATA[699]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>original_price_eur</wp:meta_key>
+      <wp:meta_value><![CDATA[859]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>duration</wp:meta_key>
+      <wp:meta_value><![CDATA[5 jours]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>flight_time</wp:meta_key>
+      <wp:meta_value><![CDATA[2h]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>stops</wp:meta_key>
+      <wp:meta_value><![CDATA[Direct]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>rating</wp:meta_key>
+      <wp:meta_value><![CDATA[4.6]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>reviews</wp:meta_key>
+      <wp:meta_value><![CDATA[312]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+</channel>
+</rss>
