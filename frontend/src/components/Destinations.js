@@ -327,18 +327,6 @@ const Destinations = () => {
         highlights: ['Skytower', 'Waiheke Island', 'Waitakere Ranges'],
         baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       }
-        price: '€1,399',
-        originalPrice: '€1,899',
-        image: 'https://images.unsplash.com/photo-1506976785307-8732e854ad89?w=600&h=400&fit=crop&auto=format&q=80',
-        duration: '9 jours',
-        flightTime: '22h',
-        stops: '1-2 escales',
-        rating: 4.8,
-        reviews: 280,
-        description: 'Opéra, Harbour Bridge et plages mythiques',
-        highlights: ['Opéra de Sydney', 'Bondi Beach', 'Blue Mountains'],
-        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
-      }
     ],
     'Îles Paradisiaques': [
       {
