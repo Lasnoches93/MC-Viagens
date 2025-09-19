@@ -78,7 +78,7 @@ const Destinations = () => {
     ],
     'Océanie': [
       { id: 601, name: 'Sydney, Australie', price: '€1399', originalPrice: '€1899', image: 'https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxTeWRuZXklMjBvcGVyYSUyMGhvdXNlfGVufDB8fHx8MTc1ODMwMDU2OXww&ixlib=rb-4.1.0&q=85', duration: '9 jours', flightTime: '22h', stops: '1-2 escales', rating: 4.8, reviews: 280, description: 'Opéra, Harbour Bridge et plages.' },
-      { id: 602, name: 'Auckland, Nouvelle-Zélande', price: '€1499', originalPrice: '€1999', image: 'https://images.unsplash.com/photo-1502784444185-4809f99c0382?w=600&h=400&fit=crop&auto=format&q=80', duration: '10 jours', flightTime: '24h', stops: '2 escales', rating: 4.8, reviews: 260, description: 'Skytower, ports et nature verdoyante.' }
+      { id: 602, name: 'Auckland, Nouvelle-Zélande', price: '€1499', originalPrice: '€1999', image: 'https://images.unsplash.com/photo-1677557769755-875d8141c0c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxBdWNrbGFuZCUyMGhhcmJvcnxlbnwwfHx8fDE3NTgzMDA1NzV8MA&ixlib=rb-4.1.0&q=85', duration: '10 jours', flightTime: '24h', stops: '2 escales', rating: 4.8, reviews: 260, description: 'Skytower, ports et nature verdoyante.' }
     ],
     'Îles Paradisiaques': [
       { id: 701, name: 'Maldives', price: '€1299', originalPrice: '€1799', image: 'https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=600&h=400&fit=crop&auto=format&q=80', duration: '7 jours', flightTime: '12h', stops: '1 escale', rating: 4.9, reviews: 190, description: 'Lagons turquoise et villas sur l\'eau.' },
