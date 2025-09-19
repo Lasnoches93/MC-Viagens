@@ -28,8 +28,38 @@
     <wp:term_slug>europe</wp:term_slug>
     <wp:term_name><![CDATA[Europe]]></wp:term_name>
   </wp:term>
+  <wp:term>
+    <wp:term_id>1003</wp:term_id>
+    <wp:term_taxonomy>region</wp:term_taxonomy>
+    <wp:term_slug>amerique-du-nord</wp:term_slug>
+    <wp:term_name><![CDATA[Amérique du Nord]]></wp:term_name>
+  </wp:term>
+  <wp:term>
+    <wp:term_id>1004</wp:term_id>
+    <wp:term_taxonomy>region</wp:term_taxonomy>
+    <wp:term_slug>amerique-centrale</wp:term_slug>
+    <wp:term_name><![CDATA[Amérique Centrale]]></wp:term_name>
+  </wp:term>
+  <wp:term>
+    <wp:term_id>1005</wp:term_id>
+    <wp:term_taxonomy>region</wp:term_taxonomy>
+    <wp:term_slug>asie</wp:term_slug>
+    <wp:term_name><![CDATA[Asie]]></wp:term_name>
+  </wp:term>
+  <wp:term>
+    <wp:term_id>1006</wp:term_id>
+    <wp:term_taxonomy>region</wp:term_taxonomy>
+    <wp:term_slug>oceanie</wp:term_slug>
+    <wp:term_name><![CDATA[Océanie]]></wp:term_name>
+  </wp:term>
+  <wp:term>
+    <wp:term_id>1007</wp:term_id>
+    <wp:term_taxonomy>region</wp:term_taxonomy>
+    <wp:term_slug>iles-paradisiaques</wp:term_slug>
+    <wp:term_name><![CDATA[Îles Paradisiaques]]></wp:term_name>
+  </wp:term>
 
-  <!-- Destinations -->
+  <!-- Existing Destinations -->
   <item>
     <title><![CDATA[Machu Picchu, Pérou]]></title>
     <wp:post_type>destination</wp:post_type>
@@ -39,50 +69,18 @@
     <wp:post_name>machu-picchu-perou</wp:post_name>
     <category domain="region" nicename="amerique-du-sud"><![CDATA[Amérique du Sud]]></category>
     <content:encoded><![CDATA[Découvrez la citadelle inca perchée dans les Andes.]]></content:encoded>
-    <wp:postmeta>
-      <wp:meta_key>price_eur</wp:meta_key>
-      <wp:meta_value><![CDATA[899]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>original_price_eur</wp:meta_key>
-      <wp:meta_value><![CDATA[1299]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>duration</wp:meta_key>
-      <wp:meta_value><![CDATA[8 jours]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>flight_time</wp:meta_key>
-      <wp:meta_value><![CDATA[12h]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>stops</wp:meta_key>
-      <wp:meta_value><![CDATA[1 escale]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>rating</wp:meta_key>
-      <wp:meta_value><![CDATA[4.9]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>reviews</wp:meta_key>
-      <wp:meta_value><![CDATA[245]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>baggage_cabin</wp:meta_key>
-      <wp:meta_value><![CDATA[1 bagage cabine (8kg)]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>baggage_checked</wp:meta_key>
-      <wp:meta_value><![CDATA[1 bagage en soute (23kg)]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>baggage_backpack</wp:meta_key>
-      <wp:meta_value><![CDATA[Sac à dos inclus]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>description_long</wp:meta_key>
-      <wp:meta_value><![CDATA[<p>Programme détaillé disponible à la demande.</p>]]></wp:meta_value>
-    </wp:postmeta>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[899]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1299]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[8 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[12h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1 escale]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.9]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[245]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>baggage_cabin</wp:meta_key><wp:meta_value><![CDATA[1 bagage cabine (8kg)]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>baggage_checked</wp:meta_key><wp:meta_value><![CDATA[1 bagage en soute (23kg)]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>baggage_backpack</wp:meta_key><wp:meta_value><![CDATA[Sac à dos inclus]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>description_long</wp:meta_key><wp:meta_value><![CDATA[<p>Programme détaillé disponible à la demande.</p>]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1479299784244-c5262363c5df?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
   </item>
 
   <item>
@@ -94,34 +92,168 @@
     <wp:post_name>lisbonne-portugal</wp:post_name>
     <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
     <content:encoded><![CDATA[La capitale portugaise aux sept collines.]]></content:encoded>
-    <wp:postmeta>
-      <wp:meta_key>price_eur</wp:meta_key>
-      <wp:meta_value><![CDATA[699]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>original_price_eur</wp:meta_key>
-      <wp:meta_value><![CDATA[859]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>duration</wp:meta_key>
-      <wp:meta_value><![CDATA[5 jours]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>flight_time</wp:meta_key>
-      <wp:meta_value><![CDATA[2h]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>stops</wp:meta_key>
-      <wp:meta_value><![CDATA[Direct]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>rating</wp:meta_key>
-      <wp:meta_value><![CDATA[4.6]]></wp:meta_value>
-    </wp:postmeta>
-    <wp:postmeta>
-      <wp:meta_key>reviews</wp:meta_key>
-      <wp:meta_value><![CDATA[312]]></wp:meta_value>
-    </wp:postmeta>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[699]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[859]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[5 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[2h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.6]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[312]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
   </item>
+
+  <!-- New Regions & Destinations -->
+  <item>
+    <title><![CDATA[New York, États-Unis]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>new-york-etats-unis</wp:post_name>
+    <category domain="region" nicename="amerique-du-nord"><![CDATA[Amérique du Nord]]></category>
+    <content:encoded><![CDATA[La ville qui ne dort jamais: gratte-ciels, Central Park et Broadway.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[899]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1199]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[6 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[8h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.7]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[540]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[Toronto, Canada]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>toronto-canada</wp:post_name>
+    <category domain="region" nicename="amerique-du-nord"><![CDATA[Amérique du Nord]]></category>
+    <content:encoded><![CDATA[Métropole cosmopolite au bord du lac Ontario.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[799]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1099]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[6 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[7h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.6]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[320]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[Cancún, Mexique]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>cancun-mexique</wp:post_name>
+    <category domain="region" nicename="amerique-centrale"><![CDATA[Amérique Centrale]]></category>
+    <content:encoded><![CDATA[Plages de sable blanc et eaux turquoise de la Riviera Maya.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[699]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[999]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[7 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[11h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1 escale]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.6]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[410]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1543367347-59669c673952?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[San José, Costa Rica]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>san-jose-costa-rica</wp:post_name>
+    <category domain="region" nicename="amerique-centrale"><![CDATA[Amérique Centrale]]></category>
+    <content:encoded><![CDATA[Nature luxuriante: volcans, forêts tropicales et plages.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[749]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1049]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[8 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[12h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1 escale]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.7]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[210]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1520974428093-1c5bfeaf07f8?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[Tokyo, Japon]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>tokyo-japon</wp:post_name>
+    <category domain="region" nicename="asie"><![CDATA[Asie]]></category>
+    <content:encoded><![CDATA[Fusion futuriste et traditions millénaires.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[1099]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1499]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[8 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[14h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1 escale]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.8]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[640]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[Bangkok, Thaïlande]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>bangkok-thailande</wp:post_name>
+    <category domain="region" nicename="asie"><![CDATA[Asie]]></category>
+    <content:encoded><![CDATA[Temples dorés, marchés flottants et street-food incroyable.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[899]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1199]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[8 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[13h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1 escale]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.7]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[520]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[Sydney, Australie]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>sydney-australie</wp:post_name>
+    <category domain="region" nicename="oceanie"><![CDATA[Océanie]]></category>
+    <content:encoded><![CDATA[Opéra, Harbour Bridge et plages mythiques.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[1399]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1899]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[9 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[22h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1-2 escales]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.8]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[280]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1506976785307-8732e854ad89?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
+  <item>
+    <title><![CDATA[Maldives]]></title>
+    <wp:post_type>destination</wp:post_type>
+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
+    <wp:status>publish</wp:status>
+    <wp:post_name>maldives</wp:post_name>
+    <category domain="region" nicename="iles-paradisiaques"><![CDATA[Îles Paradisiaques]]></category>
+    <content:encoded><![CDATA[Lagons turquoise et villas sur l'eau.]]></content:encoded>
+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[1299]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1799]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[7 jours]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[12h]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1 escale]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>rating</wp:meta_key><wp:meta_value><![CDATA[4.9]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>reviews</wp:meta_key><wp:meta_value><![CDATA[190]]></wp:meta_value></wp:postmeta>
+    <wp:postmeta><wp:meta_key>image_url</wp:meta_key><wp:meta_value><![CDATA[https://images.unsplash.com/photo-1501117716987-c8e0bdde6653?w=1200&fit=crop&auto=format&q=80]]></wp:meta_value></wp:postmeta>
+  </item>
+
 </channel>
 </rss>

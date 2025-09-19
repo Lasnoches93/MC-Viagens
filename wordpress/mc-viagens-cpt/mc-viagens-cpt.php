@@ -81,6 +81,9 @@ add_action('init', function () {
     $register_meta('baggage_backpack', 'string');
     $register_meta('description_long', 'string');
 
+    // Image URL fallback for headless if no featured image
+    $register_meta('image_url', 'string');
+
     // Array: highlights
     $register_meta('highlights', 'array', true, [
         'type' => 'array',

@@ -1,18 +1,24 @@
 import { WP_BASE_URL, isWpConfigured } from '../config/wpConfig';
 
-const getMedia = (embedded) => {
+const getMedia = (embedded, meta = {}) => {
   try {
     const media = embedded?.['wp:featuredmedia']?.[0];
-    return (
+    const featured = (
       media?.source_url ||
       media?.media_details?.sizes?.large?.source_url ||
       media?.media_details?.sizes?.medium_large?.source_url ||
       media?.media_details?.sizes?.full?.source_url ||
       ''
     );
+    if (featured) return featured;
   } catch (_) {
-    return '';
+    // ignore
   }
+  // Fallback to custom meta image_url if provided
+  if (meta && typeof meta.image_url === 'string' && meta.image_url.length > 6) {
+    return meta.image_url;
+  }
+  return '';
 };
 
 const getTerms = (embedded) => {
@@ -47,24 +53,25 @@ export async function fetchDestinations({ perPage = 12, regionId = null } = {}) 
     const embedded = p._embedded || {};
     const terms = getTerms(embedded);
     const regionNames = terms.filter((t) => t.taxonomy === 'region').map((t) => t.name);
+    const meta = p.meta || {};
     return {
       id: p.id,
       name: p.title?.rendered || '',
       slug: p.slug,
-      description: (p.meta?.description_long || '').toString() || (p.excerpt?.rendered || ''),
-      image: getMedia(embedded),
-      priceEUR: Number(p.meta?.price_eur || 0),
-      originalPriceEUR: Number(p.meta?.original_price_eur || 0),
-      duration: p.meta?.duration || '',
-      flightTime: p.meta?.flight_time || '',
-      stops: p.meta?.stops || '',
-      rating: Number(p.meta?.rating || 0),
-      reviews: Number(p.meta?.reviews || 0),
-      highlights: Array.isArray(p.meta?.highlights) ? p.meta.highlights : [],
+      description: (meta.description_long || '').toString() || (p.excerpt?.rendered || ''),
+      image: getMedia(embedded, meta),
+      priceEUR: Number(meta.price_eur || 0),
+      originalPriceEUR: Number(meta.original_price_eur || 0),
+      duration: meta.duration || '',
+      flightTime: meta.flight_time || '',
+      stops: meta.stops || '',
+      rating: Number(meta.rating || 0),
+      reviews: Number(meta.reviews || 0),
+      highlights: Array.isArray(meta.highlights) ? meta.highlights : [],
       baggage: {
-        cabin: p.meta?.baggage_cabin || '',
-        checked: p.meta?.baggage_checked || '',
-        backpack: p.meta?.baggage_backpack || ''
+        cabin: meta.baggage_cabin || '',
+        checked: meta.baggage_checked || '',
+        backpack: meta.baggage_backpack || ''
       },
       regions: regionNames
     };
