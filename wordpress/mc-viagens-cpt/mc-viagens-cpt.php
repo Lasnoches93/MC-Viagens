@@ -58,7 +58,7 @@ add_action('init', function () {
             'type' => $type,
             'single' => $single,
             'show_in_rest' => true,
-            'auth_callback' => function() { return current_user_can('edit_posts'); },
+            'auth_callback' => '__return_true',
         ];
         if (!empty($schema)) {
             $args['show_in_rest'] = [ 'schema' => $schema ];
