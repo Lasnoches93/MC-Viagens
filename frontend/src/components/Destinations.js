@@ -285,7 +285,7 @@ const Destinations = () => {
         name: 'Pékin, Chine',
         price: '€999',
         originalPrice: '€1,399',
-        image: 'https://images.unsplash.com/photo-1505764706515-aa95265c5abc?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1518684079-04c1e3743996?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '8 jours',
         flightTime: '10h',
         stops: '1 escale',
