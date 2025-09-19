@@ -11,7 +11,7 @@
   body {
     @apply text-white;
     /* Harmonized site-wide vertical gradient matching header/footer */
-    background: #0E0F11;
+    background-color: #0E0F11 !important; background: #0E0F11 !important;
   }
 }
 
