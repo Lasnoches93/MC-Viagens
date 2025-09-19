@@ -2,9 +2,37 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Heart, Star, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { isWpConfigured } from '../config/wpConfig';
+import { fetchPageBySlug, pageContentHTML } from '../services/wpPages';
 
 const AboutMe = () => {
   const { t } = useLanguage();
+
+  const [wpPage, setWpPage] = React.useState(null);
+  const [wpLoading, setWpLoading] = React.useState(false);
+  const [wpError, setWpError] = React.useState('');
+  const wpEnabled = isWpConfigured();
+
+  React.useEffect(() => {
+    let active = true;
+    async function load() {
+      if (!wpEnabled) return;
+      try {
+        setWpLoading(true);
+        setWpError('');
+        const p = await fetchPageBySlug('about-me');
+        if (!active) return;
+        setWpPage(p);
+      } catch (e) {
+        if (!active) return;
+        setWpError(e.message || 'Failed to load page');
+      } finally {
+        if (active) setWpLoading(false);
+      }
+    }
+    load();
+    return () => { active = false; };
+  }, [wpEnabled]);
 
   const countries = [
     { key: 'brazil', flag: '🌎', name: 'Brasil' },
@@ -36,13 +64,27 @@ const AboutMe = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-luxury-blue/70 border border-luxury-gold/20 rounded-2xl p-8 md:p-12 mb-12"
           >
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              {t('aboutMe.content.intro')}
-            </p>
-            
-            <p className="text-lg text-gray-300 mb-8">
-              {t('aboutMe.content.journey')}
-            </p>
+            {wpEnabled ? (
+              wpLoading ? (
+                <p className="text-xl text-gray-300 mb-8 leading-relaxed">Chargement…</p>
+              ) : wpError ? (
+                <p className="text-red-400 mb-8">{wpError}</p>
+              ) : wpPage ? (
+                <div className="prose prose-invert max-w-none text-gray-300">
+                  <div dangerouslySetInnerHTML={{ __html: pageContentHTML(wpPage) }} />
+                </div>
+              ) : (
+                <>
+                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">{t('aboutMe.content.intro')}</p>
+                  <p className="text-lg text-gray-300 mb-8">{t('aboutMe.content.journey')}</p>
+                </>
+              )
+            ) : (
+              <>
+                <p className="text-xl text-gray-300 mb-8 leading-relaxed">{t('aboutMe.content.intro')}</p>
+                <p className="text-lg text-gray-300 mb-8">{t('aboutMe.content.journey')}</p>
+              </>
+            )}
 
             {/* Countries Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -52,7 +94,7 @@ const AboutMe = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start space-x-4 p-4 bg-luxury-blue/60 rounded-lg hover:bg-black-700 transition-colors duration-300"
+                  className="flex items-start space-x-4 p-4 bg-luxury-blue/60 rounded-lg"
                 >
                   <span className="text-2xl">{country.flag}</span>
                   <p className="text-gray-300 leading-relaxed">

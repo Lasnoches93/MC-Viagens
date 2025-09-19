@@ -2,9 +2,37 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Award, Heart, Globe, Users, Star } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { isWpConfigured } from '../config/wpConfig';
+import { fetchPageBySlug, pageContentHTML } from '../services/wpPages';
 
 const About = () => {
   const { t } = useLanguage();
+
+  const [wpPage, setWpPage] = React.useState(null);
+  const [wpLoading, setWpLoading] = React.useState(false);
+  const [wpError, setWpError] = React.useState('');
+  const wpEnabled = isWpConfigured();
+
+  React.useEffect(() => {
+    let active = true;
+    async function load() {
+      if (!wpEnabled) return;
+      try {
+        setWpLoading(true);
+        setWpError('');
+        const p = await fetchPageBySlug('about');
+        if (!active) return;
+        setWpPage(p);
+      } catch (e) {
+        if (!active) return;
+        setWpError(e.message || 'Failed to load page');
+      } finally {
+        if (active) setWpLoading(false);
+      }
+    }
+    load();
+    return () => { active = false; };
+  }, [wpEnabled]);
 
   const stats = [
     { number: '500+', label: t('about.stats.travelers') },
@@ -87,12 +115,29 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
                 {t('about.title')}
               </h2>
-              <p className="text-xl text-gray-300 mb-6">
-                {t('about.intro')}
-              </p>
-              <p className="text-lg text-gray-400 mb-8">
-                {t('about.description')}
-              </p>
+
+              {/* WP override: render page content if available */}
+              {wpEnabled ? (
+                wpLoading ? (
+                  <p className="text-xl text-gray-300 mb-6">Chargement…</p>
+                ) : wpError ? (
+                  <p className="text-red-400 mb-6">{wpError}</p>
+                ) : wpPage ? (
+                  <div className="prose prose-invert max-w-none text-gray-300">
+                    <div dangerouslySetInnerHTML={{ __html: pageContentHTML(wpPage) }} />
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-xl text-gray-300 mb-6">{t('about.intro')}</p>
+                    <p className="text-lg text-gray-400 mb-8">{t('about.description')}</p>
+                  </>
+                )
+              ) : (
+                <>
+                  <p className="text-xl text-gray-300 mb-6">{t('about.intro')}</p>
+                  <p className="text-lg text-gray-400 mb-8">{t('about.description')}</p>
+                </>
+              )}
             </div>
 
             {/* Specialties */}
