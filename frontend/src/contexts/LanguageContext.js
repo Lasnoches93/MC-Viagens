@@ -398,6 +398,20 @@ const translations = {
     },
     // Footer
     footer: {
+      company: {
+        title: 'MC Viagens',
+        addressLabel: 'Localização',
+        address: 'Rua Quinze de Novembro 228 - 2° andar, Centro Histórico de São Paulo/SP - 01013-911 - Brasil',
+        phoneLabel: 'Telefone',
+        phone: '+55 11 91468-6123',
+        emailLabel: 'Email',
+        email: 'turismomc799@gmail.com',
+        hoursLabel: 'Horários',
+        hours: {
+          weekdays: 'Seg-Sex: 9h-18h',
+          saturday: 'Sáb: 10h-12h'
+        }
+      },
       cta: {
         title: 'Pronto para descobrir a América Latina?',
         description: 'Obtenha um orçamento gratuito e personalizado para sua próxima viagem',
