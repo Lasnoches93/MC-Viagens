@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { submitContactFormCF7 } from '../services/wpApi';
+import { isWpConfigured, WP_CF7_FORM_ID } from '../config/wpConfig';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -15,11 +17,33 @@ const Contact = () => {
     dates: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setSubmitError('');
+    setSubmitSuccess('');
+
+    const wpReady = isWpConfigured() && !!WP_CF7_FORM_ID;
+
+    try {
+      setSubmitting(true);
+      if (wpReady) {
+        await submitContactFormCF7(formData);
+        setSubmitSuccess('Votre demande a bien été envoyée. Nous vous répondrons sous 24h.');
+        setFormData({ name: '', email: '', phone: '', destination: '', travelers: '', budget: '', dates: '', message: '' });
+      } else {
+        // Fallback: no WP configured yet
+        console.log('Form submitted (local fallback):', formData);
+        setSubmitSuccess('Demande enregistrée localement (mode démo). Configurez WordPress pour l\'envoi.');
+      }
+    } catch (err) {
+      setSubmitError(err.message || 'Échec de l\'envoi.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -144,7 +168,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                     placeholder={t('contact.form.placeholders.name')}
                   />
                 </div>
@@ -156,7 +180,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                     placeholder={t('contact.form.placeholders.email')}
                   />
                 </div>
@@ -170,7 +194,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                     placeholder={t('contact.form.placeholders.phone')}
                   />
                 </div>
@@ -181,7 +205,7 @@ const Contact = () => {
                     value={formData.travelers}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                   >
                     <option value="">{t('contact.form.travelers_options.select')}</option>
                     <option value="1">{t('contact.form.travelers_options.one')}</option>
@@ -201,7 +225,7 @@ const Contact = () => {
                     value={formData.destination}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                   >
                     <option value="">{t('contact.form.travelers_options.select')}</option>
                     {destinations.map((dest) => (
@@ -216,7 +240,7 @@ const Contact = () => {
                     value={formData.budget}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                   >
                     <option value="">{t('contact.form.travelers_options.select')}</option>
                     {budgetRanges.map((range) => (
@@ -233,7 +257,7 @@ const Contact = () => {
                   name="dates"
                   value={formData.dates}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                   placeholder={t('contact.form.placeholders.dates')}
                 />
               </div>
@@ -246,7 +270,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg bg-black-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-lg bg-luxury-blue/60 text-white border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
                   placeholder={t('contact.form.placeholders.message')}
                 />
               </div>
@@ -255,12 +279,24 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full bg-gold-500 text-black py-4 rounded-lg font-semibold hover:bg-gold-400 transition-colors duration-200 flex items-center justify-center space-x-2"
+                disabled={submitting}
+                className="w-full bg-gold-500 text-black py-4 rounded-lg font-semibold hover:bg-gold-400 transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-60"
               >
                 <Send className="h-5 w-5" />
-                <span>{t('contact.form.submit')}</span>
+                <span>{submitting ? 'Envoi en cours...' : t('contact.form.submit')}</span>
               </motion.button>
             </form>
+
+            {(submitSuccess || submitError) && (
+              <div className="mt-6 text-center">
+                {submitSuccess && (
+                  <p className="text-green-400 text-sm">{submitSuccess}</p>
+                )}
+                {submitError && (
+                  <p className="text-red-400 text-sm">{submitError}</p>
+                )}
+              </div>
+            )}
 
             <div className="mt-6 text-center">
               <p className="text-gray-400 text-sm">

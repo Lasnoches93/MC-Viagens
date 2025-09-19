@@ -3,13 +3,48 @@ import { motion } from 'framer-motion';
 import { Clock, ArrowRight, MapPin, User } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import AboutModal from './AboutModal';
+import { fetchCategories, fetchPosts } from '../services/wpApi';
+import { isWpConfigured } from '../config/wpConfig';
 
 const Blog = () => {
   const { t } = useLanguage();
   const [aboutModalOpen, setAboutModalOpen] = React.useState(false);
   const [aboutModalType, setAboutModalType] = React.useState(null);
 
-  // Function to get translated blog posts
+  // WordPress headless states
+  const wpEnabled = isWpConfigured();
+  const [wpLoading, setWpLoading] = React.useState(false);
+  const [wpError, setWpError] = React.useState('');
+  const [wpCategories, setWpCategories] = React.useState([]);
+  const [wpPosts, setWpPosts] = React.useState([]);
+  const [selectedWpCategoryId, setSelectedWpCategoryId] = React.useState(null);
+
+  React.useEffect(() => {
+    let active = true;
+    async function loadWp() {
+      if (!wpEnabled) return;
+      try {
+        setWpLoading(true);
+        setWpError('');
+        const [cats, posts] = await Promise.all([
+          fetchCategories({ perPage: 50 }),
+          fetchPosts({ page: 1, perPage: 9 })
+        ]);
+        if (!active) return;
+        setWpCategories(cats);
+        setWpPosts(posts);
+      } catch (e) {
+        if (!active) return;
+        setWpError(e.message || 'Failed to load WordPress content');
+      } finally {
+        if (active) setWpLoading(false);
+      }
+    }
+    loadWp();
+    return () => { active = false; };
+  }, [wpEnabled]);
+
+  // Function to get translated blog posts (fallback when WP not configured)
   const getBlogPosts = () => [
     {
       id: 'about-me',
@@ -131,16 +166,44 @@ const Blog = () => {
   ];
 
   const blogPosts = getBlogPosts();
-  
-  const categories = [t('blog.categories.all'), t('blog.categories.aboutMe'), t('blog.categories.about'), t('blog.categories.myJourney'), t('blog.categories.destinations'), t('blog.categories.tips'), t('blog.categories.guides'), t('blog.categories.culture'), t('blog.categories.couples')];
+
+  // Categories UI state (fallback)
+  const categoriesFallback = [
+    t('blog.categories.all'),
+    t('blog.categories.aboutMe'),
+    t('blog.categories.about'),
+    t('blog.categories.myJourney'),
+    t('blog.categories.destinations'),
+    t('blog.categories.tips'),
+    t('blog.categories.guides'),
+    t('blog.categories.culture'),
+    t('blog.categories.couples')
+  ];
+
   const [selectedCategory, setSelectedCategory] = React.useState(t('blog.categories.all'));
 
-  const filteredPosts = selectedCategory === t('blog.categories.all') 
-    ? blogPosts 
+  const filteredPostsFallback = selectedCategory === t('blog.categories.all')
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = blogPosts.filter(post => !post.featured);
+  // Compute featured and regular for fallback
+  const featuredPostFallback = blogPosts.find(post => post.featured);
+  const regularPostsFallback = blogPosts.filter(post => !post.featured);
+
+  // WP filtered posts
+  const displayedWpPosts = React.useMemo(() => {
+    if (!wpEnabled) return [];
+    if (!selectedWpCategoryId) return wpPosts;
+    return wpPosts.filter((p) => (p.categories || []).includes(selectedWpCategoryId));
+  }, [wpEnabled, wpPosts, selectedWpCategoryId]);
+
+  const featuredWpPost = displayedWpPosts[0] || null;
+  const regularWpPosts = featuredWpPost ? displayedWpPosts.slice(1) : displayedWpPosts;
+
+  const openWpPost = (post) => {
+    if (!post?.link) return;
+    window.open(post.link, '_blank', 'noopener');
+  };
 
   return (
     <section id="blog" className="py-20 bg-transparent">
@@ -166,79 +229,91 @@ const Blog = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full transition-all duration-200 ${
-                selectedCategory === category
-                  ? 'bg-gold-500 text-black font-semibold'
-                  : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+          {wpEnabled ? (
+            <>
+              <button
+                key="all"
+                onClick={() => setSelectedWpCategoryId(null)}
+                className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                  selectedWpCategoryId === null
+                    ? 'bg-gold-500 text-black font-semibold'
+                    : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
+                }`}
+              >
+                {t('blog.categories.all')}
+              </button>
+              {wpCategories.map((c) => (
+                <button
+                  key={c.id}
+                  onClick={() => setSelectedWpCategoryId(c.id)}
+                  className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                    selectedWpCategoryId === c.id
+                      ? 'bg-gold-500 text-black font-semibold'
+                      : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
+                  }`}
+                >
+                  {c.name}
+                </button>
+              ))}
+            </>
+          ) : (
+            categoriesFallback.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2 rounded-full transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'bg-gold-500 text-black font-semibold'
+                    : 'bg-luxury-blue/60 text-gray-300 hover:bg-luxury-blue/80'
+                }`}
+              >
+                {category}
+              </button>
+            ))
+          )}
         </motion.div>
 
         {/* Featured Post */}
-        {featuredPost && selectedCategory === t('blog.categories.all') && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-16"
-          >
-            <div className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl border border-luxury-gold/20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="relative">
-                  <img
-                    src={featuredPost.image}
-                    alt={featuredPost.title}
-                    className="w-full h-64 lg:h-full object-cover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-gold-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-                      {t('blog.featuredArticle')}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <span className="bg-gold-500/20 text-gold-500 px-3 py-1 rounded-full text-sm">
-                      {featuredPost.category}
-                    </span>
-                    <div className="flex items-center space-x-2 text-gray-400">
-                      <Clock className="h-4 w-4" />
-                      <span className="text-sm">{featuredPost.readTime}</span>
+        {wpEnabled ? (
+          !wpLoading && !wpError && featuredWpPost && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mb-16"
+            >
+              <div className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl border border-luxury-gold/20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="relative">
+                    <img
+                      src={featuredWpPost.image}
+                      alt={featuredWpPost.title}
+                      className="w-full h-64 lg:h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-gold-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
+                        {t('blog.featuredArticle')}
+                      </span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-white mb-4">
-                    {featuredPost.title}
-                  </h3>
-                  <p className="text-gray-300 mb-6">{featuredPost.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <User className="h-5 w-5 text-gold-500" />
-                      <div>
-                        <p className="text-white font-medium">{featuredPost.author}</p>
-                        <p className="text-gray-400 text-sm">{featuredPost.date}</p>
+                  <div className="p-8 flex flex-col justify-center">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <span className="bg-gold-500/20 text-gold-500 px-3 py-1 rounded-full text-sm">
+                        {featuredWpPost.categories?.length ? 'Post' : 'Blog'}
+                      </span>
+                      <div className="flex items-center space-x-2 text-gray-400">
+                        <Clock className="h-4 w-4" />
+                        <span className="text-sm">{new Date(featuredWpPost.date).toLocaleDateString()}</span>
                       </div>
                     </div>
+                    <h3 className="text-2xl font-serif font-bold text-white mb-4" dangerouslySetInnerHTML={{ __html: featuredWpPost.title }} />
+                    {featuredWpPost.excerpt && (
+                      <p className="text-gray-300 mb-6" dangerouslySetInnerHTML={{ __html: featuredWpPost.excerpt }} />
+                    )}
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => {
-                        if (featuredPost.isAbout) {
-                          setAboutModalType(featuredPost.aboutType);
-                          setAboutModalOpen(true);
-                        } else if (featuredPost.link) {
-                          const element = document.querySelector(featuredPost.link);
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }
-                      }}
+                      onClick={() => openWpPost(featuredWpPost)}
                       className="bg-gold-500 text-black px-6 py-2 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200 flex items-center space-x-2"
                     >
                       <span>{t('blog.readArticle')}</span>
@@ -247,8 +322,77 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          )
+        ) : (
+          featuredPostFallback && selectedCategory === t('blog.categories.all') && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mb-16"
+            >
+              <div className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl border border-luxury-gold/20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="relative">
+                    <img
+                      src={featuredPostFallback.image}
+                      alt={featuredPostFallback.title}
+                      className="w-full h-64 lg:h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-gold-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
+                        {t('blog.featuredArticle')}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8 flex flex-col justify-center">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <span className="bg-gold-500/20 text-gold-500 px-3 py-1 rounded-full text-sm">
+                        {featuredPostFallback.category}
+                      </span>
+                      <div className="flex items-center space-x-2 text-gray-400">
+                        <Clock className="h-4 w-4" />
+                        <span className="text-sm">{featuredPostFallback.readTime}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-white mb-4">
+                      {featuredPostFallback.title}
+                    </h3>
+                    <p className="text-gray-300 mb-6">{featuredPostFallback.excerpt}</p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <User className="h-5 w-5 text-gold-500" />
+                        <div>
+                          <p className="text-white font-medium">{featuredPostFallback.author}</p>
+                          <p className="text-gray-400 text-sm">{featuredPostFallback.date}</p>
+                        </div>
+                      </div>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => {
+                          if (featuredPostFallback.isAbout) {
+                            setAboutModalType(featuredPostFallback.aboutType);
+                            setAboutModalOpen(true);
+                          } else if (featuredPostFallback.link) {
+                            const element = document.querySelector(featuredPostFallback.link);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }
+                        }}
+                        className="bg-gold-500 text-black px-6 py-2 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200 flex items-center space-x-2"
+                      >
+                        <span>{t('blog.readArticle')}</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </motion.button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )
         )}
 
         {/* Regular Posts Grid */}
@@ -258,101 +402,150 @@ const Blog = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {(selectedCategory === t('blog.categories.all') ? regularPosts : filteredPosts).map((post, index) => (
-            <motion.article
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl hover:shadow-gold-500/10 transition-all duration-300 border border-luxury-gold/10"
-            >
-              <div className="relative">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-black-900/80 backdrop-blur-sm text-gold-500 px-3 py-1 rounded-full text-sm">
-                    {post.category}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center space-x-4 mb-3">
-                  <div className="flex items-center space-x-2 text-gray-400">
-                    <Clock className="h-4 w-4" />
-                    <span className="text-sm">{post.readTime}</span>
+          {wpEnabled ? (
+            wpLoading ? (
+              Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="bg-luxury-blue/60 rounded-2xl h-64 animate-pulse border border-luxury-gold/10" />
+              ))
+            ) : wpError ? (
+              <div className="col-span-full text-center text-red-400">{wpError}</div>
+            ) : (
+              regularWpPosts.map((post, index) => (
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                  className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl hover:shadow-gold-500/10 transition-all duration-300 border border-luxury-gold/10"
+                >
+                  <div className="relative">
+                    {post.image ? (
+                      <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
+                    ) : (
+                      <div className="w-full h-48 bg-luxury-blue/50" />
+                    )}
                   </div>
-                  <span className="text-gray-400 text-sm">{post.date}</span>
+                  <div className="p-6">
+                    <div className="flex items-center space-x-4 mb-3">
+                      <div className="flex items-center space-x-2 text-gray-400">
+                        <Clock className="h-4 w-4" />
+                        <span className="text-sm">{new Date(post.date).toLocaleDateString()}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-white mb-3 line-clamp-2" dangerouslySetInnerHTML={{ __html: post.title }} />
+                    {post.excerpt && (
+                      <p className="text-gray-300 mb-4 line-clamp-3" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+                    )}
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => openWpPost(post)}
+                      className="text-gold-500 hover:text-gold-400 font-semibold flex items-center space-x-2 transition-colors duration-200"
+                    >
+                      <span>{t('blog.readMore')}</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </motion.button>
+                  </div>
+                </motion.article>
+              ))
+            )
+          ) : (
+            (selectedCategory === t('blog.categories.all') ? regularPostsFallback : filteredPostsFallback).map((post, index) => (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -10 }}
+                className="bg-luxury-blue/60 rounded-2xl overflow-hidden shadow-2xl hover:shadow-gold-500/10 transition-all duration-300 border border-luxury-gold/10"
+              >
+                <div className="relative">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-48 object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-white mb-3 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-300 mb-4 line-clamp-3">{post.excerpt}</p>
+                <div className="p-6">
+                  <div className="flex items-center space-x-4 mb-3">
+                    <div className="flex items-center space-x-2 text-gray-400">
+                      <Clock className="h-4 w-4" />
+                      <span className="text-sm">{post.readTime}</span>
+                    </div>
+                    <span className="text-gray-400 text-sm">{post.date}</span>
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-white mb-3 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-300 mb-4 line-clamp-3">{post.excerpt}</p>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      if (post.isAbout) {
+                        setAboutModalType(post.aboutType);
+                        setAboutModalOpen(true);
+                      } else if (post.link) {
+                        const element = document.querySelector(post.link);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                    className="text-gold-500 hover:text-gold-400 font-semibold flex items-center space-x-2 transition-colors duration-200"
+                  >
+                    <span>{t('blog.readMore')}</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </motion.button>
+                </div>
+              </motion.article>
+            ))
+          )}
+        </motion.div>
+
+        {/* Newsletter Signup (unchanged visual) */}
+        {!wpEnabled && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-16 text-center"
+          >
+            <div className="bg-gradient-to-r from-gold-500/20 to-gold-600/20 rounded-2xl p-8 md:p-12">
+              <h3 className="text-3xl font-serif font-bold text-white mb-4">
+                {t('blog.newsletter.title')}
+              </h3>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                {t('blog.newsletter.description')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder={t('blog.newsletter.placeholder')}
+                  className="flex-1 px-6 py-3 rounded-full bg-luxury-blue/60 text-white placeholder-gray-400 border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
+                />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => {
-                    if (post.isAbout) {
-                      setAboutModalType(post.aboutType);
-                      setAboutModalOpen(true);
-                    } else if (post.link) {
-                      const element = document.querySelector(post.link);
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }
-                  }}
-                  className="text-gold-500 hover:text-gold-400 font-semibold flex items-center space-x-2 transition-colors duration-200"
+                  className="bg-gold-500 text-black px-8 py-3 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200"
                 >
-                  <span>{t('blog.readMore')}</span>
-                  <ArrowRight className="h-4 w-4" />
+                  {t('blog.newsletter.subscribe')}
                 </motion.button>
               </div>
-            </motion.article>
-          ))}
-        </motion.div>
-
-        {/* Newsletter Signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-gold-500/20 to-gold-600/20 rounded-2xl p-8 md:p-12">
-            <h3 className="text-3xl font-serif font-bold text-white mb-4">
-              {t('blog.newsletter.title')}
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              {t('blog.newsletter.description')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder={t('blog.newsletter.placeholder')}
-                className="flex-1 px-6 py-3 rounded-full bg-luxury-blue/60 text-white placeholder-gray-400 border border-luxury-gold/20 focus:outline-none focus:border-luxury-gold transition-colors duration-200"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gold-500 text-black px-8 py-3 rounded-full font-semibold hover:bg-gold-400 transition-colors duration-200"
-              >
-                {t('blog.newsletter.subscribe')}
-              </motion.button>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
       </div>
       
       {/* About Modal */}
-      <AboutModal 
-        isOpen={aboutModalOpen}
-        onClose={() => setAboutModalOpen(false)}
-        type={aboutModalType}
-      />
+      {!wpEnabled && (
+        <AboutModal 
+          isOpen={aboutModalOpen}
+          onClose={() => setAboutModalOpen(false)}
+          type={aboutModalType}
+        />
+      )}
     </section>
   );
 };
