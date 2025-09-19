@@ -55,7 +55,7 @@ const Destinations = () => {
     ],
     'Amérique Centrale': [
       { id: 201, name: 'Cancún, Mexique', price: '€699', originalPrice: '€999', image: 'https://images.unsplash.com/photo-1509818139432-c67e4197a914?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxDYW5jdW4lMjBiZWFjaHxlbnwwfHx8fDE3NTgzMDA1NDZ8MA&ixlib=rb-4.1.0&q=85', duration: '7 jours', flightTime: '11h', stops: '1 escale', rating: 4.6, reviews: 410, description: 'Plages de sable blanc et eaux turquoise.' },
-      { id: 202, name: 'San José, Costa Rica', price: '€749', originalPrice: '€1049', image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&h=400&fit=crop&auto=format&q=80', duration: '8 jours', flightTime: '12h', stops: '1 escale', rating: 4.7, reviews: 210, description: 'Volcans, forêts tropicales et plages.' }
+      { id: 202, name: 'San José, Costa Rica', price: '€749', originalPrice: '€1049', image: 'https://images.unsplash.com/photo-1684383311007-7baa94be7951?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxDb3N0YSUyMFJpY2ElMjB2b2xjYW5vfGVufDB8fHx8MTc1ODMwMDU1MXww&ixlib=rb-4.1.0&q=85', duration: '8 jours', flightTime: '12h', stops: '1 escale', rating: 4.7, reviews: 210, description: 'Volcans, forêts tropicales et plages.' }
     ],
     'Amérique du Sud': [
       { id: 301, name: 'Machu Picchu, Pérou', price: '€899', originalPrice: '€1299', image: 'https://images.unsplash.com/photo-1479299784244-c5262363c5df?w=600&h=400&fit=crop&auto=format&q=80', duration: '8 jours', flightTime: '12h', stops: '1 escale', rating: 4.9, reviews: 245, description: 'Citadelle inca perchée dans les Andes.' },
