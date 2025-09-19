@@ -102,3 +102,9 @@ mc-viagens-wp-bundle.zip
 # Environment files
 *.env
 *.env.*
+-e 
+# Environment files
+*.env
+*.env.*
+frontend/public/mc-viagens-wp-bundle-full.zip
+mc-viagens-wp-bundle-full.zip
