@@ -1,78 +1,78 @@
 <analysis>
-The AI engineer successfully completed a series of feature enhancements and fixes based on user requests. Initially, the outstanding task of adding a professional office image to the Sobre a MC Viagens blog article was addressed. This involved image selection using , updating , and verifying with screenshots after a service restart.
+The AI engineer's work in this trajectory primarily focused on two major areas: refining existing UI/UX elements and implementing a comprehensive WordPress integration (both headless and classic theme). Initially, the application featured basic multilingual support, currency conversion, and contact information.
 
-Subsequently, a significant feature—dynamic currency conversion—was implemented. This involved modifying  to store exchange rates and conversion functions, then applying these to prices in  and budget ranges in  for PT (BRL), EN (USD), and FR (EUR). Troubleshooting included refining budget conversion logic and explicit navigation for testing.
+The first phase involved user-requested UI/UX improvements. This included removing luxury travel branding from various text elements, harmonizing the site's background color to a dark  (after several iterations involving gradients and solid colors), and updating specific contact details for the Portuguese version.
 
-Finally, all site-wide contact information was updated. New address, email, and phone details were centralized in  for all languages, and hardcoded values in , , and  were replaced with dynamic translations. All implementations were thoroughly verified with screenshots, confirming full functionality and correct display across the application.
+The second, more substantial phase, centered on enabling a WordPress backend. The AI engineer developed a headless WordPress integration, including custom services (, , ) to fetch posts, destinations (CPT), regions (taxonomy), and pages via REST API. Concurrently, a full WordPress theme () was built, replicating the frontend design and incorporating templates for various pages, CPTs, ACF fields, and i18n support. Throughout this process, numerous static destination images and data were added and refined in , and comprehensive WordPress XML import files (with and without attachments) were generated and frequently updated to reflect these changes. Several syntax and ESLint errors were encountered and resolved during code modifications, particularly in .
 </analysis>
 
 <product_requirements>
-The MC Viagens web application offers low-cost international travel with a premium, affordable luxury design, utilizing a blue/gold palette and modern UI elements. Core sections include a multilingual Header/Navigation, an immersive Hero section with a dynamic background carousel, and a Destinations catalog with detailed packages. An About/MC Viagens section, About Me, and Minha Trajetória are integrated as fully translatable blog articles. Other features include Testimonials, a Contact/Personalized Quote form, and a comprehensive Footer.
+The MC Viagens web application aims to offer low-cost international travel with an affordable luxury design, primarily using a blue/gold palette. It features a multilingual header, a dynamic hero section, a destinations catalog, About/MC Viagens, About Me, Minha Trajetória blog articles, testimonials, a contact form, and a footer.
 
-Ongoing development has focused on performance, image optimization, and full internationalization. Specific requirements addressed in this trajectory include:
-1.  **Image Integration**: Add a professional office image for the Sobre a MC Viagens blog article.
-2.  **Currency Conversion**: Implement dynamic price conversion for all destinations and budget ranges: Brazilian Real (R$) for Portuguese, US Dollar (USD) for English, and Euro (€) for French, using approximate current exchange rates.
-3.  **Contact Information Update**: Update all site contact details (address: Rua Quinze de Novembro 228- 2° andar - Centro historico de Sao Paulo/SP - 01013-911 - Brasil São Paulo; email: turismomc799@gmail.com; telephone: +55 11 91468-6123) across all relevant components and languages.
+Prior development established core internationalization (PT, FR, EN), image optimization, and dynamic currency conversion (BRL, USD, EUR). Site-wide contact details were also updated.
+
+The current trajectory focused on:
+1.  **Branding Refinement:** Remove all explicit luxury travel mentions, replacing them with MC Viagens or an accessible standard, while retaining the luxury-themed blue/gold color palette.
+2.  **UI Color Harmony:** Harmonize the entire site's background color, specifically ensuring the body, header, and footer share a consistent dark blue shade () and applying uniform translucent blue backgrounds to internal cards/modals (Option B).
+3.  **WordPress Backend Integration:** Provide the full frontend source code and implement features for both a headless WordPress backend (using REST API for blog, contact form, custom post types for destinations, pages) and a classic WordPress theme conversion that maintains the existing design. This includes:
+    *   Migration of existing static content (blog articles, About pages, destinations) to WordPress-compatible structures.
+    *   Creation of a WordPress plugin for Custom Post Types (CPT) for Destinations and Regions taxonomy with associated metadata (price, duration, images, etc.).
+    *   Generation of WordPress XML import files (demo data with images).
+    *   Full i18n support for the WordPress theme and plugin.
+    *   Integration of legal pages (Mentions légales, Politique de confidentialité) with auto-linking.
+4.  **Destination Data & Image Enrichment:** Continuously update and expand the list of global destinations in the app preview (static data) and the WordPress import files, ensuring all destinations have appropriate and visible images, including specific capitals and newly requested regions like Switzerland/Geneva.
 </product_requirements>
 
 <key_technical_concepts>
--   **React**: Frontend framework for UI development.
--   **TailwindCSS**: Utility-first CSS for styling.
--   **Framer Motion**: Library for UI animations.
--   **Internationalization (i18n)**: Multi-language support (PT, FR, EN) via  for text, currency, and contact info.
--   **Image Optimization**: Selection and integration of images using .
--   **Currency Conversion**: Dynamic calculation and formatting of prices based on selected language.
+-   **React:** Frontend framework for building interactive user interfaces.
+-   **TailwindCSS:** Utility-first CSS framework for rapid styling and responsive design.
+-   **Framer Motion:** Library for animations and transitions in React applications.
+-   **Internationalization (i18n):** Multi-language support (PT, FR, EN) integrated via  for all textual content, currency, and contact information.
+-   **Headless WordPress Integration:** Utilizing WordPress as a content management system while decoupling the frontend (React app) using its REST API and custom services.
+-   **WordPress Theme Development:** Creating a classic WordPress theme (PHP/Gutenberg) based on Underscores (_s) and TailwindCSS, replicating the React app's design.
+-   **Custom Post Types (CPT) & Taxonomies:** WordPress features for creating custom content types (e.g., Destinations) and classifications (e.g., Regions).
+-   **Advanced Custom Fields (ACF):** WordPress plugin for adding custom fields to posts, pages, and CPTs, facilitating content management.
+-   **Contact Form 7 (CF7):** WordPress plugin for managing contact forms, integrated with the frontend for submissions.
 </key_technical_concepts>
 
 <code_architecture>
 
-
--   ****:
-    -   **Importance**: Centralizes language, translations, and global application settings.
-    -   **Changes**: Updated to include currency exchange rates and formatting functions (, ) for BRL, USD, and EUR. Modified  to directly store currency-specific values. Updated  and  objects across PT, FR, EN languages with new address, email, and phone details.
--   ****:
-    -   **Importance**: Displays blog articles, including company information.
-    -   **Changes**: The  URL for the about-company article (Sobre a MC Viagens) was updated to a new professional office image URL.
--   ****:
-    -   **Importance**: Lists travel packages with pricing.
-    -   **Changes**: Integrated  hook to access  and . All displayed prices, including those in  and detail modals, are now dynamically converted and formatted based on the active language's currency.
--   ****:
-    -   **Importance**: Provides contact forms and company details.
-    -   **Changes**: Replaced hardcoded contact information with dynamic translations (e.g., ). The budget range options are now sourced from  with integrated currency values.
--   ****:
-    -   **Importance**: Top navigation and quick contact access.
-    -   **Changes**: Updated to display dynamic phone and email from  (e.g., ) instead of hardcoded values.
--   ****:
-    -   **Importance**: Bottom section with navigation and legal/contact info.
-    -   **Changes**: Updated to display dynamic address, email, and phone from  (e.g., ) instead of hardcoded values.
+-   ****: Centralizes language, translations, currency conversion. Updated to remove luxury mentions, include new contact info for PT.
+-   ****: New file. Centralizes WordPress API URLs and Contact Form 7 ID for the headless setup.
+-   ****: New file. Provides functions to interact with the WordPress REST API for posts, categories, and Contact Form 7 submissions.
+-   ****: New file. Handles fetching custom post type destination and taxonomy region data from WordPress, including fallback for images.
+-   ****: New file. Provides functions to fetch WordPress pages by slug or list.
+-   ****: Displays blog articles. Modified to fetch articles and categories from WordPress if configured, otherwise uses static data.
+-   ****: Contact form and details. Modified to submit form via Contact Form 7 if configured, otherwise uses local logging.
+-   ****: Lists travel packages. Significantly updated to include dynamic CPT fetching from WordPress (if configured) or an extensive static dataset of destinations with updated images. Contains logic for currency conversion. Frequently edited for image URLs and data.
+-   ****: Top navigation. Updated to remove luxury branding.
+-   ****: Bottom section with contact info. Updated to remove luxury branding and include comprehensive contact details for the PT language.
+-   ** & **: Global CSS files. Modified to control the site's overall dark background color (forced to ) and to ensure various sections have transparent backgrounds to inherit this global color.
+-   ****: Tailwind CSS configuration. Modified to define  color () for consistent styling.
+-   ****: New file. WordPress plugin registering destination CPT, region taxonomy, and exposing custom metadata (price, duration, image_url, etc.) to the REST API.
+-   ****: New file. Translation template file for the CPT plugin.
+-   ****: New files. HTML snippets for various static pages (About, AboutMe, MyJourney, Legal pages) to be copied into WordPress.
+-   ****: New file. WordPress XML import file containing demo regions and destinations with  metadata for headless mode. Repeatedly updated with new destinations.
+-   ****: New file. WordPress XML import file, similar to , but configured to include image attachments and set them as featured images automatically. Progressively expanded.
+-   ****: New directory. Contains a full WordPress theme based on Underscores and TailwindCSS, designed to replicate the React frontend's aesthetics. Includes various PHP template files (e.g., , , , legal pages),  (for theme setup, ACF local fields, auto-menu/page creation), and  for styling.
+-   ****: New file. Translation template file for the WordPress theme.
 </code_architecture>
 
 <pending_tasks>
-- There are no pending tasks. All user requests within this trajectory were fully implemented and verified.
+-   **XML Attachments Extension:** The AI engineer offered to extend the  file to include explicit attachment details for Hanoï, Pékin, Sydney, Auckland, Maldives, Punta Cana, Réunion, and Maurice so they also get automatically assigned featured images in WordPress. This task was implicitly accepted by the user in chat message 292.
+-   **Image Update for Europe (Switzerland/Geneva and others):** The user specifically requested image changes for Paris (Eiffel Tower), Rome (Colosseum), Athens (Greek temple), Spain (belle photo), and Geneva (Swiss landscape).
 </pending_tasks>
 
 <current_work>
-Immediately prior to this summary, the AI engineer successfully completed all explicit user requests within the provided trajectory. This involved three main areas:
+Immediately before this summary request, the AI engineer was actively resolving a critical syntax error in  (), which caused the frontend application to fail compilation and not display. This error was due to an accidentally pasted JSON fragment at the top of the file.
 
-1.  **Image Integration for Blog**: The Sobre a MC Viagens blog article now displays a professional office image (). This was achieved by editing  to update the image URL and was verified with screenshots after ensuring services were running correctly.
+The AI offered two options: a platform rollback or an immediate hotfix. The user chose the Hotfix immediate option (Chat Message 311). The AI engineer then successfully removed the offending JSON fragment from , restoring the file's valid structure and fixing the compilation issue.
 
-2.  **Currency Conversion System**: The application dynamically converts and displays prices based on the selected language.
-    *   **Portuguese (PT)**: Prices are shown in Brazilian Real (R$), e.g., R$ 5.574.
-    *   **English (EN)**: Prices are shown in US Dollars (USD), e.g., 44.
-    *   **French (FR)**: Prices remain in Euros (€), e.g., €899.
-    This was implemented by:
-    *   Adding currency rates (1 EUR = 6.20 BRL, 1 EUR = 1.05 USD) and formatting logic to .
-    *   Modifying  to use  and  for all destination prices and modal details.
-    *   Updating  to ensure budget range options reflect the correct currency.
-    Thorough screenshot verification confirmed correct conversions across languages and components.
+Following this fix, the user immediately requested further image updates for specific European destinations, including Paris (Tour Eiffel), Rome (Colisée), Athens (Greek temple), Spain (belle photo), and Geneva (Swiss landscape). The AI engineer is poised to implement these image changes.
 
-3.  **Updated Contact Information**: The site now displays the new contact details:
-    *   **Address**: Rua Quinze de Novembro 228- 2° andar - Centro historico de Sao Paulo/SP - 01013-911 - Brasil São Paulo
-    *   **Email**: turismomc799@gmail.com
-    *   **Phone**: +55 11 91468-6123
-    These details are centrally managed in  for PT, FR, and EN. Hardcoded contact information in , , and  has been replaced with dynamic calls to the  function, ensuring consistency and multilingual support. Screenshots confirmed the correct display of updated contact information across the site.
+The application's static frontend (app preview) now includes a comprehensive set of destinations and regions with updated images. The site's background is uniformly . The WordPress integration assets (headless services, CPT plugin, theme, XML imports) are all in place and have been updated multiple times to reflect the growing list of destinations and image references.
 </current_work>
 
 <optional_next_step>
-None. All tasks explicitly requested by the user in the provided trajectory have been completed and verified.
+Update the static destination data in  with the newly requested image URLs for Paris, Rome, Athens, Spain, and Geneva.
 </optional_next_step>
