@@ -518,7 +518,7 @@ const Destinations = () => {
         name: 'Rome, Italie',
         price: '€749',
         originalPrice: '€999',
-        image: 'https://images.unsplash.com/photo-1549893079-842e6a1609e0?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1549880181-56a44cf4a9a6?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '5 jours',
         flightTime: '2h',
         stops: 'Direct',
