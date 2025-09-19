@@ -270,7 +270,7 @@ const Destinations = () => {
         name: 'Hanoï, Vietnam',
         price: '€799',
         originalPrice: '€1,099',
-        image: 'https://images.unsplash.com/photo-1518684079-d232f7c87c87?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1543248939-ff40856f65d0?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '8 jours',
         flightTime: '12h',
         stops: '1 escale',
