@@ -208,7 +208,7 @@ const Destinations = () => {
         name: 'Cancún, Mexique',
         price: '€699',
         originalPrice: '€999',
-        image: 'https://images.unsplash.com/photo-1543367347-59669c673952?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1590080876460-95be4f1baf1d?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
         flightTime: '11h',
         stops: '1 escale',
