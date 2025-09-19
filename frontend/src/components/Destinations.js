@@ -563,7 +563,7 @@ const Destinations = () => {
         name: 'Madrid, Espagne',
         price: '€699',
         originalPrice: '€999',
-        image: 'https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1526481280694-3ba03f3a2abf?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '5 jours',
         flightTime: '2h',
         stops: 'Direct',
