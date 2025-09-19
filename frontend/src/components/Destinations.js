@@ -388,8 +388,7 @@ const Destinations = () => {
         description: 'Lagons translucides et hospitalité mauricienne',
         highlights: ['Île aux Cerfs', 'Chamarel', 'Grand Baie'],
         baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
-      }
-        price: '€1,299',
+      },
         originalPrice: '€1,799',
         image: 'https://images.unsplash.com/photo-1501117716987-c8e0bdde6653?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '7 jours',
