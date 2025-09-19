@@ -842,7 +842,8 @@ const translations = {
         'Amérique du Nord': 'North America',
         'Asie': 'Asia',
         'Océanie': 'Oceania',
-        'Îles Paradisiaques': 'Paradise Islands'
+        'Îles Paradisiaques': 'Paradise Islands',
+        'Amérique Centrale': 'Central America'
       },
       details: 'View details',
       book: 'Book now',
