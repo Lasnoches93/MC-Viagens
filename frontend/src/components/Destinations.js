@@ -165,7 +165,7 @@ const Destinations = () => {
       }
     }
     if (wpEnabled) loadByRegion();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [wpRegionId]);
 
   // Fallback static data
