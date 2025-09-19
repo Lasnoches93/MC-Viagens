@@ -223,7 +223,7 @@ const Destinations = () => {
         name: 'San José, Costa Rica',
         price: '€749',
         originalPrice: '€1,049',
-        image: 'https://images.unsplash.com/photo-1520974428093-1c5bfeaf07f8?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '8 jours',
         flightTime: '12h',
         stops: '1 escale',
