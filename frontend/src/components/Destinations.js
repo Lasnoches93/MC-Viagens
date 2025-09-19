@@ -548,7 +548,7 @@ const Destinations = () => {
         name: 'Londres, Royaume-Uni',
         price: '€899',
         originalPrice: '€1,299',
-        image: 'https://images.unsplash.com/photo-1473959383411-c6db0e8e854b?w=600&h=400&fit=crop&auto=format&q=80',
+        image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop&auto=format&q=80',
         duration: '5 jours',
         flightTime: '1h30',
         stops: 'Direct',
