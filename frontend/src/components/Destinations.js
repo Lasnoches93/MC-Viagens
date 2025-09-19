@@ -170,6 +170,136 @@ const Destinations = () => {
 
   // Fallback static data
   const staticData = useMemo(() => ({
+    'Amérique du Nord': [
+      {
+        id: 101,
+        name: 'New York, États-Unis',
+        price: '€899',
+        originalPrice: '€1,199',
+        image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '6 jours',
+        flightTime: '8h',
+        stops: 'Direct',
+        rating: 4.7,
+        reviews: 540,
+        description: 'La ville qui ne dort jamais: gratte-ciels, Central Park et Broadway',
+        highlights: ['Times Square', 'Central Park', 'Statue de la Liberté'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 102,
+        name: 'Toronto, Canada',
+        price: '€799',
+        originalPrice: '€1,099',
+        image: 'https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '6 jours',
+        flightTime: '7h',
+        stops: 'Direct',
+        rating: 4.6,
+        reviews: 320,
+        description: 'Métropole cosmopolite au bord du lac Ontario',
+        highlights: ['CN Tower', 'Quartier Distillery', 'Chutes du Niagara (excursion)'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      }
+    ],
+    'Amérique Centrale': [
+      {
+        id: 201,
+        name: 'Cancún, Mexique',
+        price: '€699',
+        originalPrice: '€999',
+        image: 'https://images.unsplash.com/photo-1543367347-59669c673952?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '7 jours',
+        flightTime: '11h',
+        stops: '1 escale',
+        rating: 4.6,
+        reviews: 410,
+        description: 'Plages de sable blanc et eaux turquoise de la Riviera Maya',
+        highlights: ['Chichén Itzá', 'Cénotes', 'Isla Mujeres'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 202,
+        name: 'San José, Costa Rica',
+        price: '€749',
+        originalPrice: '€1,049',
+        image: 'https://images.unsplash.com/photo-1520974428093-1c5bfeaf07f8?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '12h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 210,
+        description: 'Nature luxuriante: volcans, forêts tropicales et plages',
+        highlights: ['Parc National Manuel Antonio', 'Volcan Arenal', 'Monteverde'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      }
+    ],
+    'Asie': [
+      {
+        id: 301,
+        name: 'Tokyo, Japon',
+        price: '€1,099',
+        originalPrice: '€1,499',
+        image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '14h',
+        stops: '1 escale',
+        rating: 4.8,
+        reviews: 640,
+        description: 'Fusion futuriste et traditions millénaires',
+        highlights: ['Shibuya', 'Asakusa', 'Mont Fuji (excursion)'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 302,
+        name: 'Bangkok, Thaïlande',
+        price: '€899',
+        originalPrice: '€1,199',
+        image: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '13h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 520,
+        description: 'Temples dorés, marchés flottants et street-food incroyable',
+        highlights: ['Grand Palais', 'Wat Arun', 'Ayutthaya (excursion)'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      }
+    ],
+    'Océanie': [
+      {
+        id: 401,
+        name: 'Sydney, Australie',
+        price: '€1,399',
+        originalPrice: '€1,899',
+        image: 'https://images.unsplash.com/photo-1506976785307-8732e854ad89?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '9 jours',
+        flightTime: '22h',
+        stops: '1-2 escales',
+        rating: 4.8,
+        reviews: 280,
+        description: 'Opéra, Harbour Bridge et plages mythiques',
+        highlights: ['Opéra de Sydney', 'Bondi Beach', 'Blue Mountains'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      }
+    ],
+    'Îles Paradisiaques': [
+      {
+        id: 501,
+        name: 'Maldives',
+        price: '€1,299',
+        originalPrice: '€1,799',
+        image: 'https://images.unsplash.com/photo-1501117716987-c8e0bdde6653?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '7 jours',
+        flightTime: '12h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 190,
+        description: 'Lagons turquoise et villas sur l\'eau',
+        highlights: ['Snorkeling', 'Resorts sur pilotis', 'Coucher de soleil en dhoni'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      }
+    ],
     'Amérique du Sud': [
       {
         id: 1,
