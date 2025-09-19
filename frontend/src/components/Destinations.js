@@ -77,7 +77,7 @@ const Destinations = () => {
       { id: 504, name: 'Pékin, Chine', price: '€999', originalPrice: '€1399', image: 'https://images.unsplash.com/photo-1652949485345-d4af1952e7f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxCZWlqaW5nJTIwZm9yYmlkZGVuJTIwY2l0eXxlbnwwfHx8fDE3NTgzMDA1NjN8MA&ixlib=rb-4.1.0&q=85', duration: '8 jours', flightTime: '10h', stops: '1 escale', rating: 4.7, reviews: 580, description: 'Cité interdite et Grande Muraille.' }
     ],
     'Océanie': [
-      { id: 601, name: 'Sydney, Australie', price: '€1399', originalPrice: '€1899', image: 'https://images.unsplash.com/photo-1510749041921-69cc20b8d8ee?w=600&h=400&fit=crop&auto=format&q=80', duration: '9 jours', flightTime: '22h', stops: '1-2 escales', rating: 4.8, reviews: 280, description: 'Opéra, Harbour Bridge et plages.' },
+      { id: 601, name: 'Sydney, Australie', price: '€1399', originalPrice: '€1899', image: 'https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxTeWRuZXklMjBvcGVyYSUyMGhvdXNlfGVufDB8fHx8MTc1ODMwMDU2OXww&ixlib=rb-4.1.0&q=85', duration: '9 jours', flightTime: '22h', stops: '1-2 escales', rating: 4.8, reviews: 280, description: 'Opéra, Harbour Bridge et plages.' },
       { id: 602, name: 'Auckland, Nouvelle-Zélande', price: '€1499', originalPrice: '€1999', image: 'https://images.unsplash.com/photo-1502784444185-4809f99c0382?w=600&h=400&fit=crop&auto=format&q=80', duration: '10 jours', flightTime: '24h', stops: '2 escales', rating: 4.8, reviews: 260, description: 'Skytower, ports et nature verdoyante.' }
     ],
     'Îles Paradisiaques': [
