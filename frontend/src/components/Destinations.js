@@ -343,6 +343,63 @@ const Destinations = () => {
         description: 'Lagons turquoise et villas sur l\'eau',
         highlights: ['Snorkeling', 'Resorts sur pilotis', 'Coucher de soleil en dhoni'],
         baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 502,
+        name: 'Punta Cana, République Dominicaine',
+        price: '€899',
+        originalPrice: '€1,299',
+        image: 'https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '7 jours',
+        flightTime: '9h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 370,
+        description: 'Plages de sable fin et cocotiers à perte de vue',
+        highlights: ['Bavaro Beach', 'Isla Saona', 'Cenotes Hoyo Azul'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 503,
+        name: 'Île de la Réunion, France',
+        price: '€999',
+        originalPrice: '€1,399',
+        image: 'https://images.unsplash.com/photo-1518544345920-060609d5d835?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '9 jours',
+        flightTime: '11h',
+        stops: '1 escale',
+        rating: 4.8,
+        reviews: 210,
+        description: 'Cirques, volcans et lagons',
+        highlights: ['Piton de la Fournaise', 'Cirque de Mafate', 'Lagons de l’Ouest'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 504,
+        name: 'Île Maurice, Maurice',
+        price: '€1,099',
+        originalPrice: '€1,499',
+        image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '11h',
+        stops: '1 escale',
+        rating: 4.8,
+        reviews: 300,
+        description: 'Lagons translucides et hospitalité mauricienne',
+        highlights: ['Île aux Cerfs', 'Chamarel', 'Grand Baie'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      }
+        price: '€1,299',
+        originalPrice: '€1,799',
+        image: 'https://images.unsplash.com/photo-1501117716987-c8e0bdde6653?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '7 jours',
+        flightTime: '12h',
+        stops: '1 escale',
+        rating: 4.9,
+        reviews: 190,
+        description: 'Lagons turquoise et villas sur l\'eau',
+        highlights: ['Snorkeling', 'Resorts sur pilotis', 'Coucher de soleil en dhoni'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       }
     ],
     'Amérique du Sud': [
