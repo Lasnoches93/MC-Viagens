@@ -264,6 +264,36 @@ const Destinations = () => {
         description: 'Temples dorés, marchés flottants et street-food incroyable',
         highlights: ['Grand Palais', 'Wat Arun', 'Ayutthaya (excursion)'],
         baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 303,
+        name: 'Hanoï, Vietnam',
+        price: '€799',
+        originalPrice: '€1,099',
+        image: 'https://images.unsplash.com/photo-1518684079-d232f7c87c87?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '12h',
+        stops: '1 escale',
+        rating: 4.6,
+        reviews: 410,
+        description: 'Vieille ville, lacs et gastronomie vietnamienne',
+        highlights: ['Vieille Ville', 'Lac Hoàn Kiếm', 'Baie d’Halong (excursion)'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
+      },
+      {
+        id: 304,
+        name: 'Pékin, Chine',
+        price: '€999',
+        originalPrice: '€1,399',
+        image: 'https://images.unsplash.com/photo-1505764706515-aa95265c5abc?w=600&h=400&fit=crop&auto=format&q=80',
+        duration: '8 jours',
+        flightTime: '10h',
+        stops: '1 escale',
+        rating: 4.7,
+        reviews: 580,
+        description: 'Cité interdite, Grande Muraille et hutongs',
+        highlights: ['Cité interdite', 'Grande Muraille', 'Temple du Ciel'],
+        baggage: { cabin: '1 bagage cabine (8kg)', checked: '1 bagage en soute (23kg)', backpack: 'Sac à dos inclus' }
       }
     ],
     'Océanie': [
