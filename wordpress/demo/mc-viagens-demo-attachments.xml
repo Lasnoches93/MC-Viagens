@@ -1,187 +1,184 @@
 @@
-+  <!-- Paris (2011/3011) -->
++  <!-- Hanoï (2101/3101) -->
 +  <item>
-+    <title><![CDATA[Paris, France]]></title>
-+    <link>https://example.com/?destination=paris-france</link>
-+    <wp:post_id>2011</wp:post_id>
++    <title><![CDATA[Hanoï, Vietnam]]></title>
++    <link>https://example.com/?destination=hanoi-vietnam</link>
++    <wp:post_id>2101</wp:post_id>
 +    <wp:post_type>destination</wp:post_type>
-+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
-+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
 +    <wp:status>publish</wp:status>
-+    <wp:post_name>paris-france</wp:post_name>
-+    <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
-+    <content:encoded><![CDATA[Ville lumière: Tour Eiffel, Louvre et Seine.]]></content:encoded>
-+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[799]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1099]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[5 jours]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[2h]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3011]]></wp:meta_value></wp:postmeta>
++    <wp:post_name>hanoi-vietnam</wp:post_name>
++    <category domain="region" nicename="asie"><![CDATA[Asie]]></category>
++    <content:encoded><![CDATA[Vieille ville, lacs et gastronomie vietnamienne.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3101]]></wp:meta_value></wp:postmeta>
 +  </item>
 +  <item>
-+    <title><![CDATA[paris.jpg]]></title>
-+    <link>https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
-+    <wp:post_id>3011</wp:post_id>
-+    <wp:post_parent>2011</wp:post_parent>
++    <title><![CDATA[hanoi.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1543248939-ff40856f65d0?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3101</wp:post_id>
++    <wp:post_parent>2101</wp:post_parent>
 +    <wp:status>inherit</wp:status>
-+    <wp:post_name>paris</wp:post_name>
++    <wp:post_name>hanoi</wp:post_name>
 +    <wp:post_type>attachment</wp:post_type>
-+    <wp:attachment_url>https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
-+    <wp:postmeta><wp:meta_key>_wp_attached_file</wp:meta_key><wp:meta_value><![CDATA[paris.jpg]]></wp:meta_value></wp:postmeta>
++    <wp:attachment_url>https://images.unsplash.com/photo-1543248939-ff40856f65d0?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
 +  </item>
 +
-+  <!-- Rome (2012/3012) -->
++  <!-- Pékin (2102/3102) -->
 +  <item>
-+    <title><![CDATA[Rome, Italie]]></title>
-+    <link>https://example.com/?destination=rome-italie</link>
-+    <wp:post_id>2012</wp:post_id>
++    <title><![CDATA[Pékin, Chine]]></title>
++    <link>https://example.com/?destination=pekin-chine</link>
++    <wp:post_id>2102</wp:post_id>
 +    <wp:post_type>destination</wp:post_type>
-+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
-+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
 +    <wp:status>publish</wp:status>
-+    <wp:post_name>rome-italie</wp:post_name>
-+    <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
-+    <content:encoded><![CDATA[Colisée, Fontaine de Trévi et Vatican.]]></content:encoded>
-+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[749]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[999]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[5 jours]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[2h]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3012]]></wp:meta_value></wp:postmeta>
++    <wp:post_name>pekin-chine</wp:post_name>
++    <category domain="region" nicename="asie"><![CDATA[Asie]]></category>
++    <content:encoded><![CDATA[Cité interdite, Grande Muraille et hutongs.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3102]]></wp:meta_value></wp:postmeta>
 +  </item>
 +  <item>
-+    <title><![CDATA[rome.jpg]]></title>
-+    <link>https://images.unsplash.com/photo-1549880181-56a44cf4a9a6?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
-+    <wp:post_id>3012</wp:post_id>
-+    <wp:post_parent>2012</wp:post_parent>
++    <title><![CDATA[pekin.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1518684079-04c1e3743996?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3102</wp:post_id>
++    <wp:post_parent>2102</wp:post_parent>
 +    <wp:status>inherit</wp:status>
-+    <wp:post_name>rome</wp:post_name>
++    <wp:post_name>pekin</wp:post_name>
 +    <wp:post_type>attachment</wp:post_type>
-+    <wp:attachment_url>https://images.unsplash.com/photo-1549880181-56a44cf4a9a6?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
-+    <wp:postmeta><wp:meta_key>_wp_attached_file</wp:meta_key><wp:meta_value><![CDATA[rome.jpg]]></wp:meta_value></wp:postmeta>
++    <wp:attachment_url>https://images.unsplash.com/photo-1518684079-04c1e3743996?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
 +  </item>
 +
-+  <!-- Athènes (2013/3013) -->
++  <!-- Sydney (2103/3103) -->
 +  <item>
-+    <title><![CDATA[Athènes, Grèce]]></title>
-+    <link>https://example.com/?destination=athenes-grece</link>
-+    <wp:post_id>2013</wp:post_id>
++    <title><![CDATA[Sydney, Australie]]></title>
++    <link>https://example.com/?destination=sydney-australie</link>
++    <wp:post_id>2103</wp:post_id>
 +    <wp:post_type>destination</wp:post_type>
-+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
-+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
 +    <wp:status>publish</wp:status>
-+    <wp:post_name>athenes-grece</wp:post_name>
-+    <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
-+    <content:encoded><![CDATA[Acropole, Plaka et mer Égée.]]></content:encoded>
-+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[699]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[999]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[5 jours]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[3h]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[1 escale]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3013]]></wp:meta_value></wp:postmeta>
++    <wp:post_name>sydney-australie</wp:post_name>
++    <category domain="region" nicename="oceanie"><![CDATA[Océanie]]></category>
++    <content:encoded><![CDATA[Opéra, Harbour Bridge et plages mythiques.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3103]]></wp:meta_value></wp:postmeta>
 +  </item>
 +  <item>
-+    <title><![CDATA[athenes.jpg]]></title>
-+    <link>https://images.unsplash.com/photo-1523293915678-4c7dda34e0d6?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
-+    <wp:post_id>3013</wp:post_id>
-+    <wp:post_parent>2013</wp:post_parent>
++    <title><![CDATA[sydney.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1510749041921-69cc20b8d8ee?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3103</wp:post_id>
++    <wp:post_parent>2103</wp:post_parent>
 +    <wp:status>inherit</wp:status>
-+    <wp:post_name>athenes</wp:post_name>
++    <wp:post_name>sydney</wp:post_name>
 +    <wp:post_type>attachment</wp:post_type>
-+    <wp:attachment_url>https://images.unsplash.com/photo-1523293915678-4c7dda34e0d6?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
-+    <wp:postmeta><wp:meta_key>_wp_attached_file</wp:meta_key><wp:meta_value><![CDATA[athenes.jpg]]></wp:meta_value></wp:postmeta>
++    <wp:attachment_url>https://images.unsplash.com/photo-1510749041921-69cc20b8d8ee?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
 +  </item>
 +
-+  <!-- Londres (2014/3014) -->
++  <!-- Auckland (2104/3104) -->
 +  <item>
-+    <title><![CDATA[Londres, Royaume-Uni]]></title>
-+    <link>https://example.com/?destination=london-royaume-uni</link>
-+    <wp:post_id>2014</wp:post_id>
++    <title><![CDATA[Auckland, Nouvelle-Zélande]]></title>
++    <link>https://example.com/?destination=auckland-nouvelle-zelande</link>
++    <wp:post_id>2104</wp:post_id>
 +    <wp:post_type>destination</wp:post_type>
-+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
-+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
 +    <wp:status>publish</wp:status>
-+    <wp:post_name>london-royaume-uni</wp:post_name>
-+    <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
-+    <content:encoded><![CDATA[Big Ben, Tower Bridge et musées gratuits.]]></content:encoded>
-+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[899]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1299]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[5 jours]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[1h30]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3014]]></wp:meta_value></wp:postmeta>
++    <wp:post_name>auckland-nouvelle-zelande</wp:post_name>
++    <category domain="region" nicename="oceanie"><![CDATA[Océanie]]></category>
++    <content:encoded><![CDATA[Skytower, ports et nature verdoyante.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3104]]></wp:meta_value></wp:postmeta>
 +  </item>
 +  <item>
-+    <title><![CDATA[londres.jpg]]></title>
-+    <link>https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
-+    <wp:post_id>3014</wp:post_id>
-+    <wp:post_parent>2014</wp:post_parent>
++    <title><![CDATA[auckland.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1502784444185-4809f99c0382?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3104</wp:post_id>
++    <wp:post_parent>2104</wp:post_parent>
 +    <wp:status>inherit</wp:status>
-+    <wp:post_name>londres</wp:post_name>
++    <wp:post_name>auckland</wp:post_name>
 +    <wp:post_type>attachment</wp:post_type>
-+    <wp:attachment_url>https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
-+    <wp:postmeta><wp:meta_key>_wp_attached_file</wp:meta_key><wp:meta_value><![CDATA[londres.jpg]]></wp:meta_value></wp:postmeta>
++    <wp:attachment_url>https://images.unsplash.com/photo-1502784444185-4809f99c0382?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
 +  </item>
 +
-+  <!-- Madrid (2015/3015) -->
++  <!-- Maldives (2105/3105) -->
 +  <item>
-+    <title><![CDATA[Madrid, Espagne]]></title>
-+    <link>https://example.com/?destination=madrid-espagne</link>
-+    <wp:post_id>2015</wp:post_id>
++    <title><![CDATA[Maldives]]></title>
++    <link>https://example.com/?destination=maldives</link>
++    <wp:post_id>2105</wp:post_id>
 +    <wp:post_type>destination</wp:post_type>
-+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
-+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
 +    <wp:status>publish</wp:status>
-+    <wp:post_name>madrid-espagne</wp:post_name>
-+    <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
-+    <content:encoded><![CDATA[Prado, Plaza Mayor et tapas.]]></content:encoded>
-+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[699]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[999]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[5 jours]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[2h]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3015]]></wp:meta_value></wp:postmeta>
++    <wp:post_name>maldives</wp:post_name>
++    <category domain="region" nicename="iles-paradisiaques"><![CDATA[Îles Paradisiaques]]></category>
++    <content:encoded><![CDATA[Lagons turquoise et villas sur l'eau.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3105]]></wp:meta_value></wp:postmeta>
 +  </item>
 +  <item>
-+    <title><![CDATA[madrid.jpg]]></title>
-+    <link>https://images.unsplash.com/photo-1526481280694-3ba03f3a2abf?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
-+    <wp:post_id>3015</wp:post_id>
-+    <wp:post_parent>2015</wp:post_parent>
++    <title><![CDATA[maldives.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3105</wp:post_id>
++    <wp:post_parent>2105</wp:post_parent>
 +    <wp:status>inherit</wp:status>
-+    <wp:post_name>madrid</wp:post_name>
++    <wp:post_name>maldives</wp:post_name>
 +    <wp:post_type>attachment</wp:post_type>
-+    <wp:attachment_url>https://images.unsplash.com/photo-1526481280694-3ba03f3a2abf?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
-+    <wp:postmeta><wp:meta_key>_wp_attached_file</wp:meta_key><wp:meta_value><![CDATA[madrid.jpg]]></wp:meta_value></wp:postmeta>
++    <wp:attachment_url>https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
 +  </item>
 +
-+  <!-- Genève (2016/3016) -->
++  <!-- Punta Cana (2106/3106) -->
 +  <item>
-+    <title><![CDATA[Genève, Suisse]]></title>
-+    <link>https://example.com/?destination=geneve-suisse</link>
-+    <wp:post_id>2016</wp:post_id>
++    <title><![CDATA[Punta Cana, Rép. Dominicaine]]></title>
++    <link>https://example.com/?destination=punta-cana-republique-dominicaine</link>
++    <wp:post_id>2106</wp:post_id>
 +    <wp:post_type>destination</wp:post_type>
-+    <wp:post_date>2025-09-01 00:00:00</wp:post_date>
-+    <wp:post_date_gmt>2025-09-01 00:00:00</wp:post_date_gmt>
 +    <wp:status>publish</wp:status>
-+    <wp:post_name>geneve-suisse</wp:post_name>
-+    <category domain="region" nicename="europe"><![CDATA[Europe]]></category>
-+    <content:encoded><![CDATA[Jet d’eau, Vieille Ville et Lac Léman.]]></content:encoded>
-+    <wp:postmeta><wp:meta_key>price_eur</wp:meta_key><wp:meta_value><![CDATA[799]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>original_price_eur</wp:meta_key><wp:meta_value><![CDATA[1099]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>duration</wp:meta_key><wp:meta_value><![CDATA[5 jours]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>flight_time</wp:meta_key><wp:meta_value><![CDATA[2h]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>stops</wp:meta_key><wp:meta_value><![CDATA[Direct]]></wp:meta_value></wp:postmeta>
-+    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3016]]></wp:meta_value></wp:postmeta>
++    <wp:post_name>punta-cana-republique-dominicaine</wp:post_name>
++    <category domain="region" nicename="iles-paradisiaques"><![CDATA[Îles Paradisiaques]]></category>
++    <content:encoded><![CDATA[Plages de sable fin et cocotiers.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3106]]></wp:meta_value></wp:postmeta>
 +  </item>
 +  <item>
-+    <title><![CDATA[geneve.jpg]]></title>
-+    <link>https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
-+    <wp:post_id>3016</wp:post_id>
-+    <wp:post_parent>2016</wp:post_parent>
++    <title><![CDATA[punta-cana.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1578898887932-49e42abf5dc4?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3106</wp:post_id>
++    <wp:post_parent>2106</wp:post_parent>
 +    <wp:status>inherit</wp:status>
-+    <wp:post_name>geneve</wp:post_name>
++    <wp:post_name>punta-cana</wp:post_name>
 +    <wp:post_type>attachment</wp:post_type>
-+    <wp:attachment_url>https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
-+    <wp:postmeta><wp:meta_key>_wp_attached_file</wp:meta_key><wp:meta_value><![CDATA[geneve.jpg]]></wp:meta_value></wp:postmeta>
++    <wp:attachment_url>https://images.unsplash.com/photo-1578898887932-49e42abf5dc4?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
 +  </item>
-@@
++
++  <!-- Île de la Réunion (2107/3107) -->
++  <item>
++    <title><![CDATA[Île de la Réunion, France]]></title>
++    <link>https://example.com/?destination=ile-de-la-reunion-france</link>
++    <wp:post_id>2107</wp:post_id>
++    <wp:post_type>destination</wp:post_type>
++    <wp:status>publish</wp:status>
++    <wp:post_name>ile-de-la-reunion-france</wp:post_name>
++    <category domain="region" nicename="iles-paradisiaques"><![CDATA[Îles Paradisiaques]]></category>
++    <content:encoded><![CDATA[Cirques, volcans et lagons.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3107]]></wp:meta_value></wp:postmeta>
++  </item>
++  <item>
++    <title><![CDATA[reunion.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1518544345920-060609d5d835?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3107</wp:post_id>
++    <wp:post_parent>2107</wp:post_parent>
++    <wp:status>inherit</wp:status>
++    <wp:post_name>reunion</wp:post_name>
++    <wp:post_type>attachment</wp:post_type>
++    <wp:attachment_url>https://images.unsplash.com/photo-1518544345920-060609d5d835?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
++  </item>
++
++  <!-- Île Maurice (2108/3108) -->
++  <item>
++    <title><![CDATA[Île Maurice, Maurice]]></title>
++    <link>https://example.com/?destination=ile-maurice-maurice</link>
++    <wp:post_id>2108</wp:post_id>
++    <wp:post_type>destination</wp:post_type>
++    <wp:status>publish</wp:status>
++    <wp:post_name>ile-maurice-maurice</wp:post_name>
++    <category domain="region" nicename="iles-paradisiaques"><![CDATA[Îles Paradisiaques]]></category>
++    <content:encoded><![CDATA[Lagons translucides et hospitalité mauricienne.]]></content:encoded>
++    <wp:postmeta><wp:meta_key>_thumbnail_id</wp:meta_key><wp:meta_value><![CDATA[3108]]></wp:meta_value></wp:postmeta>
++  </item>
++  <item>
++    <title><![CDATA[maurice.jpg]]></title>
++    <link>https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</link>
++    <wp:post_id>3108</wp:post_id>
++    <wp:post_parent>2108</wp:post_parent>
++    <wp:status>inherit</wp:status>
++    <wp:post_name>maurice</wp:post_name>
++    <wp:post_type>attachment</wp:post_type>
++    <wp:attachment_url>https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&amp;fit=crop&amp;auto=format&amp;q=80</wp:attachment_url>
++  </item>
